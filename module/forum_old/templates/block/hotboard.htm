@@ -1,0 +1,3 @@
+<{ foreach from=$block.board item="board" }>
+<div><a href="<{$block.dirname}>/viewboard.php?no=<{$board.no}>"><{$board.name}></a><{if $curruser->isadmin() }><span style="color: white">(<{$board.count}>)</span><{/if}></div>
+<{ /foreach }>

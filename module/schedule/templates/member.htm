@@ -1,0 +1,48 @@
+<script type="text/javascript">
+        function show_chk_uid(req)
+        {
+                $('chk_uid').innerHTML = (req.responseText == "exists") ? '' : '<font color="#FF0000">錯誤的使用者帳號</font>';
+        }
+
+        function chk_uid()
+        {
+                if (!document.memb_add.uid.value)
+                        return false;
+
+                var parms = "chk_uid=1&uid=" + document.memb_add.uid.value;
+
+                var req = new Ajax.Request("<{$currconfig->url}>/include/user.php", {method: "get", parameters: parms, onComplete: show_chk_uid});
+	}
+</script>
+
+<form action="memberChange.php?memberAdd=1&gno=<{$gno}>" method="post" name="memb_add" style="text-align: center;" onSubmit="
+	if(!this.uid.value){alert('未輸入新增者 ID');this.uid.focus();return false;}
+">
+	新增使用者：<input type="text" name="uid" onBlur="javascript:chk_uid()"/>
+	<input type="submit" value="確認"/><span id="chk_uid"></span>
+</form>
+<form action="memberChange.php?change=1&gno=<{$gno}>" method="post" name="chform">
+  <table border="1" cellpadding="5" cellspacing="0" style="margin: 10px auto; border-collapse: collapse; width: 500px;">
+    <tr>
+      <td></td>
+      <td>ID</td>
+      <td>權限<a href="?gno=<{$gno}>&order=level" title="以權限排序">&darr;</a></td>
+      <td>加入時間<a href="?gno=<{$gno}>&order=itime" title="以加入時間排序">&darr;</a></td>
+    </tr>
+<{section name=memb loop=$gmember}>
+    <tr>
+      <td><input type="checkbox" name="change<{$smarty.section.memb.index}>" /></td>
+      <td><{$gmember[memb].uid}> <input type="hidden" name="uno<{$smarty.section.memb.index}>" value="<{$gmember[memb].uno}>" /></td>
+      <td>
+<select name="level<{$smarty.section.memb.index}>" onChange="document.chform.change<{$smarty.section.memb.index}>.checked=true;">
+        <{html_options options=$level selected=$gmember[memb].level}>
+</select>
+      </td>
+      <td><{$gmember[memb].itime}></td>
+    </tr>
+<{/section}>
+    <tr>
+      <td colspan="4" align="center"><input type="hidden" name="all_num" value="<{$smarty.section.memb.loop}>" /><input type="submit" value="送出"></td>
+    </tr>
+  </table>
+</form>

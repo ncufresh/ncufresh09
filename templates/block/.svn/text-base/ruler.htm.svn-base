@@ -1,0 +1,4 @@
+<{if ($curruser->isguest()) || $currmodule->showlink || $block.fuckok}>
+<img src="<{$block.dirname}>/templates/images/schedule.jpg" alt="史卡舅" style="margin-top:10px;"/>
+<a id="img_aboutus" href="<{$block.dirname}>/aboutus.php" title="關於我們"><span>ABOUTUS</span></a>
+<{/if}>

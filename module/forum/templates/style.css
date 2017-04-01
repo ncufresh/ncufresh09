@@ -1,0 +1,170 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+#forum_outer{
+	font-family:"微軟正黑體";
+	color:#333;
+	width:100%;
+	height:100%;
+}
+#forum_inner{
+	width:768px;
+	margin:0px 100px;
+	display:inline-block;
+}
+#forum_inner a{
+	font-family:"微軟正黑體";
+	color:#333;
+	text-decoration:none;
+}
+#forum_departlist_block{
+	width:239px;
+	display:inline-block;
+	float:left;
+}
+#forum_depl_banner{
+	background:url(images/departStu01.gif) no-repeat;
+	height:86px;
+	width:239px;
+	display:inline-block;
+}
+#forum_depl_container{
+	background:url(images/departStu02.gif) repeat-y;
+	width:239px;
+	display:inline-block;
+	text-align:center;
+	min-height:775px;
+}
+.forum_depl{
+	margin:20px 0px 10px;
+    padding-left:9px;
+}
+#forum_depl_footer{
+	background:url(images/departStu03.gif) no-repeat;
+	height:47px;
+	width:239px;
+	display:inline-block;
+}
+#forum_clublist_block{
+	width:527px;
+	display:inline-block;
+	text-align:center;
+	float:left;
+}
+#forum_cl_banner{
+	background:url(images/departClub01.gif) no-repeat;
+	height:86px;
+	width:527px;
+	display:inline-block;
+}
+#forum_cl_container{
+	background:url(images/departClub02.gif) repeat-y;
+	width:527px;
+	display:inline-block;
+	min-height:775px;
+}
+#forum_cl_footer{
+	background:url(images/departClub03.gif) no-repeat;
+	height:47px;
+	width:527px;
+	display:inline-block;
+}
+.forum_cl{
+	display:inline-block;
+	width:500px;
+	margin:20px 0px 10px;
+    padding-left:15px;
+}
+
+#depl_liberalart{
+	background:url(images/departLogo01.gif) no-repeat;
+	display:inline-block;
+	width:151px;
+	height:25px;
+}
+#depl_science{
+	background:url(images/departLogo02.gif) no-repeat;
+	display:inline-block;
+	width:151px;
+	height:25px;
+}
+#depl_engineering{
+	background:url(images/departLogo03.gif) no-repeat;
+	display:inline-block;
+	width:151px;
+	height:25px;
+}
+#depl_management{
+	background:url(images/departLogo04.gif) no-repeat;
+	display:inline-block;
+	width:151px;
+	height:25px;
+}
+#depl_information{
+	background:url(images/departLogo05.gif) no-repeat;
+	display:inline-block;
+	width:151px;
+	height:25px;
+}
+#depl_earth{
+	background:url(images/departLogo06.gif) no-repeat;
+	display:inline-block;
+	width:151px;
+	height:25px;
+}
+#cl_haha{
+	background:url(images/departLogo07.gif) no-repeat;
+	width:151px;
+	height:25px;
+}
+#cl_help{
+	background:url(images/departLogo08.gif) no-repeat;
+	width:151px;
+	height:25px;
+}
+#cl_learn{
+	background:url(images/departLogo09.gif) no-repeat;
+	width:151px;
+	height:25px;
+}
+#cl_associate{
+	background:url(images/departLogo10.gif) no-repeat;
+	width:151px;
+	height:25px;
+}
+#cl_hm{
+	background:url(images/departLogo12.gif) no-repeat;
+	width:151px;
+	height:25px;
+}
+
+.forum_cl_lib{
+	position:relative;
+	width:21%;
+	display:inline-block;
+	text-align:left;
+	white-space:nowrap;
+	
+}
+
+.list_container{
+	text-align:left;
+	margin-left:25px;
+}
+
+.forum_dl_lib{
+    margin-left:-9px;
+}
+
+.clearboth{
+	clear:both;
+}
+
+.pageTab{
+	border:solid 1px #333;
+	padding:0px 2px;
+}
+
+.VB_currpage{
+    background:#fadd19;
+}

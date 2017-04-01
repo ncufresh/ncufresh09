@@ -1,0 +1,45 @@
+<div class="blue_back">
+<!--<div class="field_top_top"><img src="templates/images/contactus.gif" class="field_title"/><img src="templates/images/pineR.gif" class="in_section"/></div>-->
+<div class="field_content_bar"></div>
+<div class="field_content">
+	<a href="<{$currconfig->url}>/redirect.php?1" title="上一頁">回到上頁</a>&nbsp;&nbsp;
+	<a onClick="if(!confirm('確認刪除？'))return false;" href="<{$currconfig->phpself}>?del_contact=1&mno=<{$mno}>" title="刪除留言" style="line-height:46px;">刪除</a>
+  <table border="0" cellpadding="3" cellspacing="0" style="border-collapse: collapse" align="center" width="100%">
+    <tr>
+      <td>姓名：</td>
+      <td><a href="<{$email}>" title="回覆"><{$sender}></a></td>
+    </tr>
+    <tr>
+      <td>標題：</td>
+      <td><{$title}></td>
+    </tr>
+    <tr>
+      <td>時間：</td>
+      <td><{$time}></td>
+	  <td align="right">ip:<{$ip}></td>
+    </tr>
+    <tr>
+      <td colspan="2"><hr/>
+          <{$content}>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2"><hr />
+        <form action="?changestate=1" method="post">
+          <input type="hidden" name="mno" value="<{$mno}>" />
+          狀態 :
+          <select name="state">
+            <{assign_adv var="states" value="array('未處理','處理中','已回覆','已解決')"}>
+            <{if $state == ''}><{assign var="state" value="未處理"}><{/if}>
+            <{foreach from=$states item="st"}>
+            <option value="<{$st}>"<{if $st==$state}> selected<{/if}>><{$st}></option>
+            <{/foreach}>
+          </select>
+          </select><input type="submit" value="更新" />
+        </form>
+      </td>
+    </tr>
+  </table>
+</div>
+<div class="field_bottom"></div>
+</div>

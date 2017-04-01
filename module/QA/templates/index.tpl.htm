@@ -1,0 +1,63 @@
+<div id="qa_main_container">
+  <div id="qa_main_left">
+    <{if false}><span class="qa_button"><a href="topic_edit.php"><img src="templates/images/iconNew.gif" alt="發表文章" /></a></span><{/if}>
+    <span class="qa_nav_bar">
+    文章分類檢視：
+    <select name="jumpMenu" class="qa_nav_bar" onChange="location.href=this.options[this.selectedIndex].value;" >
+      <option value="index.php#">請選擇</option>
+      <option value="index.php?select=0">全部</option>
+      <{section name=clsarr loop=$qa_cls_list_arr}>
+      <option value="index.php?select=<{$qa_cls_list_arr[clsarr].Cnum}>"><{$qa_cls_list_arr[clsarr].Ccontent}></option>
+      <{/section}>
+    </select>
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <{section name=pagebar loop=$qa_page_arr}>
+      <{$qa_page_arr[pagebar]}>
+    <{/section}>
+    </span>
+    <br class="clear" />&nbsp;
+	<br class="clear" />
+    <img src="templates/images/barDevide.gif" />
+    <{section name=qa loop=$qa_questions_list_arr}>
+    <div class="qa_topic_container">
+      <div class="qa_topic_headicon"><img width="60" height="60" src="<{$currconfig->url}>/module/shop/items_pic/<{$qa_questions_list_arr[qa].pic}>.jpg" /></div>
+      <div class="qa_topic_title_author">
+        <a class="qa_topic_span_title" href="view_topic.php?Qno=<{$qa_questions_list_arr[qa].Qno}>"><div style="width:320px;"><{$qa_questions_list_arr[qa].Qtitle}></div></a>
+        <br />
+        <span class="qa_topic_span_author"><{$qa_questions_list_arr[qa].uid}></span>
+      </div>
+      <div class="qa_topic_date">
+      <span <{if $qa_questions_list_arr[qa].new_reply == TRUE}>style="color: #AF2323;"<{/if}>>[回應: <{$qa_questions_list_arr[qa].Qrenum}>]</span>
+      <br />&nbsp;
+      <br />&nbsp;
+      <br />
+      發表時間：<{$qa_questions_list_arr[qa].Qtime}>
+      </div>
+    </div>
+    <img src="templates/images/barDevide.gif" />
+    <{/section}>
+	<br />&nbsp;
+	<div class="qa_nav_bar" style="text-align: right; padding: 0px 20px;">
+    <{section name=pagebar loop=$qa_page_arr}>
+      <{$qa_page_arr[pagebar]}>
+    <{/section}>
+	<br />&nbsp;
+	</div>
+  </div>
+  <div id="qa_main_right">
+    <div id="tq_head"></div>
+    <div id="tq_center">
+    <{section name=tq loop=$tq_list_arr}>
+      <a href="view_tq.php?TQno=<{$tq_list_arr[tq].TQno}>">
+      <div class="tq_link">
+        <span class="tq_link_img"><img src="templates/images/tenQAicon<{$tq_list_arr[tq].TQno}>.gif" alt="QA1" /></span>
+        <span class="tq_link_text"><{$tq_list_arr[tq].TQtitle}></span>
+      </div>
+      </a>
+    <{/section}>
+    </div>
+    <div id="tq_bottom"></div>
+  </div>
+  <br class="clear" />&nbsp;
+</div>

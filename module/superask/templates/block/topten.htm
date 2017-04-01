@@ -1,0 +1,30 @@
+<style type="text/css">
+#topten
+{
+	margin: 0px;
+	background: url("<{$block.dirname}>/templates/images/c_top1_1.jpg") no-repeat;
+	overflow: hidden;
+	width: 204px;
+	height: 35px;
+}
+
+#topten h1
+{
+	margin-top: 4px;
+	margin-left: 15px;
+	font-size: 10pt;
+}
+</style>
+
+<div id="topten"><h1>人氣主題</h1></div>
+<div class="block_top_content">
+  <table border="0" cellpadding="3" cellspacing="0" style="border-collapse: collapse;" width="100%">
+<{foreach from=$block.topic item="item"}>
+    <tr>
+      <td><a href="<{$block.dirname}>/view.php?tno=<{$item.tno}>" title="<{$item.title|htmlencode}>"><{$item.title|htmlencode}></a></td>
+      <td align="right"><{$item.numread}></td>
+    </tr>
+<{/foreach}>
+  </table>
+</div>
+<div class="block_top_bottom"></div>

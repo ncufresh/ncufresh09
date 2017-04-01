@@ -1,0 +1,64 @@
+<style type="text/css">
+#newten
+{
+	margin: 0px;
+	background: url("<{$block.dirname}>/templates/images/p_forum_main2_1.jpg") no-repeat;
+	overflow: hidden;
+	width: 416px;
+	height: 35px;
+}
+
+#newten h1
+{
+	margin-top: 7px;
+	margin-left: 30px;
+	font-size: 10pt;
+}
+
+#newten h1 a
+{
+	color: #000000;
+	text-decoration: none;
+}
+
+.top_content
+{
+	margin: 0px;
+	background: url("<{$block.dirname}>/templates/images/p_forum_main_bg.jpg") repeat-y;
+	overflow: hidden;
+	padding: 0px 3px;
+	font-size: 10pt;
+	width: 410px;
+}
+
+.top_content a
+{
+	color: #666666;
+	text-decoration: none;
+}
+
+.top_bottom
+{
+	margin: 0px;
+	background: url("<{$block.dirname}>/templates/images/p_forum_main_down.jpg") no-repeat;
+	width: 416px;
+	height: 35px;
+}
+</style>
+
+<div id="newten"><h1><a href="<{$block.dirname}>/question.php" title="所有問題列表">最新發問</a></h1></div>
+<div class="top_content">
+  <table border="0" cellpadding="3" cellspacing="0" style="border-collapse: collapse;" width="100%">
+    <tr>
+      <th>問題</th>
+      <th align="right">更新時間</th>
+    </tr>
+<{foreach from=$block.question item="item"}>
+    <tr>
+      <td><a href="<{$block.dirname}>/question.php?qno=<{$item.qno}>" title="<{$item.question|htmlencode}>"><{$item.question|htmlencode}></a></td>
+      <td align="right"><{$item.posttime}></td>
+    </tr>
+<{/foreach}>
+  </table>
+</div>
+<div class="top_bottom"></div>

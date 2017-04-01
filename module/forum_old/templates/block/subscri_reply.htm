@@ -1,0 +1,29 @@
+<{if $block.reply}>
+<form action="<{$block.dirname}>/rm_subscribe.php" method="get">
+<input type="hidden" name="type" value="reply" />
+<table style="width:100%;text-align:left" id="_subscrreply">
+<thead>
+	<tr>
+	<th width="10%">刪除</th>
+	<th width="35%">最後回覆</th>
+	<th width="20%">作者</th>
+	<th width="35%">標題</th>
+	</tr>
+</thead>
+<tbody>
+	<tr><td colspan="4"><hr /><td></tr>
+<{foreach from=$block.reply item="reply"}>
+	<tr>
+	<td style="padding-left:10px"><input type="checkbox" name="del[]" value="<{$reply.reply_no}>" /></td>
+	<td><{$reply.lasttime|date_format:"%Y-%m-%d %H:%M:%S"}></td>
+	<td><{$reply.name}></td>
+	<td><a href="<{$block.dirname}>/viewtopic.php?no=<{$reply.topic_no}>" title="閱讀文章"><{$reply.title|htmlencode}> (<{$reply.num}>)</a></td>
+	</tr>
+<{/foreach}>
+	<tr><td colspan="4"><input type="button" value="反選" onclick="$$('#_subscrreply input[type=checkbox]').each(function(th){ $(th).checked=! $(th).checked; });" /> <input type="submit" value="刪除勾選" /><td></tr>
+</tbody>
+</table>
+</form>
+<{else}>
+<div class="notopic">沒有追蹤</div>
+<{/if}>

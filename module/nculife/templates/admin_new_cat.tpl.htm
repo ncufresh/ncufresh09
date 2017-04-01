@@ -1,0 +1,42 @@
+<form action="admin_new_cat.php?action=save&curr_action=<{$curr_action}>" method="post">
+<div id="nl_admin_container">
+  <div id="nl_admin_cat">編輯分類</div>
+  <div id="nl_admin_item">
+    <div align="right" id="nl_admin_item_l">分類名稱</div>
+    <div id="nl_admin_item_r"><input type="text" name="cat_name" value="<{$curr_cat_arr.cat_name}>" /></div>
+  </div>
+  <div id="nl_admin_item">
+    <div align="right" id="nl_admin_item_l">文章「標頭」影像</div>
+    <div id="nl_admin_item_r"><input type="text" name="cat_title_image" value="<{$curr_cat_arr.cat_title_image}>" /></div>
+  </div>
+  <div id="nl_admin_item">
+    <div align="right" id="nl_admin_item_l">文章「結尾」影像</div>
+    <div id="nl_admin_item_r"><input type="text" name="cat_end_image" value="<{$curr_cat_arr.cat_end_image}>" /></div>
+  </div>
+  <div id="nl_admin_item">
+    <div align="right" id="nl_admin_item_l">左側分類背景</div>
+    <div id="nl_admin_item_r"><input type="text" name="cat_menuside_image" value="<{$curr_cat_arr.cat_menuside_image}>" /></div>
+  </div>
+  <div id="nl_admin_item">
+    <div align="right" id="nl_admin_item_l">左側分類標題圖示</div>
+    <div id="nl_admin_item_r"><input type="text" name="cat_favicon_image" value="<{$curr_cat_arr.cat_favicon_image}>" /></div>
+  </div>
+  <div id="nl_admin_item">
+    <div align="right" id="nl_admin_item_l">左側連結(a)</div>
+    <div id="nl_admin_item_r"><input type="text" name="cat_a_icon" value="<{$curr_cat_arr.cat_a_icon}>" /></div>
+  </div>
+  <div id="nl_admin_item">
+    <div align="right" id="nl_admin_item_l">左側使用中連結(a:hover)</div>
+    <div id="nl_admin_item_r"><input type="text" name="cat_a_hover_icon" value="<{$curr_cat_arr.cat_a_hover_icon}>" /></div>
+  </div>
+  <div id="nl_admin_item">
+    <div align="right" style="min-height: 120px;" id="nl_admin_item_l">分類描述</div>
+    <div id="nl_admin_item_r" style="min-height: 120px;"><textarea name="cat_description" style="min-height:110px;" id="cat_description" cols="36" rows="5"><{$curr_cat_arr.cat_description}></textarea></div>
+  </div>
+  <center>
+  <input type="hidden" name="curr_cat_ID" value="<{$curr_cat_ID}>" />
+  <input type="submit" name="submit" value="新增編輯分類" />
+  <input type="reset" name="reset" value="重新編輯" />
+  </center>
+</div>
+</form>

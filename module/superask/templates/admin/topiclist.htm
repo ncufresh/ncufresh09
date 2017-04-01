@@ -1,0 +1,29 @@
+<p class="field2_top">主題列表</p>
+<div class="field2_content">
+<{include file="admin/topicsearchform.htm"}>
+  <table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center" width="100%">
+    <tr>
+      <th><a href="<{$currconfig->phpself}>?column=<{$column}>&key=<{$key}>&order=title" title="照主題排序">主題</a> (<a href="?column=<{$column}>&key=<{$key}>&order=sum" title="照篇數排序">篇數</a>)</th>
+      <th align="left" width="30"><a href="<{$currconfig->phpself}>?column=<{$column}>&key=<{$key}>&order=locks" title="照鎖定排序">鎖定</a></th>
+      <th align="left" width="120"><a href="<{$currconfig->phpself}>?column=<{$column}>&key=<{$key}>&order=cno" title="照類別排序">類別</a></th>
+      <!--      <th align="left">版主</th>-->
+      <th align="left">顯示連結</th>
+<{if ($currmodule->isadmin($curruser))}>
+      <th align="right" width="60">修改資料</th>
+<{/if}>
+    </tr>
+<{foreach from=$topics item="topic"}>
+    <tr>
+      <td><a href="?<{$topic.title|urlencode}>" title="<{$topic.title}>"><{$topic.title}></a> (<a href="<{$currconfig->phpself}>?resave=1&tno=<{$topic.tno}>" title="刪除先前資料"><{$topic.sum}></a>)</td>
+      <td><{if ($topic.locks == 0)}>開放<{else}>鎖定<{/if}></td>
+      <td><{$topic.cat}></td>
+      <!--      <td><{$topic.manager}></td>-->
+      <td><{if $topic.showlink == 1}>顯示<{else}>隱藏<{/if}></td>
+<{if ($currmodule->isadmin($curruser))}>
+      <td align="right"><a href="<{$currconfig->phpself}>?edit=1&tno=<{$topic.tno}>" title="修改資料">修改資料</a></td>
+<{/if}>
+    </tr>
+<{/foreach}>
+  </table>
+</div>
+<p class="field2_bottom"></p>

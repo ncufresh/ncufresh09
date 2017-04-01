@@ -1,0 +1,93 @@
+@charset "utf-8";
+/* CSS Document */
+
+#nculife_main_bg
+{
+	background: url(images/cenbg.gif) center no-repeat;
+	width: 780px;
+	height: 741px;
+}
+
+.nculife_img_l{float: left;}
+.nculife_img_r{float: right;}
+
+/* --- contents - menu --- */
+
+#nculife_contents_container
+{
+	width: 930px;
+	min-height: 510px;
+	padding: 8px;
+}
+
+#nculife_cc_l{			float: left;	background-position: top left;	background-repeat: no-repeat;	width: 193px;	font-family: "微軟正黑體";	font-weight: bold;	font-size: 16px;	min-height: 510px;}
+#nculife_cc_l_top_bg{	float: left;	background-position: 30% 100%;	background-repeat: no-repeat;	width: 133px;	height: 20px;	color: #5D5C19;		padding: 30px 0px 0px 60px;}
+
+#nculife_cc_l a
+{
+	background-position: 20px top;
+	background-repeat: no-repeat;
+	
+	padding: 2px 0px 0px 45px;
+	color: #000000;
+	text-decoration: none;
+	line-height: 30px;
+}
+
+#nculife_cc_l a:hover
+{
+	color: #B82020;
+}
+
+/* --- contents - article --- */
+
+#nculife_cc_r
+{
+	float: left;
+	width: 737px;
+	min-height: 510px;
+}
+
+#nculife_cc_r_top_bg
+{
+	font-family: "微軟正黑體";
+	font-weight: bold;
+	
+	width: 164px;
+	height: 40px;
+	padding: 24px 0px 0px;
+}
+
+#nculife_cc_r_contents
+{
+	color: #333333;
+	
+	width: 677px;
+	padding: 20px 30px;
+}
+
+/* --- Admin Interface --- */
+#nl_admin_container
+{
+	width: 640px;
+	min-height: 10px;
+	margin: auto;
+}
+
+#nl_admin_item{		float: left;	width: 640px;	min-height: 24px;	border: #FFFFFF solid 1px;}
+#nl_admin_item_l{	float: left;	width: 300px;	min-height: 24px;	background-color: #E0E0E0;	padding: 0px 10px;}
+#nl_admin_item_r{	float: left;	width: 300px;	min-height: 24px;	padding: 0px 10px;}
+
+#nl_admin_cat{
+	background-color: #6699FF;
+	border: #FFFFFF solid 1px;
+	
+	color: #FFFFFF;
+	font-weight: bold;
+	font-family: "微軟正黑體";
+	
+	float: left;
+	width: 600px;
+	height: 20px;
+	padding: 5px 20px;
+}

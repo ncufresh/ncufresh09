@@ -1,0 +1,173 @@
+<div style="clear:both;height:630px;">
+
+<script language="javascript">
+var btn=".draggable";
+function k($i){
+	J(btn+$i).draggable();
+};
+
+var divNo = document.getElementsByTagName("div").length;
+//alert(divNo);
+function changeIndex(me){
+	if(changeIndex.top)
+		changeIndex.top.style.zIndex="";
+	me.style.zIndex=100;
+	changeIndex.top=me;
+}
+
+J(document).ready(function(){
+    var box = {
+        width: 150,
+        height: 150
+    };
+
+    var score = 0;    
+
+    J('.dest').droppable({
+        drop: function(event, ui) {
+            if (ui.draggable.attr('id') ==  J(this).attr('id')){
+                ui.draggable
+                    .css('left', J(this).css('left'))
+                    .css('top', J(this).css('top'));
+                
+                ui.draggable.draggable('disable');
+                ++score;
+                if (score == 16){
+                    alert('Good Job');
+					location.href="http://localhost/work_v11/module/shop/<{$lazy_p}>"
+                }
+            }
+
+        }				
+    });
+});
+
+
+
+</script>
+
+
+<style rel="stylesheet"  href="game.css" type="text/css" media="screen">
+	.ui-draggable{ 
+	width: 150px;
+	height:150px;
+	}
+	
+	#block {
+	display:inline-block;
+	position:absolute;
+	}
+	
+	 .dest{
+	position:absolute; 
+	background-color: #CCFF33;
+	width: 150px;
+	height: 150px;
+	}
+</style>
+	
+<{section name=i loop=$puzzle_area}>
+	<a href="puzzle_area.php?ino=<{$puzzle_area[i].ino}>"><{$puzzle_area[i].item}></a>   
+<{/section}>
+<br />
+
+<div id="block">
+	<div>
+		<div>
+			<span id="clip1" class="dest ui-droppable" style="border-style: groove; left: 250px; top: 10px;"></span>
+			<span id="clip2" class="dest ui-droppable" style="border-style: groove; left: 400px; top: 10px;"></span>
+			<span id="clip3" class="dest ui-droppable" style="border-style: groove; left: 550px; top: 10px;"></span>
+			<span id="clip4" class="dest ui-droppable" style="border-style: groove; left: 700px; top: 10px;"></span>
+		</div>
+		<div>
+			<span id="clip5" class="dest ui-droppable" style="border-style: groove; left: 250px; top: 160px;"></span>
+			<span id="clip6" class="dest ui-droppable" style="border-style: groove; left: 400px; top: 160px;"></span>
+			<span id="clip7" class="dest ui-droppable" style="border-style: groove; left: 550px; top: 160px;"></span>
+			<span id="clip8" class="dest ui-droppable" style="border-style: groove; left: 700px; top: 160px;"></span>
+		</div>
+		<div>
+			<span id="clip9" class="dest ui-droppable" style="border-style: groove; left: 250px; top: 310px;"></span>
+			<span id="clip10" class="dest ui-droppable" style="border-style: groove; left: 400px; top: 310px;"></span>
+			<span id="clip11" class="dest ui-droppable" style="border-style: groove; left: 550px; top: 310px;"></span>
+			<span id="clip12" class="dest ui-droppable" style="border-style: groove; left: 700px; top: 310px;"></span>
+		</div>
+		<div>
+			<span id="clip13" class="dest ui-droppable" style="border-style: groove; left: 250px; top: 460px;"></span>
+			<span id="clip14" class="dest ui-droppable" style="border-style: groove; left: 400px; top: 460px;"></span>
+			<span id="clip15" class="dest ui-droppable" style="border-style: groove; left: 550px; top: 460px;"></span>
+			<span id="clip16" class="dest ui-droppable" style="border-style: groove; left: 700px; top: 460px;"></span>
+		</div>
+	</div>
+
+
+	<span id="clip1" class="draggable<{$puzzle[0].ino}> ui-draggable" style="position: absolute; top:<{$block.1.h}>px; left: <{$block.1.v}>px;" onMouseDown="changeIndex(this)">
+		<img  width="150px" height="150px" src="./items_pic/<{$puzzle[0].pic}>" onMouseDown="k(<{$puzzle[0].ino}>)"/>
+	</span>
+
+	<span id="clip2" class="draggable<{$puzzle[1].ino}> ui-draggable" style="position: absolute; top:<{$block.2.h}>px; left: <{$block.2.v}>px;" onMouseDown="changeIndex(this)">
+		<img  width="150px" height="150px" src="./items_pic/<{$puzzle[1].pic}>" onMouseDown="k(<{$puzzle[1].ino}>)"/>
+	</span>
+
+	<span id="clip3" class="draggable<{$puzzle[2].ino}> ui-draggable" style="position: absolute; top:<{$block.1.h}>px; left: <{$block.3.v}>px; " onMouseDown="changeIndex(this)">
+		<img  width="150px" height="150px" src="./items_pic/<{$puzzle[2].pic}>" onMouseDown="k(<{$puzzle[2].ino}>)"/>
+	</span>
+
+	<span id="clip4" class="draggable<{$puzzle[3].ino}> ui-draggable" style="position: absolute; top:<{$block.4.h}>px; left: <{$block.4.v}>px;" onMouseDown="changeIndex(this)">
+		<img  width="150px" height="150px" src="./items_pic/<{$puzzle[3].pic}>" onMouseDown="k(<{$puzzle[3].ino}>)"/>
+	</span>
+
+	<span id="clip5" class="draggable<{$puzzle[4].ino}> ui-draggable" style="position: absolute; top:<{$block.5.h}>px; left: <{$block.5.v}>px; " onMouseDown="changeIndex(this)">
+		<img  width="150px" height="150px" src="./items_pic/<{$puzzle[4].pic}>" onMouseDown="k(<{$puzzle[4].ino}>)"/>
+	</span>
+
+	<span id="clip6" class="draggable<{$puzzle[5].ino}> ui-draggable" style="position: absolute; top:<{$block.6.h}>px; left: <{$block.6.v}>px;" onMouseDown="changeIndex(this)">
+		<img  width="150px" height="150px" src="./items_pic/<{$puzzle[5].pic}>" onMouseDown="k(<{$puzzle[5].ino}>)"/>
+	</span>
+
+	<span id="clip7" class="draggable<{$puzzle[6].ino}> ui-draggable" style="position: absolute; top:<{$block.7.h}>px; left: <{$block.7.v}>px;" onMouseDown="changeIndex(this)">
+		<img  width="150px" height="150px" src="./items_pic/<{$puzzle[6].pic}>" onMouseDown="k(<{$puzzle[6].ino}>)"/>
+	</span>
+
+	<span id="clip8" class="draggable<{$puzzle[7].ino}> ui-draggable" style="position: absolute; top:<{$block.8.h}>px; left: <{$block.8.v}>px;" onMouseDown="changeIndex(this)">
+		<img  width="150px" height="150px" src="./items_pic/<{$puzzle[7].pic}>" onMouseDown="k(<{$puzzle[7].ino}>)"/>
+	</span>
+
+	<span id="clip9" class="draggable<{$puzzle[8].ino}> ui-draggable" style="position: absolute; top:<{$block.9.h}>px; left: <{$block.9.v}>px;" onMouseDown="changeIndex(this)">
+		<img  width="150px" height="150px" src="./items_pic/<{$puzzle[8].pic}>" onMouseDown="k(<{$puzzle[8].ino}>)"/>
+	</span>
+
+	<span id="clip10" class="draggable<{$puzzle[9].ino}> ui-draggable" style="position: absolute; top:<{$block.10.h}>px; left: <{$block.10.v}>px;" onMouseDown="changeIndex(this)">
+		<img  width="150px" height="150px" src="./items_pic/<{$puzzle[9].pic}>" onMouseDown="k(<{$puzzle[9].ino}>)"/>
+	</span>
+
+	<span id="clip11" class="draggable<{$puzzle[10].ino}> ui-draggable" style="position: absolute; top:<{$block.11.h}>px; left: <{$block.11.v}>px; " onMouseDown="changeIndex(this)">
+		<img  width="150px" height="150px" src="./items_pic/<{$puzzle[10].pic}>" onMouseDown="k(<{$puzzle[10].ino}>)"/>
+	</span>
+
+	<span id="clip12" class="draggable<{$puzzle[11].ino}> ui-draggable" style="position: absolute; top:<{$block.12.h}>px; left: <{$block.12.v}>px;" onMouseDown="changeIndex(this)">
+		<img  width="150px" height="150px" src="./items_pic/<{$puzzle[11].pic}>" onMouseDown="k(<{$puzzle[11].ino}>)"/>
+	</span>
+
+
+	<span id="clip13" class="draggable<{$puzzle[12].ino}> ui-draggable" style="position: absolute; top:<{$block.13.h}>px; left: <{$block.13.v}>px;" onMouseDown="changeIndex(this)">
+		<img  width="150px" height="150px" src="./items_pic/<{$puzzle[12].pic}>" onMouseDown="k(<{$puzzle[12].ino}>)"/>
+	</span>
+	
+	<span id="clip14" class="draggable<{$puzzle[13].ino}> ui-draggable" style="position: absolute; top:<{$block.14.h}>px; left: <{$block.14.v}>px;" onMouseDown="changeIndex(this)">
+		<img  width="150px" height="150px" src="./items_pic/<{$puzzle[13].pic}>" onMouseDown="k(<{$puzzle[13].ino}>)"/>
+	</span>
+
+	<span id="clip15" class="draggable<{$puzzle[14].ino}> ui-draggable" style="position: absolute; top:<{$block.15.h}>px; left: <{$block.15.v}>px;" onMouseDown="changeIndex(this)">
+		<img  width="150px" height="150px" src="./items_pic/<{$puzzle[14].pic}>" onMouseDown="k(<{$puzzle[14].ino}>)"/>
+	</span>
+
+	<span id="clip16" class="draggable<{$puzzle[15].ino}> ui-draggable" style="position: absolute; top:<{$block.16.h}>px; left: <{$block.1.v}>px;" onMouseDown="changeIndex(this)">
+		<img  width="150px" height="150px" src="./items_pic/<{$puzzle[15].pic}>" onMouseDown="k(<{$puzzle[15].ino}>)"/>
+	</span>
+	<br />
+	<{if $check != 0}>
+		<a href="javascript:if(confirm('確定就這樣不拼拼圖了嗎？ 其實你只是按錯了吧!!')) location.href='<{$lazy_p}>'">不想拼了</a><br /><br />
+	<{/if}>
+		<a href="items.php?uid=<{$curruser->uid}>">回商品區</a>
+	</div>
+</div>

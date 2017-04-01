@@ -1,0 +1,29 @@
+<{include file="topic_header.htm"}>
+<div class="topic_view">
+<div class="menu_link_top">
+	<div style="float:right;margin:10px 7px 5px 0px;background:#FF3;"><a href="<{$currconfig->url}>/module/forum/viewboard.php?no=<{$_WikiTopic->tno}>">我有問題!</a></div>
+<{if ($_WikiPost->pno != $_WikiTopic->currpost->pno)}>
+    <div class="menu_link"><a href="view.php?pno=<{$_WikiTopic->currpost->pno}>" title="目前版本" class="menu">目前版本</a></div>
+<{else}>
+    <div class="menu_link"><a href="allversion.php?tno=<{$_WikiTopic->tno}>" title="編修紀錄" class="menu">編修紀錄</a></div>
+<{/if}>
+    <{if ($curruser->g_handler->isGroupAdmin($_WikiTopic->gno,$curruser->uno)) || $currmodule->isadmin($curruser)}>
+        <div class="menu_link"><a href="do_topic.php?newpost=1&pno=<{$_WikiPost->pno}>" title="編輯" class="menu">編輯</a></div>
+    <{/if}>
+</div>
+<div class="topic_view_title"><a name="topic_top"></a><{$_WikiTopic->title|htmlencode}></div>
+    <div class="topic_view_field">
+        <{$_WikiPost->content()}>
+    </div>
+    <hr id="topic_hr"/>
+    <div style="text-align:right; margin-right:63px;"><a href="#topic_top" class="menu">TOP&#9650;</a></div>
+    <{if !($curruser->isguest())}>
+<div class="menu_link_top">
+        <div class="menu_link"><a href="<{$currconfig->url}>/module/schedule/group.php?gno=<{$_WikiTopic->gno}>&apply=1" title="加入此行事曆" class="menu">加入此行事曆</a></div>
+</div>
+    <{/if}>
+    <{if ($curruser->g_handler->isGroupAdmin($_WikiTopic->gno,$curruser->uno)) || $currmodule->isadmin($curruser)}>
+    <div class="caledit"><a href="<{$currconfig->url}>/module/schedule/actAdd-sample.php<{if $smarty.get.userType == 'G'}>?n=<{$smarty.get.no}><{/if}>"><span>新增</span></a></div>
+    <{/if}>
+    <{$cal_block}>
+</div>

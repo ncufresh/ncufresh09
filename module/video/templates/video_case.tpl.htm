@@ -1,0 +1,52 @@
+
+<div id="video_container">																						     <!--影片位置-->
+
+
+	<div id="video_block" style="text-align:center;">
+        <div id="video_swf" style="display:inline-block;">
+            <embed 
+			src="<{$swf_url}>?config=%7B
+			
+			
+			
+			videoFile%3A%27%2E%2E%2F<{ $play.video }>%27%2C
+			
+			
+			controlBar
+			
+			autoPlay%3A<{ $is_auto_play }>%7D" 
+            width="<{$frame_width}>" 
+			height="<{$frame_height}>" 
+			
+			bgcolor="111111" 
+			
+			allowFullScreen="true" 
+			allowScriptAccess="always" 
+			allowNetworking="all" 
+			pluginspage="http://www.macromedia.com/go/getflashplayer">
+            </embed>
+        </div>
+    </div>
+    
+	<{if $quality == "0" }>
+    <{/if}>
+    
+    
+    <{if $quality == "high" }>
+    <span id="video_info_right" style="border-top: 0px; float:right; margin-right:10%;">
+		<a href="video_case.php?no=<{$play.no}>&quality=low">
+        <img style="border:0px;" src="templates/LQ.gif" >
+        </a></span>
+	<{/if}>
+    
+	
+    <{if $quality == "low"}>
+    <span id="video_info_right" style="border-top: 0px; float:right; margin-right:10%;">
+		<a href="video_case.php?no=<{$play.no}>&quality=high">
+        <img style="border:0px;" src="templates/HQ.gif" >
+        </a></span>
+    <{/if}>
+
+    
+</div>
+

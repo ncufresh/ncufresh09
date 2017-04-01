@@ -1,0 +1,56 @@
+<div id="module_container">
+
+	<div id="nav">
+		 <{ if $currmodule->isadmin($curruser)}>
+		<a href="edit_nav.php" class="editLink"><span>[修改目錄]</span></a>
+		<{ /if }>
+		<{ section loop=$cate name=cate }>
+			<{ if $cate[cate].level == 1 }>
+				<{ if $cate[cate].hyperlink == NULL }>
+					<span class="likea header"> <{ $cate[cate].title }> </span>
+				<{ else}>
+					<a href="<{ $cate[cate].hyperlink }>" class="navlink0 header <{ if $cate[cate].csn == $main.csn }> selected <{/if }>"><span> <{ $cate[cate].title }> </span></a>	
+				<{ /if }>
+			<{ elseif $cate[cate].level == 2 }>
+				<{ if $cate[cate].hyperlink == NULL }>
+					<p class="navlink1"><span> <{ $cate[cate].title }></span></p>
+				<{ else}>
+					<a href="<{ $cate[cate].hyperlink }>" class="navlink1 <{ if $cate[cate].csn == $main.csn }> selected <{/if }>"><span> <{ $cate[cate].title }> </span></a>	
+				<{ /if }>
+			<{ else }>
+				<a href="<{ $cate[cate].hyperlink }>" class="navlink2 <{ if $cate[cate].csn == $main.csn }> selected <{/if }>"><span> <{ $cate[cate].title }> </span></a>
+			<{ /if }>
+		<{ /section }>		
+	</div>
+	
+	<div id="main">
+		<{if $currmodule->isadmin($curruser)}>
+			<a href="index.php?csn=<{ $main.csn }>&edit=1" class="editLink"><span>[修改文章]</span></a>
+		<{/if }>
+		<div class="header"><{ $main.title }>
+					<{ if $main.origin == 0 }>
+				<a href="index.php?csn=12" style="color:orange;font-size:10pt;">[返回 畢業門檻]</a>
+			<{ /if }>
+			</div>
+		<div class="post">
+		<{ if $edit != NULL }>
+			<div id="edit_tips">
+				<strong>修改文章提醒:</strong>
+					<blockquote>
+						1. HTML全面支援<br />
+						2. <font color="red">換行</font>請加 &lt;br /&gt;不支援 enter 斷行 <br />
+						3. 小心使用 不要攻擊 謝謝
+					</blockquote>
+			</div>
+			<form method="post" action="index.php?csn=<{ $main.csn }>&edit_done=1" class="form1">
+				<input type="submit" value="送出" class="submit">
+				<textarea name="edit_main" wrap="physical"><{ $main.main }></textarea>
+				<input type="submit" value="送出" class="submit">
+			</form>
+		<{ else }>
+			<{ $main.main }>
+		<{ /if }>
+		</div>
+	</div>
+	<div style="clear:both"></div>
+</div>

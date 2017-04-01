@@ -1,0 +1,24 @@
+@charset "utf-8";
+/* CSS Document */
+#FB_MAIN_OUTER{
+	text-align:center;
+}
+
+#FB_divideBAR{
+	background:url(images/departNewbar.gif);
+	display:inline-block;
+	width:850px;
+	height:74px;
+}
+#FB_content{
+	text-align:left;
+	display:inline-block;
+}
+
+#NQContent{
+	float:left;
+}
+
+#FB_submit{
+	margin-left:35px
+}

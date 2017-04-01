@@ -1,0 +1,109 @@
+#background{
+	background-image:url(templates/images/FunnyBackground.gif);
+	background-position:top center; 
+}
+
+#base{
+	background-image:url(templates/images/Funnyback.gif);
+	background-repeat:no-repeat;
+	margin-left:95px;
+	width:800px;
+	height:781px;
+}
+
+.money{
+	margin-left:550px;
+	margin-top:70px;
+	position:absolute;
+}
+
+.face{
+	margin-left:73px;
+	margin-top:180px;
+	position:absolute;
+	
+}
+
+.car{
+	margin-left:50px;
+	margin-top:355px;
+	position:absolute;
+	
+	
+}
+
+.mar{
+	margin-left:280px;
+	margin-top:170px;
+	position:absolute;
+	font-size:11px;
+	color:#316c1f;
+	
+}
+
+#img1{
+	margin-left:40px;
+	margin-top:-540px;
+	position:absolute;
+	
+}
+
+#img2{
+	margin-left:190px;
+	margin-top:-540px;
+	position:absolute;
+}
+
+#img3{
+	margin-left:340px;
+	margin-top:-540px;
+	position:absolute;
+}
+
+#img4{
+	margin-left:40px;
+	margin-top:-280px;
+	position:absolute;
+}
+
+#img5{
+	margin-left:190px;
+	margin-top:-280px;
+	position:absolute;
+}
+
+#img6{
+	margin-left:340px;
+	margin-top:-280px;
+	position:absolute;
+}
+
+#word{
+	font-size:11px;
+	color:#316c1f;
+	max-width:100px;	
+}
+
+#buttomtocar{
+	padding-left:0px;
+}
+
+#coco{
+	margin-left:659px;
+	margin-top:77px;
+	color:#316c1f;
+	font-size:30px;
+	position:absolute;
+}
+
+.test{
+	color:#316c1f
+	font-size:16px;
+	position:absolute;
+}
+
+#mag{
+	margin-left:100px;
+	margin-top:	100px;
+	position:absolute;
+}

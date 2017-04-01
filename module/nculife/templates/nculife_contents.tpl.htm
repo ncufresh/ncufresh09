@@ -1,0 +1,24 @@
+<style type="text/css">
+#nculife_cc_l a{		background-image: url(<{$cat_arr.cat_a_icon}>);}
+#nculife_cc_l a:hover{	background-image: url(<{$cat_arr.cat_a_hover_icon}>);}
+#nculife_cc_r_top_bg{	background-image: url(<{$cat_arr.cat_title_image}>);}
+</style>
+<div id="nculife_contents_container">
+  <div id="nculife_cc_l" style="background-image:url(<{$cat_arr.cat_menuside_image}>);">
+    <div id="nculife_cc_l_top_bg" style="background-image:url(<{$cat_arr.cat_favicon_image}>);"><{$cat_arr.cat_name}></div>
+    <br />&nbsp;
+    <br />
+    <{section name=menu_lst loop=$list_menu_arr}>
+    <a href="index.php?t_ID=<{$list_menu_arr[menu_lst].t_ID}>"><{$list_menu_arr[menu_lst].t_name}></a><br />
+    <{/section}>
+  </div>
+  <div id="nculife_cc_r">
+    <div id="nculife_cc_r_top_bg" align="center"><{$topic_arr.t_name}></div>
+    <div id="nculife_cc_r_contents">
+    <{$topic_arr.t_contents}>
+    <br />&nbsp;
+    <br />&nbsp;
+    <img src="<{$cat_arr.cat_end_image}>" alt="中大生活" />
+    </div>
+  </div>
+</div>

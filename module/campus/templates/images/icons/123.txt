@@ -1,0 +1,35 @@
+註冊組 = 行政大樓 = domain.jpg
+出納組 = 行政大樓 = domain.jpg
+文書組 = 行政大樓 = domain.jpg
+學務處 = 舊圖 = oldlib.jpg
+
+中大路上 = 中大路上 = ncuroad.jpg
+筆墨紙硯 = 紀念碑 = memory.jpg
+情人步道 = 百花川 = river.jpg
+綠草如茵 = 綠草如茵 = grass.jpg
+太極銅雕 = 太極同雕 = taigee.jpg
+烏龜池 = 烏龜池 = turtlepool.jpg
+百花川語 = 百花川 = river.jpg
+松濤書格 = 總圖 = mainlib.jpg
+女十四舍 = 女十四舍 = dorm14.jpg
+中大湖判 = 中大湖 = nculake.jpg
+
+總圖 = 總圖 = mainlib.jpg
+國鼎 = 國鼎 = kuoding.jpg
+自學中心 = 舊圖 = oldlib.jpg
+藝文中心 = 舊圖 = oldlib.jpg
+舊圖二樓 = 舊圖 = oldlib.jpg
+107 = 文一二 = ac2.jpg
+閱讀坊 = 總圖 = mainlib.jpg
+
+依仁堂 = 依仁堂 = maingym.jpg
+排球場 = 排球場 = volley.jpg
+籃球場 = 籃球場 = basket.jpg
+羽球館 = 羽球館 = badminton.jpg
+網球場 = 網球場 = tennis.jpg
+桌球室 = 依仁堂 = maingym.jpg
+溜冰場 = 溜冰場 = skating.jpg
+游泳池 = 游泳池 = swimmingpool.jpg
+攀岩 = 依仁堂 = maingym.jpg
+操場 = maingym.jpg
+壘球場 = 壘球場 = softball.jpg

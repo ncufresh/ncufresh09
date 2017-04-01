@@ -1,0 +1,31 @@
+新增 schedule
+<form method="post" action="?t=<{$smarty.get.t}>&amp;n=<{$smarty.get.n}>">
+	<p> 期間: <input type="text" name="start_date" value="<{$dnow}>" /> ~ <input type="text" name="end_date" value="<{$dnow}>" /></p>
+	<p>標題: <input type="test" name="title" /></p>
+	<p> <textarea name="content"></textarea></p>
+	<p> 類型:<{html_radios name="type" options=$itype_radio selected=$itype_def}></p>
+	<p id="interval" style="display:none"> 週期: <input name="interval" value="1" /></p>
+	<p id="weekdays" style="display:none"> 星期:<{html_checkboxes name="weekdays" options=$wdays_chbox}></p>
+	<p><input type="submit" value="送出" /></p>
+</form>
+<a href="actAdd-sample.php?t=<{$smarty.get.t}>&amp;n=<{$smarty.get.n}>">簡易功能...</a>
+
+<script type="text/javascript">
+$$('input[name=type]').each(function(_this){
+	if(_this.value == 'N')
+		_this.onclick = function(e){
+			$('interval').hide();
+			$('weekdays').hide();
+		};
+	else if(_this.value == 'W')
+		_this.onclick = function(e){
+			$('interval').show();
+			$('weekdays').show();
+		};
+	else
+		_this.onclick = function(e){
+			$('interval').show();
+			$('weekdays').hide();
+		};
+});
+</script>

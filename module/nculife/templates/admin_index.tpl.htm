@@ -1,0 +1,37 @@
+<div id="nl_admin_container">
+<div style="color:#FF3399; font-weight: bold;"><{$msg}></div>
+<a href="admin_new_cat.php">[新增分類]</a><br /><br />
+<form action="admin_edit_order.php" method="post">
+<{section name=cat loop=$cat_arr}>
+  
+  <div id="nl_admin_cat">
+  (分類ID: <{$cat_arr[cat].cat_ID}>)
+  <{$cat_arr[cat].cat_name}>
+  <a href="admin_new_topic.php?action=new&cat_ID=<{$cat_arr[cat].cat_ID}>">[新增文章]</a>
+  <a href="admin_new_cat.php?action=edit&cat_ID=<{$cat_arr[cat].cat_ID}>">[編輯]</a>
+  <a href="admin_new_cat.php?action=delete&cat_ID=<{$cat_arr[cat].cat_ID}>">[刪除]</a>
+  順序：<input name="cat_order_<{$cat_arr[cat].cat_ID}>" type="text" size="1" value="<{$cat_arr[cat].cat_sort}>" />
+  </div>
+  
+  <{section name=topic loop=$topic_arr}>
+  <{if $topic_arr[topic].t_b_cat_ID == $cat_arr[cat].cat_ID}>
+  
+  <div id="nl_admin_item">
+    <div id="nl_admin_item_l"><{$topic_arr[topic].t_name}></div>
+    <div id="nl_admin_item_r">
+    <a href="admin_new_topic.php?action=edit&t_ID=<{$topic_arr[topic].t_ID}>">[編輯]</a>
+    <a href="admin_new_topic.php?action=delete&t_ID=<{$topic_arr[topic].t_ID}>">[刪除]</a>
+    順序：<input name="topic_order_<{$topic_arr[topic].t_ID}>" type="text" size="1" value="<{$topic_arr[topic].t_sort}>" />
+    </div>
+  </div>
+  <{/if}>
+  <{/section}>
+  
+<{/section}>
+
+<center>
+<input type="submit" name="submit" value="更改設定" />
+<input type="reset" name="reset" value="更改回原設定值" />
+</center>
+</form>
+</div>

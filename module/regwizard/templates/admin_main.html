@@ -1,0 +1,26 @@
+<table width="652" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td height="64" colspan="2" valign="top" background="templates/images/bg_1_top.gif">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="318" valign="top" background="templates/images/bg_2_left.gif">
+    <table width="318" border="0" cellspacing="0" cellpadding="0">
+    <{section name=dis loop=$opt_list_dis}>
+      <tr>
+        <td width="58">
+        <a href="admin_process.php?action=delete&rwoID=<{$opt_list_dis[dis].rwoID}>"><span class="text_delete">[刪除]</span></a><br />
+        <a href="admin_manage_url.php?action=editurl&rwoID=<{$opt_list_dis[dis].rwoID}>"><span class="text_url">[相關連結]</span></a><br /><br />
+        </td>
+        <td width="5">&nbsp;</td>
+        <td width="255"><a href="admin_manage_add.php?action=modify&rwoID=<{$opt_list_dis[dis].rwoID}>"><span class="necessary"><{$opt_list_dis[dis].rwo_name}></span></a><br /><span class="column_title"><{$opt_list_dis[dis].rwo_type_display}>(<{$opt_list_dis[dis].rwo_date_display}>)</span><br /><br /></td>
+      </tr>
+    <{/section}>
+    </table>
+    </td>
+    <td width="334" valign="top" class="td_2_full_right">
+    <div id="td_2_right_admin"></div>
+    <a href="admin_main.php"><img border="0" src="templates/images/admin_btn_opt_manage.gif" alt="管理端首頁" /></a><br />
+    <a href="admin_manage_add.php"><img border="0" src="templates/images/admin_btn_opt_add.gif" alt="選項新增" /></a><br />
+    </td>
+  </tr>
+</table>

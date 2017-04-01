@@ -1,0 +1,88 @@
+<style type="text/css">
+.cate_menu
+{
+	margin: 0px;
+	padding: 0px;
+	list-style-type: none;
+}
+
+#tcat
+{
+	background: url("<{$block.dirname}>/templates/images/c_menu_top.jpg") no-repeat;
+	width: 196px;
+	height: 11px;
+}
+
+.pcat
+{
+	background: url("<{$block.dirname}>/templates/images/c_menu_bg.jpg") no-repeat;
+	width: 196px;
+	height: 30px;
+}
+
+.pcat a
+{
+	display: block;
+	text-decoration: none;
+	padding: 5px 15px;
+	width: 166px;
+	height: 20px;
+}
+
+.ccat
+{
+	background: url("<{$block.dirname}>/templates/images/c_menu_bg.jpg") no-repeat;
+	width: 196px;
+	height: 30px;
+
+}
+
+.ccat a
+{
+	display: block;
+	text-decoration: none;
+	padding: 5px 25px;
+	width: 146px;
+	height: 20px;
+}
+
+
+</style>
+
+<script type="text/javascript">
+	var i = 0;
+
+	function show_cats(id)
+	{
+		if (i > 0)
+			$('pcat_' + i).style.display = 'none';
+
+		if (i != id)
+		{
+			$('pcat_' + id).style.display = 'block';
+			i = id;
+		}
+		else
+			i = 0;
+	}
+</script>
+
+<div style="overflow: hidden; width: 200px;">
+  <ul class="cate_menu">
+    <li id="tcat"></li>
+<{foreach from=$block.cat item="pcat"}>
+    <li class="pcat"><a href="javascript: show_cats(<{$pcat.cno}>);" title="<{$pcat.name|htmlencode}>"><font color="#333333"><{$pcat.name|htmlencode}></font></a></li>
+    <li id="pcat_<{$pcat.cno}>" style="margin: 0px; padding: 0px; display: none;">
+      <ul class="cate_menu"">
+<{foreach from=$pcat.child item="ccat"}>
+<{if ($ccat.tno)}>
+        <li class="ccat"><a href="<{$block.dirname}>/view.php?tno=<{$ccat.tno}>" title="<{$ccat.title|htmlencode}>"><font color="#666666"><{$ccat.title|htmlencode}></font></a></li>
+<{else}>
+        <li class="ccat"><a href="<{$block.dirname}>/showgroup.php?cno=<{$ccat.cno}>" title="<{$ccat.name|htmlencode}>"><font color="#333333"><{$ccat.name|htmlencode}></font></a></li>
+<{/if}>
+<{/foreach}>
+      </ul>
+    </li>
+<{/foreach}>
+  </ul>
+</div>

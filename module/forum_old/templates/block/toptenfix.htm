@@ -1,0 +1,3 @@
+<{ foreach from=$block.topten item="item" }>
+<div>[<a href="viewboard.php?no=<{$item.board_no}>"><{$item.board}></a>] <a href="viewtopic.php?no=<{$item.topic_no}>"><{$item.title}></a> (<{$item.num}>)</div>
+<{ /foreach }>

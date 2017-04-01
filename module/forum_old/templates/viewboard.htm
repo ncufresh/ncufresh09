@@ -1,0 +1,99 @@
+<script type="text/javascript">
+	function subscribe(type, no)
+	{
+		var parms = '&subscr_' + type + '=1&no=' + no;
+
+		var req = new Ajax.Request("do_subscribe.php", {method: "post", parameters: parms, onComplete: function(q){alert('訂閱成功');}});
+	}
+
+	function rmtopic_result(req)
+	{
+		if (req.responseText == '找不到主題')
+			alert(req.responseText);
+		else
+			document.location.href = '<{$currconfig->phpself}>?no=<{$forumboard->board_no}>';
+	}
+
+	function rmtopic(no)
+	{
+		var parms = 'rmtopic=1&tno=' + no;
+
+		var req = new Ajax.Request("do_topic.php", {method: "post", parameters: parms, onComplete: rmtopic_result});
+	}
+
+	function toptopic(no)
+	{
+		var parms = 'toptopic=1&tno=' + no;
+
+		var req = new Ajax.Request("do_top.php", {method: "post", parameters: parms, onComplete: function(q){document.location.href = '<{$currconfig->phpself}>?no=<{$forumboard->board_no}>';}});
+	}
+</script>
+<div class="forum_field">
+
+<div class="forum_title">
+	<{$forumboard->title}> 
+	<{if $forumboard->board_no < 301 || $forumboard > 305 }>
+	<span style="font-size:10pt">&gt;&gt; <a href="<{$currconfig->url}>/module/superask/view.php?tno=<{$forumboard->board_no}>">前往<{$forumboard->title}>介紹</a></span>
+	<{/if}>
+</div>
+
+<div class="forum_content">
+
+<div class="forum_img">
+	<{if !$curruser->isguest() && ($curruser->haveperm($forumboard->perm) || $bm)}>
+	<a id="img_post" style="float:right;" href="do_topic.php?dopost=1&amp;bno=<{$forumboard->board_no}>"><span>發表文章</span></a>
+	<{else}>
+	<div class="noperm" style="float:right;">你不能 [發表文章] (<acronym title="你可能尚未登入或者沒有權限">?</acronym>)</div>
+	<{/if}>
+	<a id="img_back" style="float:left;" href="showGroup.php?gno=<{$forumboard->group_no}>"><span>回列表</span></a>
+</div>
+<div style="clear:both"></div>
+<table class="forum_topics" border="0">
+<thead>
+	<tr>
+		<th width="7%">NO</th>
+		<th width="45%">標題</th>
+		<th width="15%">作者</th>
+		<th width="6%">回覆</th>
+		<th width="20%">Lasttime</th>
+		<th width="7%">人氣</th>
+	</tr>
+</thead>
+<tbody>
+<{if !$forumtopic }>
+<tr><td colspan="6"><div class="notopic">現在沒有文章，你可利用右上角 [發表文章] 的功能來新增第一篇文章</div></td></tr>
+<{/if}>
+<{foreach from=$forumtopic item="topic" name="topic"}>
+<{if $topic->die == 1}>
+<tr class="point_white">
+	<td><{$topic->fix_no}></td>
+	<td>本文已被刪除</td>
+	<td>--</td>
+	<td>--</td>
+	<td style="text-align:right">---- - -- - --<br />--:--:--</td>
+	<td>--</td>
+</tr>
+<{else}>
+<tr class="point_<{if $topic->red > 0 || $curruser->isguest()}>white<{else}>red<{/if}>">
+	<td><{$topic->fix_no}></td>
+	<td style="text-align:left;overflow:hidden">
+		<{if ($bm)}>
+		<a style="float:right;" href="javascript: toptopic(<{$topic->topic_no}>);" title="文章置頂">[置頂/取消]</a>
+		<{/if}>
+		<a href="viewtopic.php?no=<{$topic->topic_no}>"><{$topic->title}></a>
+	</td>
+	<td><{$topic->poster_name}></td>
+	<td><{$topic->numreply}></td>
+	<td style="text-align:right"><{$topic->lasttime}></td>
+	<td><{$topic->numread}></td>
+</tr>
+<{/if}>
+<{/foreach}>
+</tbody>
+</table>
+
+<div class="forum_page"><{foreach from=$plink item="link"}><{$link}>&nbsp;&nbsp;<{/foreach}></div>
+
+</div>
+
+</div>

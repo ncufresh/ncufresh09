@@ -1,0 +1,29 @@
+<div class="blue_back">
+<div class="field_top_top">
+	<img class="field_title" src="templates/images/elf.gif" />
+	<div class="bigfront" style="margin: -35px 0pt 80px 480px; width: 140px;">
+	你現在有 <br /><span style="margin-left:10px;"><{$pics_num}> 隻精靈</span>
+	</div>
+</div>
+
+<div style="position:relative;top:-40px;left:30px;margin-bottom:-40px;">
+
+<{if $smarty.get.uno != ''}>
+<dl id="elfroom">
+<{foreach from=$pics item="pic"}>
+<dt id="elf<{$pic}>"></dt>
+<dd id="elf<{$pic}>def"><a onclick="return false;" href="#"><span><{$pic}></span></a></dd>
+<{/foreach}>
+</dl>
+<{else}>
+<dl id="elfroom">
+<{foreach from=$pics item="pic"}>
+<dt id="elf<{$pic}>"></dt>
+<dd id="elf<{$pic}>def"><a onclick="return confirm('你確定要放生 <{$pic}> ?');" href="letitgo.php?pic=<{$pic}>"><span><{$pic}></span></a></dd>
+<{/foreach}>
+</dl>	
+<{/if}>
+
+</div>
+
+</div>

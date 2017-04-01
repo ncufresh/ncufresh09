@@ -1,0 +1,14 @@
+<div id="search_main">
+  <div id="search_main_logo"></div>
+  <div class="search_main_bar"></div>
+  <{section name=sch loop=$search_result}>
+  <div class="search_result_block">
+  <{$search_result[sch].title_href}>
+  <br class="clear">
+  <br class="clear">
+  <{$search_result[sch].content}>
+  </div>
+  <br class="clear">
+  <div class="search_main_bar"></div>
+  <{/section}>
+</div>

@@ -1,0 +1,20 @@
+<div id="profile">
+  <div class="profile_title">帳號</div>
+  <div class="profile_content"><{$user->uid}> (<{if ($user->isonline() == 1)}>正在線上<{else}>不在線上<{/if}>)</div>
+  <br class="clear" />
+  <div class="profile_title">暱稱</div>
+  <div class="profile_content"><{$user->name}></div>
+  <br class="clear" />
+  <div class="profile_title">性別</div>
+  <div class="profile_content"><{$user->sex}></div>
+  <br class="clear" />
+  <div class="profile_title">系所</div>
+  <div class="profile_content"><{$user->department}></div>
+  <br class="clear" />
+  <div class="profile_title">首頁</div>
+  <div class="profile_content"><{if ($user->website)}><a href="<{$user->website|htmlencode}>" target="_blank" title="個人首頁">請按我</a><{else}>無<{/if}></div>
+  <br class="clear" />
+  <div class="profile_title">自我介紹</div>
+  <div class="profile_content"><{$user->intro|nl2br}></div>
+  <br class="clear" />
+</div>

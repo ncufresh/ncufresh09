@@ -1,0 +1,66 @@
+<script type="text/javascript">
+	function subscribe(type, no)
+	{
+		var parms = '&subscr_' + type + '=1&no=' + no;
+
+		var req = new Ajax.Request("do_subscribe.php", {method: "post", parameters: parms, onComplete: function(q){alert('訂閱成功');}});
+	}
+
+	function rmtopic_result(req)
+	{
+		if (req.responseText == '找不到主題')
+			alert(req.responseText);
+		else
+			document.location.href = '<{$currconfig->phpself}>?no=<{$forumboard->board_no}>';
+	}
+
+	function rmtopic(no)
+	{
+		var parms = 'rmtopic=1&tno=' + no;
+
+		var req = new Ajax.Request("do_topic.php", {method: "post", parameters: parms, onComplete: rmtopic_result});
+	}
+
+	function toptopic(no)
+	{
+		var parms = 'toptopic=1&tno=' + no;
+
+		var req = new Ajax.Request("do_top.php", {method: "post", parameters: parms, onComplete: function(q){document.location.href = '<{$currconfig->phpself}>?no=<{$forumboard->board_no}>';}});
+	}
+</script>
+<div class="viewboard">
+
+<div class="b_list">
+	搜尋 <{$search}>
+</div>
+
+<{if !$forumtopic }>
+<div class="notopic">找不到文章，試著改變或縮短關鍵字？</div>
+<{/if}>
+<{foreach from=$forumtopic item="topic" name="topic"}>
+<div class="item <{if $smarty.foreach.topic.iteration % 2 == 0}>even<{else}>odd<{/if}>">
+	<div class="title">
+		<a href="viewboard.php?no=<{$topic->board_no}>">[<{$topic->Btitle}>]</a>
+		<a href="viewtopic.php?no=<{$topic->topic_no}>"><{$topic->title}></a>
+	</div>
+<!--
+	<div class="content">
+		<{$topic->content}>....(<a href="viewtopic.php?no=<{$topic->topic_no}>">詳全文</a>)
+	</div>
+-->
+	</div>
+<{/if}>
+	<div class="footer">
+		發文者：<a href="<{$currconfig->url}>/show_pfile.php?uno=<{$topic->poster_no}>" title="使用者資料"><{$topic->poster_name}></a>
+		點閱數：<{$topic->numread}>
+		回應數：<{$topic->numreply}><br />
+		發表時間：<{$topic->posttime}>
+		最後時間：<{$topic->lasttime}>
+	</div>
+</div>
+<{/foreach}>
+
+<div style="text-align: center;"><{foreach from=$plink item="link"}><{$link}>&nbsp;&nbsp;<{/foreach}></div>
+<p></p>
+<div style="text-align: center;"><a href="showGroups.php">回討論區</a></div>
+</div>

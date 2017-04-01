@@ -1,0 +1,5 @@
+<div id="forum_content_top"></div>
+<{foreach from=$block.topten item="topic"}>
+<div id="forum_content_center"><a href="<{$block.dirname}>/viewtopic.php?no=<{$topic.topic_no}>" title="<{$topic.title|htmlencode}>"><span class="white_font"><{$topic.titles|htmlencode}>&nbsp;(<{$topic.num}>)</span></a></div>
+<{/foreach}>
+<div id="forum_content_footer"></div>

@@ -1,0 +1,35 @@
+<div id="campus_all">
+	<div id="campus_main_menu">
+		<{$main_menu}>
+    </div>
+	<div id="campus_center_block">
+		<div id="cp_introduce" class="<{$Switcher.CPI}>" >
+			<div id="cp_intro_top"><span id="cp_editsele"></span></div>
+			<div id="cp_intro_content">
+				<{$campus_intro}>
+			</div>
+			<div id="cp_intro_bottom"></div>
+		</div>
+		<div id="campus_sub_menu" class="<{$Switcher.CSM}>" >
+			<div id="csm_top"></div>
+			<div id="csm_content">
+				<{$campus_sub_menu}>
+			</div>
+			<div id="csm_bottom"></div>
+		</div>				
+		<{section name=loop loop=$buildingContent}>
+			<a href="#" onclick="return false;"><div <{$buildingContent[loop]}>"></div></a>
+		<{/section}>
+		
+		<div id="campus_maps_and_intro">
+			<div id="campus_map_intro">
+				<{$campus_intro}>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="spannnn"></div>
+
+
+

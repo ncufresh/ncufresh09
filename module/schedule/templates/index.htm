@@ -1,0 +1,21 @@
+<{if (!$curruser->isguest())}>
+<div class="blue_back">
+	<div class="field_top_top">
+		<img src="templates/images/calendar.gif" class="field_title" alt="" />
+		<div class="caledit" style="margin: -20px 0px 80px 470px;float:none;"><a href="<{$currconfig->url}>/module/schedule/actAdd-sample.php<{if $smarty.get.userType == 'G'}>?n=<{$smarty.get.no}><{/if}>"><span>新增</span></a></div>
+		<div style="margin-left: 95px; margin-top: -55px;"><{$currconfig->nowtime}></div>
+	</div>
+<div style="margin-right:40px">
+	<{$c_block}>
+	<div style="width:80%;color:white;margin:10px auto 0;font-size:18pt">
+		我的訂閱
+		<div style="height:2px;background:white;font-size:0"></div>
+		<div style="text-align:right;font-size:12pt;">勾選後按delete刪除訂閱</div>
+	</div>
+	<{$c_block2}>
+</div>
+
+</div>
+<{else}>
+請先登入再使用此功能
+<{/if}>

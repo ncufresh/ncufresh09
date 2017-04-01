@@ -1,0 +1,45 @@
+<table width="652" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td height="64" colspan="2" valign="top" background="templates/images/bg_1_top.gif">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="318" valign="top" background="templates/images/bg_2_left.gif">
+    <table width="318" border="0" cellspacing="0" cellpadding="0">
+      <form method="post" action="admin_process.php?action=edit_single_url&rel_l_ID=<{$opt_url_dis.rel_l_ID}>">
+      <tr>
+        <td colspan="3"><center><span class="necessary">編輯相關連結</span><input name="rwoID" type="hidden" value="<{$opt_url_dis.rwoID}>" /></center>
+        </td>
+      </tr>
+      <tr>
+        <td width="58" align="right"><span class="column_title">連結名稱</span></td>
+        <td width="5"></td>
+        <td width="255"><input name="name" type="text" value="<{$opt_url_dis.name}>" /></td>
+      </tr>
+      <tr>
+        <td width="58" align="right"><span class="column_title">連結URL</span></td>
+        <td width="5"></td>
+        <td width="255"><input name="url" type="text" value="<{$opt_url_dis.url}>" /></td>
+      </tr>
+      <tr>
+        <td width="58" align="right"><span class="column_title">開啟視窗</span></td>
+        <td width="5"></td>
+        <td width="255">
+        <select name="target">
+          <option value="_blank" <{if $opt_url_dis.target == "_blank"}>selected<{/if}>>開新視窗</option>
+          <option value="_self" <{if $opt_url_dis.target == "_self"}>selected<{/if}>>原視窗開啟</option>
+        </select>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3"><center><input name="submit" type="submit" value="修改相關連結" /></center></td>
+      </tr>
+      </form>
+    </table>
+    </td>
+    <td width="334" valign="top" class="td_2_full_right">
+    <div id="td_2_right_admin"></div>
+    <a href="admin_main.php"><img border="0" src="templates/images/admin_btn_opt_manage.gif" alt="管理端首頁" /></a><br />
+    <a href="admin_manage_add.php"><img border="0" src="templates/images/admin_btn_opt_add.gif" alt="選項新增" /></a><br />
+    </td>
+  </tr>
+</table>

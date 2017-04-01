@@ -1,0 +1,160 @@
+@charset "utf-8";
+/* CSS Document */
+
+#QA_MAIN_OUTER{
+	width:100%;
+	height:100%;
+	display:block;
+	padding-left:25px;
+}
+
+#QA_navigate_bar{
+	height:35px;
+	width:620px;
+}
+
+#QA_navigate_bar_page{
+	height:12px;
+	padding: 10px 5px;
+	width:620px;
+}
+
+#QA_IhaveQuestion{
+	width:84px;
+	height:33px;
+	float: left;
+	display:inline-block;
+	background:url('../images/iconNew.gif');
+}
+
+#QA_navigate_bar{
+	color:#394d26;
+}
+
+#QA_pageNavigate{
+	font-size:15px;
+    /*margin-left:120px;*/
+    float:right;
+    margin-top:2px;
+	display:inline-block;
+}
+#QA_pageNavigateEnd{
+	font-size:15px;
+	margin-bottom:-12px;
+	display:inline-block;
+    float:right;
+}
+
+.QA_page_select{
+	border:solid 1px #999999;
+	display:inline-block;
+	height:15px;
+	padding:1px 3px;
+}
+
+.QA_page_select2{
+	border:solid 1px #999999;
+	display:inline-block;
+	height:15px;
+}
+
+.QA_divideBAR{
+	width:620px;
+	height:12px;
+	display:block;
+	background:url('../images/barDevide.gif');
+}
+
+.QA_rightcontent{
+	width:500px;
+	min-height:80px;
+	margin-top:10px;
+	float: left;
+	display:block;
+
+}
+.QA_leftcontent{
+	width:80px;
+	min-height:80px;
+	margin-top:10px;
+	float: left;
+	display:block;
+}
+
+.QA_img{
+	width:60px;
+	height:60px;
+	margin-top:10px;
+	margin-left:10px;
+	float: left;
+	display:block;
+}
+
+.QA_title_b{
+	width:100px;
+	height:55px;
+	display:block;
+	margin-left:10px;
+	font-size:120%; 
+	float: left;
+	color:#af2323;
+	overflow: hidden;
+}
+
+.QA_title_a{
+	width:260px;
+	height:55px;
+	display:block;
+	/* margin-left:-40px; */
+	font-size:120%; 
+	float: left;
+	color:#af2323;
+	overflow: hidden;
+}
+
+.QA_re{
+	width:65px;
+	height:40px;
+	margin-right:1px;
+	color:#999999;
+	font-size:80%;
+	float: right;
+	display:block;
+}
+.QA_reNew{
+	width:65px;
+	height:40px;
+	margin-right:1px;
+	color:#af2323;
+	font-size:80%;
+	float: right;
+	display:block;
+}
+.QA_author{
+	width:150px;
+	height:40px;
+	margin-left:10px;
+	color:#333333;
+	font-size:80%;
+	/*float: left;*/
+	display:block;
+}
+.QA_time{
+	width:200px;
+	height:40px;
+	margin-right:-40px;
+	color:#999999;
+	font-size:80%;
+	float: right;
+	display:block;
+}
+.QA_cataselect{
+	float: left;
+	margin-left:5px;
+	margin-top:2px;
+	display:inline-block;
+}
+a.page{
+	color:#FFFFFF;
+}
+

@@ -1,0 +1,98 @@
+#news_content_top
+{
+	float: left;
+	background-image: url(images/annous01.gif);
+	width: 421px;
+	height: 37px;
+}
+
+#news_content_center
+{
+	background-image: url(images/annous02.gif);
+	
+	color: #FFFFFF;
+	font-size: 14px;
+	line-height: 24px;
+	
+	width: 391px;
+	min-height: 135px;
+	padding: 15px 15px;
+	float: left;
+}
+#news_content_center span.news_title{	float: left;	width: 315px;}
+#news_content_center span.news_date{	float: left;	width: 75px;}
+
+
+#news_content_footer
+{
+	float:left;
+	background-image: url(images/annous03.gif);
+	background-repeat: no-repeat;
+	width: 421px;
+	height: 12px;
+}
+
+#a_more
+{
+	position: relative;
+	left: 350px;
+	top: 17px;
+	width: 50px;
+	height: 18px;
+	color: #FFFFFF;
+}
+
+.red_font{	color: #FFFF00;	font-weight: bold;}
+.white_font{color: #FFFFFF;}
+
+/* --- Announce System main --- */
+#news_main_container
+{
+	width: 852px;
+	margin: auto;
+}
+
+#news_main_container a.title
+{
+	color: #FFFFFF;
+}
+
+#news_top
+{
+	width: 852px;
+	height: 39px;
+	background-image: url(images/annu_01.gif);
+	padding: 30px 20px 0px 0px;
+}
+
+#news_middle
+{
+	width: 832px;
+	min-height: 32px;
+	background-image: url(images/annu_02.gif);
+	color: #CCCCCC;
+	padding: 0px 20px;
+}
+
+.news_con
+{
+	color: #333333;
+	background-color: #FFFFFF;
+	width: 99%;
+	padding: 5px;
+	opacity:.50;
+	filter: alpha(opacity=50);
+	-moz-opacity: 0.25;
+}
+
+#news_bottom
+{
+	width: 872px;
+	height: 13px;
+	background-image: url(images/annu_03.gif);
+}
+
+
+.news_con a{
+    color:#000;
+}

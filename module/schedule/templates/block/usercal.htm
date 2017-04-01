@@ -1,0 +1,66 @@
+<{ if $block.url.type == 'min' }>
+<table class="sch m<{$block.url.type}>">
+<caption><{$block.url.date}></caption>
+<thead>
+<tr class="weektitle">
+<td class="w0">日</td>
+<td class="w1">一</td>
+<td class="w2">二</td>
+<td class="w3">三</td>
+<td class="w4">四</td>
+<td class="w5">五</td>
+<td class="w6">六</td>
+</tr>
+</thead>
+<tbody>
+<{ foreach from=$block.info item=day }>
+<{ if $day.week == 0 }><tr class="week"><{ /if }>
+<td class="<{$day.class}>"><{$day.date}></td>
+<{ if $day.week == 6 }></tr><{ /if }>
+<{ /foreach }>
+</tbody>
+</table>
+
+<{ else }>
+<div class="calhead">
+<div class="calfun">
+<a href="?<{$block.url.serial}>&amp;type=<{$block.url.type}>&amp;date=<{$smarty.get.date}>&amp;sdate=-1&amp;tno=<{$block.tno}>#usercal">&lt;</a>
+</div>
+<a name="usercal" href="?date=<{$smarty.get.date}>&amp;tno=<{$block.tno}>#usercal"><{$block.url.date|date_format:"%Y-%b"}></a>
+<a href="?<{$block.url.serial}>&amp;type=<{$block.url.type}>&amp;date=<{$smarty.get.date}>&amp;sdate=1&amp;tno=<{$block.tno}>#usercal">&gt;</a>
+</div>
+<div class="calback">
+<table class="sch m<{$block.url.type}> mmwd">
+<caption></caption>
+<tbody>
+<{ foreach from=$block.info item=day }>
+<{ if $day.week == 0 }><tr class="week"><{ /if }>
+<td class="<{$day.class}>">
+<div class="daylimit">
+<{$day.date}>
+<div class="data">
+<{if $block.url.type == 'mon'}><a href="<{$currconfig->url}>/module/schedule/viewday.php?<{$block.url.serial}>&amp;type=day&amp;date=<{$block.url.year}>/<{$day.date}>&amp;tno=<{$block.tno}>#usercal"><{/if}>
+<{ foreach from=$day.data item=_data name="data" }>
+	<div class="caleven<{$smarty.foreach.data.iteration%2}>">
+		<{if $block.url.type == 'day'}>
+		<div class="button"><a href="<{$currconfig->url}>/module/schedule/schModify-sample.php?sno=<{$_data.sno}>" style="line-height:46px;">編輯</a></div>
+		<div class="button"><a href="<{$currconfig->url}>/module/schedule/schDel.php?sno=<{$_data.sno}>" style="line-height:46px;">刪除</a></div>
+		<{/if}>
+		<{ $_data.subject }>
+		<{ if $_data.content }><div class="sch_content"><{$_data.content}></div><{ /if }>
+	</div>
+	<{if $block.url.type == 'day'}><hr /><{/if}>
+<{ /foreach }>
+<{if $block.url.type == 'mon'}></a><{/if}>
+</div>
+</div>
+</td>
+<{ if $day.week == 6 }></tr><{ /if }>
+<{ /foreach }>
+<{ if $block.url.type == 'day' }></tr><{ /if }>
+</tbody>
+</table>
+
+</div>
+<div class="calbottom"></div>
+<{ /if }>

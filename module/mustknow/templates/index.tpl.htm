@@ -1,0 +1,24 @@
+<div id="must_container">
+  <div id="must_top"></div>
+  <div id="must_center">
+    <div id="must_center_l">
+    <{section name=l3 loop=$menu_common_arr}>
+    <a href="<{$menu_common_arr[l3].hyperlink}>"><{$menu_common_arr[l3].title}></a><br />
+    <{/section}>
+    </div>
+    <div class="must_center_r">
+    一般大一新生 <img src="templates/images/EstarGreen.gif" alt="大一必讀" /><br />
+    <{section name=l1 loop=$menu_fresh_arr}>
+    <a href="<{$menu_fresh_arr[l1].hyperlink}>"><{$menu_fresh_arr[l1].title}></a><br />
+    <{/section}>
+    </div>
+    <div class="must_center_r">
+    大一休學後復學生 <img src="templates/images/EstarGreen.gif" alt="大一必讀" /><br />
+    <{section name=l2 loop=$menu_resume_arr}>
+    <a href="<{$menu_resume_arr[l2].hyperlink}>"><{$menu_resume_arr[l2].title}></a><br />
+    <{/section}>
+    </div>
+  </div>
+  <div id="must_bottom"></div>
+</div>
+<br class="clear" />&nbsp;

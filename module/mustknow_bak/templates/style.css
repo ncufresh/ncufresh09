@@ -1,0 +1,113 @@
+a,a:hover{
+	text-decoration: none;
+}
+
+a.editLink{
+	color: orange;
+	font-size: 10pt;
+}
+form.form1 textarea{
+ font-size:10pt;
+ width:400px;
+ height:450px;
+}
+form.form1 .submit{
+	width: 400px;
+}
+.post{
+	width: 440px;
+  margin: 10px auto;
+	font-size: 10pt;
+}
+.post td{
+	border:1px solid black;
+}
+.post table{
+	border-collapse: collapse;
+	border:0px;
+}
+.header{
+  font-size: 12pt;
+	color: #366;
+	border-bottom: 3px solid #7dbde3;
+}
+.class_grandmother{
+	font-size: 16pt;
+	background-color: red;
+}
+.class_mother{
+	font-size: 14pt;
+	background-color: orange;
+}
+.class_son{
+	font-size: 12pt;
+	background-color: green;
+}
+.class_son,
+.class_mother,
+.class_grandmother{
+	border: 0px;
+	color: white;
+	text-align: center;
+}
+.new_td{
+	border: 1px dashed #CCC;
+}
+
+#module_container{
+	margin: 0px 5px 0px 5px;
+	border: 2px solid #7dbde3;
+	min-height: 600px;
+	_height: 600px;
+
+}
+#nav{
+	width: 155px;
+	margin: 30px 2px 0px 7px;
+	padding-bottom: 30px;
+	float: left;
+	color: #7dbde3;
+}
+#main{
+  float: right;
+	color: #366;
+	width: 440px;
+	margin: 30px 7px 0px 3px;
+}
+#edit_tips{
+	width: 80%;
+	border: 1px dashed #CCC;
+	padding: 5px;
+}
+
+/* nav setting */
+#nav a,.likea,#nav p{
+	float:left;
+	width: 150px;
+	color:#333333;
+}
+#nav a:hover,#nav a.selected{
+	color: #FFF;
+	background-color: #fc6;
+}
+#nav a.navlink1,
+#nav a.navlink2,
+#nav p.navlink1{
+  margin-top: 3px;
+	margin-bottom: 2px;
+}
+#nav a.navlink1 span,
+p.navlink1 span{
+	height:20px;
+	margin-left:20px;
+	border-bottom: 2px #7dbde3 solid;
+	font-size: 10pt;
+	line-height: 1.6em;
+}
+#nav a.navlink2 span{
+	height:20px;
+	margin-left:30px;
+	border-bottom: 1px #7dbde3 solid;
+	font-size: 10pt;
+	line-height: 1.6em;
+}

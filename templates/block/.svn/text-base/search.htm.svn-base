@@ -1,0 +1,14 @@
+<div style="padding: 5px 10px; text-align: right;">
+  <script type="text/javascript">
+	function search()
+	{
+		query = 'q=' + document.gs.googleSupportQ.value + '&ie=Big5&oe=Big5&hl=zh-TW';
+		query += '&domains=<{$currconfig->url}>';
+		query += '&sitesearch=<{$currconfig->url}>';
+		window.open('http://www.google.com/custom?' + query, '_blank')
+	}
+  </script>
+  <form method="post" action="" name="gs" id="gs">
+    <input type="text" name="googleSupportQ" size="15" maxlength="255" />&nbsp;<input type="button" name="btnG" value="Google" onclick="javascript: search() ;" />
+  </form>
+</div>

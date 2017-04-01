@@ -1,0 +1,111 @@
+<link rel="stylesheet" type="text/css" href="templates/style.css" />
+<script type="text/javascript">
+	function chk_uid(uid)
+	{
+		if (!uid)
+			return false;
+
+		var parms = 'chk_uid=1&uid=' + encodeURIComponent(uid);
+
+		var req = new Ajax.Request('<{$currconfig->url}>/include/user.php', {method: 'get', parameters: parms, onComplete: function (req) {$('chk_uid_result').innerHTML = (req.responseText == 'exists') ? '<font color="#FF0000">此帳號已被使用</font>' : '';} });
+	}
+	function chk_name(name)
+	{
+		var parms = $H({'name' : name}).toQueryString();
+
+		new Ajax.Request('<{$currconfig->url}>/include/name.php', {method: 'post', parameters: parms, onComplete: function(req) {if(req.responseText == 'true') $('chk_name').innerHTML = ''; else $('chk_name').innerHTML = req.responseText}});
+	}
+	function changeFace()
+	{	
+		$('cface').src = 'templates/images/pine'+document.register.face.value+'.gif';
+	}
+</script>
+
+<form id="register" name="register" action="" method="post" onsubmit="
+	if (!this.uid.value) {alert('請輸入帳號'); this.uid.focus(); return false;}
+	if (!this.pwd.value) {alert('請輸入密碼'); this.pwd.focus(); return false;}
+	if (!this.pwd_i.value) {alert('請確認密碼'); this.pwd_i.focus(); return false;}
+	if (this.pwd.value.length < 6) {alert('密碼長度需超過 6 個字元'); this.pwd.focus(); return false;}
+	if (this.pwd.value != this.pwd_i.value) {alert('密碼不相符'); this.pwd.focus(); return false;}
+	if (!this.realname.value) {alert('請輸入姓名'); this.realname.focus(); return false;}
+	if (!this.name.value) {alert('請輸入暱稱'); this.name.focus(); return false;}
+	if (!this.sex[0].checked && !this.sex[1].checked) {alert('請選擇性別'); return false;}
+">
+<div id="u_reg_main_container">
+  <div id="u_reg_top"></div>
+  <div id="u_reg_contents">
+    <div style="color:#FF6666;"><{$errmsg}></div>
+    <div id="u_reg_item_container">
+      <div align="right" id="u_reg_item_l">* 帳號<br /><span class="u_reg_item_l_eng">ID</span></div>
+      <div id="u_reg_item_r"><input type="text" name="uid" size="20" maxlength="12" onblur="chk_uid(this.value);" value="<{$smarty.post.uid}>"/><span id="chk_uid_result" style="margin: 0px 10px;"></span></div>
+    </div>
+    <div id="u_reg_item_container">
+      <div align="right" id="u_reg_item_l">* 密碼<br /><span class="u_reg_item_l_eng">Password</span></div>
+      <div id="u_reg_item_r"><input type="password" name="pwd" size="20" /> 密碼長度須超過 6 個字元</div>
+    </div>
+    <div id="u_reg_item_container">
+      <div align="right" id="u_reg_item_l">* 密碼確認<br /><span class="u_reg_item_l_eng">Re-enter Password</span></div>
+      <div id="u_reg_item_r"><input type="password" name="pwd_i" size="20" /></div>
+    </div>
+    <div id="u_reg_item_container">
+      <div align="right" id="u_reg_item_l">* 真實姓名<br /><span class="u_reg_item_l_eng">Real name</span></div>
+      <div id="u_reg_item_r"><input type="text" name="realname" size="10" value="<{$smarty.post.realname}>"/></div>
+    </div>
+    <div id="u_reg_item_container">
+      <div align="right" id="u_reg_item_l">* 暱稱<br /><span class="u_reg_item_l_eng">Nickname</span></div>
+      <div id="u_reg_item_r"><input type="text" name="name" size="20" value="<{$smarty.post.name}>" onblur="chk_name(this.value)" /><span id="chk_name" style="color:red;margin: 0 10px"></span></div>
+    </div>
+    <div id="u_reg_item_container">
+      <div align="right" id="u_reg_item_l">* 性別<br /><span class="u_reg_item_l_eng">Sex</span></div>
+      <div id="u_reg_item_r">
+	  <input type="radio" name="sex" value="boy" <{if $smarty.post.sex == "boy"}> checked="checked" <{/if}> /> 男&nbsp;&nbsp;
+	  <input type="radio" name="sex" value="girl" <{if $smarty.post.sex == "girl"}> checked="checked" <{/if}> />女
+	  </div>
+    </div>
+    <div id="u_reg_item_container">
+      <div align="right" id="u_reg_item_l">計中帳號(學號)<br /><span class="u_reg_item_l_eng">NCUCC ID</span></div>
+      <div id="u_reg_item_r"><input type="text" name="sid" size="10" value="<{$smarty.post.sid}>"/></div>
+    </div>
+    <div id="u_reg_item_container">
+      <div align="right" id="u_reg_item_l">計中密碼(生日)<br /><span class="u_reg_item_l_eng">NCUCC Password</span></div>
+      <div id="u_reg_item_r"><input type="password" name="spwd" size="10" /> 新生請填出生日期 (YYYYMMDD)</div>
+    </div>
+    <div id="u_reg_item_container">
+      <div align="right" id="u_reg_item_l">* 身份<br /><span class="u_reg_item_l_eng">Identity</span></div>
+      <div id="u_reg_item_r">
+      <select name="department" size="1">
+<{foreach from=$dep item="desc" key="value"}>
+        <{if $smarty.post.department == $value}> selected="selected" <{/if}>><{$desc}><option value="<{$value}>" <{if $smarty.post.department == $value}> selected="selected" <{/if}>><{$desc}></option>
+<{/foreach}>
+      </select>
+      </div>
+    </div>
+    <div id="u_reg_item_container">
+      <div align="right" id="u_reg_item_l">首頁<br /><span class="u_reg_item_l_eng">Homepage</span></div>
+      <div id="u_reg_item_r"><input type="text" name="website" size="40" value="<{$smarty.post.website}>"/></div>
+    </div>
+    <div id="u_reg_item_container">
+      <div align="right" id="u_reg_item_l">電子郵件<br /><span class="u_reg_item_l_eng">E-mail</span></div>
+      <div id="u_reg_item_r"><input type="text" name="email" size="40" value="<{$smarty.post.email}>"/></div>
+    </div>
+    <div id="u_reg_item_container">
+      <div style="height:155px;" align="right" id="u_reg_item_l">自我介紹<br /><span class="u_reg_item_l_eng">Introduction</span></div>
+      <div style="height:155px;" id="u_reg_item_r"><textarea style="height:150px;" name="intro" rows="10" cols="60"><{$smarty.post.intro}></textarea></div>
+    </div>
+    <div id="u_reg_item_container">
+      <div style="height:420px;" align="right" id="u_reg_item_l">頭像選擇<br /><span class="u_reg_item_l_eng">Personal icon</span></div>
+      <div style="height:420px;" id="u_reg_item_r">
+      <img src="<{$currconfig->url}>/module/shop/items_pic/head1.jpg" /><input name="pic" type="radio" value="head1" checked /><br /><br />
+      <img src="<{$currconfig->url}>/module/shop/items_pic/head2.jpg" /><input name="pic" type="radio" value="head2" /><br /><br />
+      <img src="<{$currconfig->url}>/module/shop/items_pic/head3.jpg" /><input name="pic" type="radio" value="head3" /><br /><br />
+      </div>
+    </div>
+    <center>
+	<input type="hidden" name="register_user" value="1" />
+    <input name="submit" type="submit" value="確認註冊" />
+    <input name="reset" type="reset" value="重新填寫" />
+    </center>
+  </div>
+  <div id="u_reg_footer"></div>
+</div>
+</form>

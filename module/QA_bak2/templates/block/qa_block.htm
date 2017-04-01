@@ -1,0 +1,12 @@
+<div id="qa_container">
+  <div id="qa_block_top"></div>
+  <div id="qa_block_center">
+  <{foreach from=$block.qa_arr item="topic"}>
+    <div id="qa_block_center_l"><a href="<{$block.dirname}>/index.php?QAno=<{$topic.Qno}>"><{$topic.Qtitle}></a></div>
+    <div id="qa_block_center_r"><{$topic.Qtime}></div>
+    <br class="clear" />
+  <{/foreach}>
+  </div>
+  
+  <div id="qa_block_bottom"></div>
+</div>

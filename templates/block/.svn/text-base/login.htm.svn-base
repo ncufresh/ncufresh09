@@ -1,0 +1,21 @@
+<{if ($curruser->isguest())}>
+<div id="block_login">
+<div style="margin-left:10px;"><img src="<{$block.dirname}>/templates/images/loginicon.png"/></div>
+<form method="post" action="<{$currconfig->url}>/include/user.php" id="block_login_form">
+	<p>
+		<label class="id" for="login_id">帳號</label>
+		<input type="text" id="login_id" name="id" size="10" />
+	</p>
+	<p>
+		<label class="pwd" for="login_pwd">密碼</label>
+		<input type="password" id="login_pwd" name="pwd" size="10" />
+	</p>
+	<p id="block_login_button">
+		<input type="hidden" name="user_login" value="1" /><input type="submit" value="登入" />
+<{if ($currconfig->openreg == 1)}>
+		<span class="buttonfake"><a href="<{$block.dirname}>/register.php">註冊</a></span>
+	</p>
+<{/if}>
+</form>
+</div>
+<{/if}>

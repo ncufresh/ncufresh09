@@ -1,0 +1,45 @@
+@charset "utf-8";
+/* CSS Document */
+
+#QA_Outer{
+	display:block;
+	height:100%;
+	width:100%;
+
+}
+
+#QA_tenQuestions{
+	display:inline-block;
+	min-height:20px;
+	width:247px;
+	float:left;	
+}
+
+#QA_mainblock{
+	display:inline-block;
+	width:680px;
+	min-height:20px;
+	float:left;
+}
+
+.cleaner{
+	clear:both;
+}
+
+/* --- Block --- */
+#qa_container
+{
+	width: 421px;
+	min-height: 120px;
+}
+
+#qa_block_top{		background-image: url(images/qanew01.png);	width: 421px;	height: 61px;}
+#qa_block_center{	background-image: url(images/qanew02.png);	width: 397px;	min-height: 48px;	padding: 0px 12px;	color: #FFFFFF;	font-size: 14px;	line-height: 24px;}
+#qa_block_center a{	color: #FFFFFF;}
+#qa_block_center_l{	width: 317px;	float: left;}
+#qa_block_center_r{	width: 80px;	float: left;}
+#qa_block_bottom{	background-image: url(images/qanew03.png);	background-repeat: no-repeat; width: 421px;	height: 11px;}
+
+.QA_currpage{
+    background:#fadd19;
+}

@@ -1,0 +1,19 @@
+<{include file="topic_header.htm"}>
+<div class="topic_view">
+<p class="field2_top"><{$_WikiTopic->title}> - 編修紀錄</p>
+<div class="field2_content">
+  <table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center">
+    <tr>
+      <th>編輯時間</th>
+      <th>編輯者</th>
+    </tr>
+<{foreach from=$posts item="post" name="post"}>
+    <tr>
+      <td><a href="view.php?pno=<{$post.pno}>" title="VIEW"><{$post.posttime}></a></td>
+      <td><a href="<{$currconfig->url}>/show_pfile.php?uno=<{$post.poster_no}>"><{$post.poster_id}> (<{$post.poster_name}>)</a></td>
+    </tr>
+<{/foreach}>
+  </table>
+</div>
+<p class="field2_bottom"></p>
+</div>

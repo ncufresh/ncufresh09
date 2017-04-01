@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<script type="text/javascript" src="include/jquery-ui/development-bundle/jquery-1.3.2.js"></script>
+<script type="text/javascript" src="include/ajax_item.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="items.css"/>
+<title>2009國立中央大學 大一生活知訊網-購物商城</title>
+</head>
+
+<body>
+
+<div id="background">
+<div id="base">
+	<span class="money"><img src="templates/images/funnymoney.gif" /></span>
+	<span class="face"><a onmouseover="MM_swapImage('ihead','','shop_pic/funnyheadchange.png',1)" onmouseout="MM_swapImgRestore()" href="head.php">
+<img id="ihead" style="border:none;" src="shop_pic/funnyhead.png"/></a></span>
+	
+    <span class="car"><a onmouseover="MM_swapImage('icar','','shop_pic/funnymotorchange.png',1)" onmouseout="MM_swapImgRestore()" href="car.php">
+<img id="icar" style="border:none;" src="shop_pic/funnymotor.png"/></a></span>
+<div class="mar"><img src="templates/images/funnyframe.png" />
+<{section name=i loop=$contents}>
+<div id="here"></div>
+<div id="img<{$smarty.section.i.iteration}>">
+	
+	<span>
+		<img width="100" height="100" src="./items_pic/<{$contents[i].pic}>" alt="圖片生產中" /><br />
+	</span>
+
+	<div id="word">
+		名稱：<{$contents[i].item}><br />
+		價格：<{$contents[i].price}><br />
+		說明：<{$contents[i].deric}><br />
+	</div>
+<span id="buttomtocar"><input name="" type="button"  onclick="buycar(<{$contents[i].ino}>)" value="加到購物車"/></span><br />
+
+<{if $admin == 1}>
+<span class="edit">
+	<form action="edit_form.php" style="margin:0;padding:0;">
+	<input name="ino" type="hidden" value="<{$contents[i].ino}>"/>
+	<input name="" type="submit" value="修改"/>
+</form>
+</span>
+<span class="del">
+	<form action="delete.php" style="margin:0;">
+	<input name="ino" type="hidden" value="<{$contents[i].ino}>"/>
+	<input name="" type="submit" value="刪除"/>
+</form>
+</span>
+<{/if}>
+
+<br />
+<span id="btnn<{$contents[i].ino}>"></span>
+<br />
+
+</div>
+<{/section}>
+</div>
+</div>
+</div>
+</body>
+</html>

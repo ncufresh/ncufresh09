@@ -1,0 +1,28 @@
+<div class="blue_back">
+<!--<div class="field_top_top"><img src="templates/images/contactus.gif" class="field_title"/><img src="templates/images/pineR.gif" class="in_section"/></div>-->
+<div class="field_content_bar"></div>
+<div class="field_content">
+  <table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse" align="center" width="100%">
+    <tr>
+      <td width="20%">寄件者</td>
+      <td width="45%">標題</td>
+      <td width="15%">時間</td>
+      <td width="5%">刪</td>
+      <td width="15%">狀態</td>
+    </tr>
+<{section name=sec1 loop=$title}>
+    <tr<{if $state[sec1]=='未處理'}> class="nosolve"<{elseif $state[sec1]=='處理中'}> class="solving"<{/if}>>
+      <td><a href="<{$email[sec1]}>" title="寄信"><{$sender[sec1]}></a></td>
+      <td><a href="contact.php?read_contact=1&mno=<{$mno[sec1]}>"><{$title[sec1]}></a></td>
+      <td><{$time[sec1]}></td>
+      <td><a onClick="if(!confirm('確認刪除？'))return false;" href="<{$currconfig->phpself}>?del_contact=1&mno=<{$mno[sec1]}>" title="刪除">Ｘ</a></td>
+      <td><{$state[sec1]}></td>
+    </tr>
+<{/section}>
+    <tr>
+      <td colspan="5" align="left">頁數&nbsp;&nbsp;<{foreach from=$p item=pag}><{$pag}>&nbsp;&nbsp;<{/foreach}></td>
+    </tr>
+  </table>
+</div>
+<div class="field_bottom"></div>
+</div>

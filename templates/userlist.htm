@@ -1,0 +1,33 @@
+<style type="text/css">
+#userlist table th a
+{
+	color: #000000;
+	letter-spacing: 1pt;
+	text-decoration: underline;
+}
+</style>
+<p class="field_top">使用者列表</p>
+<div class="field_content">
+<{include file="usersearchform.htm"}>
+  <table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center" width="100%">
+    <tr>
+      <th><a href="<{$currconfig->phpself}>?column=<{$column}>&key=<{$key}>&order=uid" title="帳號排序">帳號</a> ( <a href="<{$currconfig->phpself}>?column=<{$column}>&key=<{$key}>&order=name" title="照暱稱排序">暱稱</a> ) </th>
+      <th align="left"><a href="<{$currconfig->phpself}>?column=<{$column}>&key=<{$key}>&order=sex" title="照性別排序">性別</a></th>
+      <th align="left"><a href="<{$currconfig->phpself}>?column=<{$column}>&key=<{$key}>&order=sid" title="照 SPARC 排序">SPARC</a></th>
+<{if ($curruser->haveperm($curruser->p_handler->getpermadmin()))}>
+      <th align="right">修改資料</th>
+<{/if}>
+    </tr>
+<{foreach from=$users item="user"}>
+    <tr>
+      <td><{$user.uid}> (<{$user.name}>)</td>
+      <td><{$user.sex	}></td>
+      <td><{$user.sid|htmlencode}></td>
+<{if ($curruser->haveperm($curruser->p_handler->getpermadmin()))}>
+      <td align="right"><a href="edit_pfile.php?uno=<{$user.uno}>" title="修改資料">修改資料</a></td>
+<{/if}>
+    </tr>
+<{/foreach}>
+  </table>
+</div>
+<p class="field_bottom"></p>

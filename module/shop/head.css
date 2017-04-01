@@ -1,0 +1,78 @@
+@charset "utf-8";
+/* CSS Document */
+#background
+{
+ background:url(shop_pic/HeadBackground.gif);
+	background-position:top center; 
+
+}
+
+.center
+{
+ background-image:url(shop_pic/Headback.gif);
+ background-repeat:no-repeat;
+ margin-left:95px;
+ width:800px;
+ height:781px;
+}
+
+.funny
+{
+ margin-left:73px;
+ margin-top:180px;
+ position:absolute;
+}
+.motor
+{
+ margin-left:50px;
+ margin-top:355px;
+ position:absolute;
+}
+
+.money
+{
+width:213px;
+height:48px;
+margin-left:550px;
+margin-top:70px;
+position:absolute;
+background:url(shop_pic/headmoney.gif);
+}
+
+.coin
+{
+margin-left:659px;
+margin-top:77px;
+color:#7d1614;
+font-size:25px;
+position:absolute;
+}
+
+#space
+{
+margin-left:280px;
+margin-top:170px;
+color:#7d1614;
+font-size:11px;
+width:491px;
+height:573px;
+position:absolute;
+background:url(shop_pic/headframe.png);
+}
+#good_space
+{
+margin-left:6%;
+margin-top:5%;
+position:absolute;
+width:450px;
+height:530px;
+overflow-y:scroll;
+}
+
+.good
+{
+width:141px;
+height:220px;
+float:left;
+max-width:140px;
+}

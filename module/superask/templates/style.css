@@ -1,0 +1,144 @@
+.topic_view{
+    border: 2px solid #ffe0b2;
+    background:#FFF;
+    margin:29px 5px 0px 5px;
+    padding-bottom:20px;
+}
+.menu_link{
+    margin-right:8px;
+    margin-top:10px;
+    float:right;
+}
+.menu_link_top{
+    margin-right:55px;
+}
+.menu{
+    color:#666;
+}
+#topic_hr{
+    width:515px;
+    height: 3px;
+    background: #999;
+}
+.topic_view_title{
+    width:515px;
+    color:#666;
+    background:#FEFBB4;
+    font-size:22pt;
+    margin: 30px auto;
+    >margin:0 auto;
+}
+.topic_view_field{
+    margin:20px auto;
+    color:#333;
+    width:515px;
+    overflow-x:hidden;
+}
+.select_menu{
+    color:#666;
+    padding-top:2px;
+    display:block;
+    font-size:12pt;
+    text-align:center;
+}
+.select_club{
+    float:left;
+    width:127px;
+    height:29px;
+    padding-top:5px;
+}
+.select1{
+    background: url('images/club_select1.gif') no-repeat;
+}
+.select2{
+    background: url('images/club_select2.gif') no-repeat;
+}
+.cate_field{
+    border: 2px solid #ffe0b2;
+    background:#FFF;
+/*    margin-top:29px;
+    margin-left:5px;
+    margin-right:5px;*/
+    margin:29px 5px 0px 5px;
+}
+.cate_menu_top{
+    margin:60px auto;
+    width:515px;
+}
+.cate_menu{
+    width: 485px;
+    border-top: 3px solid #fdbc51;
+    padding-left:30px;
+    margin-bottom:10px;
+}
+.cate_1{
+    margin-top:8px;
+    width:515px;
+    padding:5px;
+}
+.cate_2{
+    margin-top:8px;
+    background:#fefbb4;
+    width:515px;
+    padding:5px;
+}
+.pcat_menu{
+    margin-left:5px;
+}
+.child{
+    color:#777;
+    margin-right:10px;
+    width:115px;
+}
+.child2{
+    color:#777;
+    margin-right:10px;
+    width:230px;
+}
+.header{
+    float:left;
+    margin-top:2px;
+    margin-left:5px;
+}
+.field2_top
+{
+        margin: 0px;
+        font-size: 16px;
+        font-weight: bold;
+        padding: 5px 20px;
+        width: 515px;
+        height: 35px;
+}
+
+.field2_content
+{
+        margin: 0px;
+        color: #000000;
+        width: 515px;
+}
+
+.field2_content p
+{
+        margin: 0px;
+}
+
+.field2_content a
+{
+        color: #000000;
+        text-decoration: underline;
+}
+
+.field2_content input, #field2_content textarea, #field2_content select
+{
+        margin: 1px;
+        border: 1px solid #000000;
+        color: #000000;
+}
+
+.field2_bottom
+{
+        margin: 0px;
+        padding: 0px 20px;
+        width: 515px;
+        height: 30px;
+}

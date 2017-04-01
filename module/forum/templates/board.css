@@ -1,0 +1,165 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+#forum_board_banner{
+	overflow:hidden;
+	height:200px;
+}
+
+#forum_board_outer{
+	height:100%;
+	width:850px;
+	overflow:visiable;
+	padding:0px 50px;
+	font-family:"微軟正黑體";
+}
+
+#fb_left{
+	width:208px;
+	height:200px;
+	background:url(images/departIntroL.gif) no-repeat;
+	float:left;
+	color:#FFF;
+	padding:30px 0px;
+	text-align:center;
+}
+
+#fb_left a{
+	color:#FFF;
+	text-decoration:none;
+}
+
+#fb_right{
+	width:621px;
+	height:200px;
+	padding:15px 10px;
+	background:url(images/departIntroR.gif) no-repeat;
+	float:left;
+}
+#fb_right_container{
+	width:600px;
+	height:170px;
+	overflow:auto;
+	white-space:normal;
+	display:inline-block;
+}
+
+#pic_upload{
+	line-height:0px;
+	margin-top:-22px;
+	margin-left:3px;
+	display:inline-block;
+	position:absolute;
+}
+#fb_name{
+	padding:20px 0px;
+	width:200px;
+	height:200px;
+	display:block;
+	position:relative;
+}
+#fb_engname{
+	font-size:12px;
+}
+
+#FBC_Banner{
+	padding:10px 0px;
+	padding-right:2px;
+}
+
+.FBCList{
+	margin-bottom:10px;
+	background:url(images/departList.gif) no-repeat;
+	display:block;
+	width:850px;
+	height:71px;
+	float:left;
+}
+.FBCListTop{
+	margin-bottom:10px;
+	background:url(images/departListTop.gif) no-repeat;
+	display:inline-block;
+	width:850px;
+	height:71px;
+	float:left;
+}
+
+.FBC_ChkboxAndSN{
+	float:left;
+	width:50px;
+	overflow:hidden;
+}
+
+.FBC_CheckBox{
+	margin:5px 20px;
+}
+
+.FBC_SN_Admin{
+	display:inline-block;
+	margin:0px 17px;
+}
+
+.FBC_SN{
+	display:inline-block;
+	margin:25px 17px 0px;
+}
+
+.FBC_HeadIcon{
+	display:inline-block;
+	height:60px;
+	width:60px;
+	margin:5px 10px;
+	background:#000;
+	float:left;
+}
+
+.FBC_Content{
+	display:inline-block;
+	width:450px;
+	height:71px;
+	padding:3px 0px;
+	float:left;
+	margin-left:25px;
+}
+
+.FBC_Title{
+	display:block;
+	width:520px;
+	height:40px;
+}
+
+.FBC_TimeAndReply{
+	display:inline-block;
+	float:right;
+	overflow:visible;
+	height:71px;
+	width:240px;
+	font-size:12px
+}
+.FBC_Reply{
+	padding:15px 0px;
+	float:right;
+	margin-right:10px;
+}
+
+.FBC_ReplyUnread{
+	color:#af2323;
+	padding:15px 0px;
+	float:right;
+	margin-right:10px;
+}
+
+.FBC_Reply_inner{
+	float:left;
+}
+
+.FBC_Time{
+	padding:5px 0px;
+	float:right;
+	margin-right:10px;
+}
+
+.pageBar{
+	display:block;
+	float:right;
+}

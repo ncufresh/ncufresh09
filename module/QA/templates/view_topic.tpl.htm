@@ -1,0 +1,104 @@
+<div id="qa_main_container">
+  <div id="qa_main_left">
+    <{if false}>
+    <span class="qa_button"><a href="topic_edit.php"><img src="templates/images/iconNew.gif" alt="發表文章" /></a></span>
+    <span class="qa_button"><a href="#reply"><img src="templates/images/iconFeeback.gif" alt="回覆文章" /></a></span>
+    <{/if}>
+    <span class="qa_button"><a href="index.php"><img src="templates/images/iconGoback.gif" alt="回上一層" /></a></span>
+    <br class="clear" />
+    <img src="templates/images/barDevide.gif" />
+    <div class="qa_view_topic_main">
+      <div class="qa_view_topic_headicon">
+      <img alt="headicon" width="120" height="120" src="<{$currconfig->url}>/module/shop/items_pic/<{$qa_topic_arr.pic}>.jpg" /><br /><br />
+      <a href="<{$currconfig->url}>/msgsend.php?fno=<{$qa_topic_arr.uno}>"><img src="templates/images/mailicon.png" alt="寄信給他" /> 寄信給他</a><br />
+      帳號：<a href="<{$currconfig->url}>/show_pfile.php?uno=<{$qa_topic_arr.uno}>"><{$qa_topic_arr.uid}></a><br />
+      暱稱：<{$qa_topic_arr.name}><br />
+      身份：<{$qa_topic_arr.department}>
+      </div>
+      <div class="qa_view_topic_detail">
+        <div class="qa_view_topic_title"><{$qa_topic_arr.Qtitle}></div>
+        <div class="qa_view_topic_replies">[回應數: <{$qa_topic_arr.Qrenum}>]</div>
+        <br class="clear" />&nbsp;
+        <br class="clear" />
+        <{$qa_topic_arr.Qcontent}>
+        <br class="clear" />
+      </div>
+      <br class="clear" />
+      <div class="qa_edit_button">
+      發表時間：<{$qa_topic_arr.Qtime}>
+      <{if $qa_topic_arr.uno_equal == TRUE}>
+      <br />
+      <a href="topic_edit.php?action=edit&Qno=<{$qa_topic_arr.Qno}>">[修改文章]</a>
+      <a href="topic_edit.php?action=delete&Qno=<{$qa_topic_arr.Qno}>">[刪除文章]</a>
+      <{/if}>
+      </div>
+      <br class="clear" />
+    </div>
+    <img src="templates/images/barDevide.gif" />
+    <br class="clear" />&nbsp;
+    <div class="qa_nav_bar" style="text-align: right; padding: 0px 20px;">
+    <{section name=pagebar loop=$page_arr}>
+      <{$page_arr[pagebar]}>
+    <{/section}>
+    </div>
+    <br class="clear" />&nbsp;
+    <br class="clear" />
+    <img src="templates/images/barFeeback.gif" />
+    <{section name=qar loop=$qa_replies_arr}>
+    <div class="qa_view_topic_main">
+      <div class="qa_view_topic_headicon">
+      <img alt="headicon" width="120" height="120" src="<{$currconfig->url}>/module/shop/items_pic/<{$qa_replies_arr[qar].pic}>.jpg" /><br /><br />
+      <a href="<{$currconfig->url}>/msgsend.php?fno=<{$qa_replies_arr[qar].uno}>"><img src="templates/images/mailicon.png" alt="寄信給他" /> 寄信給他</a><br />
+      帳號：<a href="<{$currconfig->url}>/show_pfile.php?uno=<{$qa_replies_arr[qar].uno}>"><{$qa_replies_arr[qar].uid}></a><br />
+      暱稱：<{$qa_replies_arr[qar].name}><br />
+      身份：<{$qa_replies_arr[qar].department}>
+      </div>
+      <div class="qa_view_topic_detail">
+        <div class="qa_view_topic_title"></div>
+        <div class="qa_view_topic_replies">[ <{$qa_replies_arr[qar].Rf}>F ]</div>
+        <br class="clear" />
+        <{$qa_replies_arr[qar].Rcontent}>
+        <br class="clear" />
+      </div>
+      <br class="clear" />
+      <div class="qa_edit_button">
+      發表時間：<{$qa_replies_arr[qar].Rtime}>
+      </div>
+      <br class="clear" />
+    </div>
+    <img src="templates/images/barFeeback.gif" />
+    <{/section}>
+    <br class="clear" />&nbsp;
+    <div class="qa_nav_bar" style="text-align: right; padding: 0px 20px;">
+    <{section name=pagebar loop=$page_arr}>
+      <{$page_arr[pagebar]}>
+    <{/section}>
+    </div>
+    <br class="clear" />&nbsp;
+    <{if false}>
+	<a name="reply" id="reply"></a>
+    <form action="reply_edit.php?action=new_newpost" method="post">
+      <span class="qa_nav_bar">回覆文章</span><br />
+      <textarea style="width:620px; height: 120px;" name="Rcontent"></textarea>
+      <input type="hidden" name="Rno" value="<{$qa_topic_arr.Qno}>" />
+      <input type="hidden" name="isReply" value="1" />
+      <input name="submit" type="submit" value="送出回覆" />
+      <input name="reset" type="reset" value="重新填寫" />
+    </form>
+    <{/if}>
+  </div>
+  <div id="qa_main_right">
+    <div id="tq_head"></div>
+    <div id="tq_center">
+    <{section name=tq loop=$tq_list_arr}>
+      <a href="view_tq.php?TQno=<{$tq_list_arr[tq].TQno}>">
+      <div class="tq_link">
+        <span class="tq_link_img"><img src="templates/images/tenQAicon<{$tq_list_arr[tq].TQno}>.gif" alt="QA1" /></span>
+        <span class="tq_link_text"><{$tq_list_arr[tq].TQtitle}></span>
+      </div>
+      </a>
+    <{/section}>
+    </div>
+    <div id="tq_bottom"></div>
+  </div>
+</div>

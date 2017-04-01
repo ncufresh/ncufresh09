@@ -1,0 +1,33 @@
+question
+
+question_topic		問卷主題
+	id
+	sort
+	topic
+	description
+	public
+	number 
+
+question_question	問卷題目
+	id 
+	gid 
+	sort
+	question 
+	type
+	
+question_chooses	問卷題目選項
+	id 
+	gid 
+	cid 
+	sort 
+	content 
+	others
+
+question_check 		問卷個人答案
+	id 
+	uno 
+	check 
+	answer
+
+所有的 id gid cid 都是相通的
+所以可以在 select 時 用 join 把多的資料表抓出來

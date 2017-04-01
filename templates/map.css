@@ -1,0 +1,116 @@
+@charset "utf-8";
+/* CSS Document */
+
+.inlineblock{
+	display:inline-block;
+}
+
+#web_map_outer{
+	padding:0px 50px;
+	width:847px;
+	min-height:100px;
+
+}
+#wm_up{
+	width:835px;
+	height:408px;
+	margin-bottom:10px;
+	float:left;
+	position:relative;
+}
+
+#wm_ul{
+	height:379px;
+	width:308px;
+	padding:15px;
+	background:url("./images/map/mustknowBG.gif");
+	margin-right:10px;
+	float:left;
+}
+#wm_mustknow{
+	display:block;
+}
+
+#wm_ur{
+	float:left;
+	height:374px;
+	width:442px;
+}
+
+#wm_uru{
+	height:307px;
+	width:458px;
+	padding:15px;
+	background:url("./images/map/nculifeBG.gif");
+}
+#wm_urd{
+	width:488px;
+	height:62px;
+	margin-top:9px;
+}
+
+#wm_urdl{
+	width:239px;
+	height:62px;
+	float:left;
+}
+
+#wm_urdr{
+	width:239px;
+	height:62px;
+	margin-left:10px;
+	float:left;
+}
+
+#wm_down{
+	width:835px;
+	height:365px;
+	margin-bottom:10px;
+	float:left;
+	position:relative;
+}
+
+#wm_dl{
+	width:173px;
+	height:365px;
+	float:left;
+}
+
+#wm_dr{
+	margin-left:9px;
+	padding:15px;
+	width:623px;
+	height:335px;
+	float:left;
+	background:url("./images/map/campusBG.gif");
+}
+
+.ele_first{
+	margin-top:0px;
+}
+
+.wm_dl_ele{
+	margin-top:10px;
+}
+
+#wm_campus{
+	padding:15px;
+	width:623px;
+	height:335px;
+}
+
+.wm_sector{
+	float:left;
+	width:auto;
+	margin-top:40px;
+	line-height:20px;
+    font-size:14px;
+}
+
+.wm_sector a:link{
+	color:#333;
+}
+.diver{
+	float:left;
+	height:1px
+}

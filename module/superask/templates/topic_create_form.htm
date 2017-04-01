@@ -1,0 +1,23 @@
+<p class="field2_top">成立新主題</p>
+<div class="field2_content">
+  <form action="" method="post">
+    <table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center">
+      <tr>
+        <td>主題</td>
+        <td><input type="text" name="title" value="<{$title}>" size="60" /></td>
+      </tr>
+      <tr>
+        <td>內容</td>
+        <td>
+<{assign var=tid value="contents"}>
+<{include file="toolbar.htm"}>
+          <textarea id="contents" name="content" rows="15" cols="60"></textarea>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" align="center"><input type="hidden" name="create" value="1" /><input type="submit" value="建立主題" />&nbsp;&nbsp;<input type="reset" value="重新填寫" /></td>
+      </tr>
+    </table>
+  </form>
+</div>
+<p class="field2_bottom"></p>

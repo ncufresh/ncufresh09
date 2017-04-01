@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>無標題文件</title>
+</head>
+
+<body>
+<{section name=i loop=$contents}>
+
+<form action="item_update.php" method="post" enctype="multipart/form-data" >
+圖片：<input name="pic" type="file"  value="<{$contents[i].pic}>"/><br />
+名稱：<input name="name" type="text" value="<{$contents[i].item}>"/><br />
+價格：<input name="price" type="text" value="<{$contents[i].price}>" /><br />
+數量：<input name="number" type="text" value="<{$contents[i].num}>" /><br />
+<{/section}>
+分類：
+
+<select name="tag" size="1">
+<option>請 選 擇</option>
+<{section name=i loop=$re_contents}>
+<option value="<{$re_contents[i].ino}>"><{$re_contents[i].item}></option>
+<{/section}>
+<option value="">----------------(這是分格線)</option>
+<{section name=i loop=$re_contents}>
+<option value="<{$re_contents[i].ino}>_all"><{$re_contents[i].item}> 拼圖(全)</option>
+<{/section}>
+<option value="">----------------(這是分格線)</option>
+<option value="puzzle_bag">拼圖包</option>
+<option value="head">頭像</option>
+<option value="special">其他</option>
+</select>
+(非頭像，拼圖或拼圖包類的，請歸在其他類)
+<br />
+
+<{section name=i loop=$contents}>
+下架日期：<input name="downd" type="text" value="<{$contents[i].outdate}>" />(oooo/oo/oo)<br />
+說明：<textarea name="derict" cols="20" rows="" ><{$contents[i].deric}></textarea><br />
+<input name="ino" type="hidden" value="<{$contents[i].ino}>" />
+<input name="" type="submit" value="確定" />
+</form>
+
+<form action="items.php" >
+<input name="" type="submit" value="回商品區" />
+</form>
+
+
+<{/section}>
+</body>
+</html>

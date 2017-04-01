@@ -1,0 +1,22 @@
+<{if ($curruser->haveperm($forumboard->perm) || $bm)}>
+<div id="reply_f_button" class="forum_img">
+	<a id="img_repost" style="float:right" href="#" onclick="javascript: Element.show('reply_form'); Element.hide('reply_f_button'); return false;"><span>我要回覆<span></a>
+</div>
+<div id="reply_form" style="display: none;">
+  <form method="post" action="do_reply.php" id="" name="">
+    <table class="formTable">
+      <tr>
+        <th>回覆主題</th>
+      </tr>
+      <tr>
+        <td><textarea name="content" rows="10" cols="60"></textarea></td>
+      </tr>
+      <tr>
+        <td><input type="hidden" name="doreply" value="1" /><input type="hidden" name="tno" value="<{$forumtopic->topic_no}>" /><input type="submit" value="確定" />&nbsp;&nbsp;<input type="reset" value="重填" />&nbsp;&nbsp;<input type="button" value="取消" onclick="javascript: Element.show('reply_f_button'); Element.hide('reply_form');" /></td>
+      </tr>
+    </table>
+  </form>
+</div>
+<{else}>
+<div class="noperm">你不能 [回應文章] (<acronym title="你可能尚未登入或者沒有權限">?</acronym>)</div>
+<{/if}>

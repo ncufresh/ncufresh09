@@ -1,0 +1,26 @@
+<div class="forum_field">
+<!--
+<div class="forum_title"><{$forumgroup->title}>列表</div>
+-->
+<div class="forum_content">
+
+<{foreach from=$forumgroups item="group"}>
+<div class="forum_group">
+<{$group->title}>
+</div>
+<div class="forum_boardlist">
+	<table border="0" style="width:100%">
+	<thead><tr><th width="25%"></th><th width="25%"></th><th width="25%"></th><th width="25%"></th></tr></thead>
+	<tbody><tr>
+	<{foreach from=$group->forumboards item="board" name="child"}>
+	<td <{if $smarty.foreach.child.iteration%4 != 0 && $smarty.foreach.child.last}> colspan="<{math equation="5-X" X=$smarty.foreach.child.iteration%4 }>"<{/if}>>
+		<a href="viewboard.php?no=<{$board->board_no}>"><{$board->title}></a></td>
+	<{if $smarty.foreach.child.iteration%4 == 0 && $smarty.foreach.child.iteration != 0}></tr><tr><{/if}>
+	<{/foreach}>
+	</tr></tbody></table>
+</div>
+<{/foreach}>
+
+</div>
+
+</div>

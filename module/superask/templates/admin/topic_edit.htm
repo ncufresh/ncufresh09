@@ -1,0 +1,44 @@
+<p class="field2_top">編輯主題</p>
+<div class="field2_content">
+  <form method="post" action="topic_manage.php">
+    <table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center" width="100%">
+      <tr>
+        <td>主題名稱</td>
+        <td><input type="text" name="title" value="<{$_WikiTopic->title}>" size="30" /></td>
+      </tr>
+      <tr>
+        <td>類別</td>
+        <td><select name="cno" size="1">
+<{foreach from=$category item="parent"}>
+          <option value="<{$parent.cno}>"<{if ($_WikiTopic->cno == $parent.cno)}> selected<{/if}>><{$parent.name}></option>
+<{foreach from=$parent.child item="child"}>
+          <option value="<{$child.cno}>"<{if ($_WikiTopic->cno == $child.cno)}> selected<{/if}>>&nbsp;&nbsp;<{$child.name}></option>
+<{/foreach}>
+<{/foreach}>
+        </select></td>
+      </tr>
+      <tr>
+        <td>鎖定</td>
+        <td><input type="checkbox" name="locks[]" value="1" <{if (binary_and($_WikiTopic->locks, 1))}>checked <{/if}>/>鎖定資訊&nbsp;&nbsp;<input type="checkbox" name="locks[]" value="2" <{if (binary_and($_WikiTopic->locks, 2))}>checked <{/if}>/>鎖定評論&nbsp;&nbsp;<input type="checkbox" name="locks[]" value="4" <{if (binary_and($_WikiTopic->locks, 4))}>checked <{/if}>/>鎖定問答</td>
+      </tr>
+      <tr>
+        <td>鎖定原因</td>
+        <td><input type="text" name="whylock" value="<{$_WikiTopic->whylock}>" size="50" /></td>
+      </tr>
+      <tr>
+<!--        <td>管理者</td>
+<td><input type="text" name="manager" value="<{$_WikiTopic->manager}>" size="30" /></td>-->
+        <td>顯示連結</td>
+	<td><input type="radio" name="showlink" value="1" <{if $_WikiTopic->showlink == 1}>checked<{/if}>/>顯示<input type="radio" name="showlink" value="0" <{if $_WikiTopic->showlink == 0}>checked<{/if}>/>隱藏</td>
+      </tr>
+      <tr>
+        <td>瀏覽次數</td>
+        <td><input type="text" name="numread" value="<{$_WikiTopic->numread}>" size="10" /></td>
+      </tr>
+      <tr>
+        <td colspan="2" align="center"><input type="hidden" name="edit" value="1" /><input type="hidden" name="tno" value="<{$_WikiTopic->tno}>" /><input type="submit" value="修改" />&nbsp;&nbsp;<input type="reset" value="重填" />&nbsp;&nbsp;<input type="button" value="回上一頁" onclick="javascript: history.go(-1);" /></td>
+      </tr>
+    </table>
+  </form>
+</div>
+<p class="field2_bottom"></p>

@@ -1,0 +1,13 @@
+<div id="news_content_top">
+  <a href="<{$block.dirname}>/index.php"><div id="a_more">More</div></a>
+</div>
+<div id="news_content_center">
+<{foreach from=$block.news item="news"}>
+  <span class="news_title"><a href="<{$block.dirname}>/index.php?news_no=<{$news.news_no}>" title="<{$news.title}>"><{if $news.top==1}><span style="color: #FFFF00; font-weight: bold;">[重要]</span><{/if}><span class="white_font"><{$news.title}></span></a></span>
+  <span class="news_date"><{$news.date}></span>
+  <br />
+<{/foreach}>
+</div>
+<div id="news_content_footer"></div>
+
+

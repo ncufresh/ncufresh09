@@ -1,0 +1,66 @@
+@charset "utf-8";
+/* CSS Document */
+#background
+{
+ background:url(shop_pic/HomeBackground.gif);
+ float:left;
+ display:inline-block;
+
+}
+
+.center
+{
+ background-image:url(shop_pic/Homeback.gif);
+ width:781px;
+ height:800px;
+ background-repeat:no-repeat;
+  float:left;
+  margin-left:11%;
+  margin-right:12%;
+ display:inline-block;
+}
+
+
+.head
+{
+margin-left:90px;
+margin-top:247px;
+position:absolute;
+}
+
+.funny
+{
+margin-left:279px;
+margin-top:345px;
+position:absolute
+}
+.motor
+{
+margin-left:384px;
+margin-top:527px;
+position:absolute
+}
+
+.money
+{
+width:213px;
+height:48px;
+margin-left:546px;
+margin-top:51px;
+position:absolute;
+background:url(shop_pic/homemoney.gif);
+}
+
+#coin
+{
+margin-left:649px;
+margin-top:60px;
+color:#999;
+font-size:25px;
+position:absolute;
+}
+
+.stop
+{
+position:absolute;
+}

@@ -1,0 +1,42 @@
+<div class="blue_back">
+<!--<div class="field_top_top"><img src="templates/images/contactus.gif" class="field_title"/><img src="templates/images/pineR.gif" class="in_section"/></div>-->
+<div class="field_content_bar"></div>
+<div class="field_content">
+  <form method="post" action="" onSubmit="
+<{if ($curruser->isguest())}>
+	if (!this.sender.value) {alert('請輸入寄件人'); this.sender.focus(); return false;}
+	if (!this.email.value) {alert('請輸入email'); this.email.focus(); return false;}
+<{/if}>
+	if (!this.title.value) {alert('請輸入標題'); this.title.focus(); return false;}
+	if (!this.content.value) {alert('請輸入內容'); this.content.focus(); return false;}
+" >
+    <table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse" align="center">
+      <tr>
+        <td>姓名</td>
+<{if $curruser->isguest()}>
+        <td><input type="text" name="sender" size="20"/></td>
+<{else}>
+		<td><{$curruser->name}>(<{$curruser->uid}>)</td>
+<{/if}>
+      </tr>
+<{if $curruser->isguest()}>
+      <tr>
+        <td>E-Mail</td>
+        <td><input type="text" name="email" size="20"/></td>
+      </tr>
+<{/if}>
+      <tr>
+        <td>標題</td>
+        <td><input type="text" name="title" value="" size="40" /></td>
+      </tr>
+      <tr>
+        <td colspan="2"><textarea name="content" rows="10" cols="50"></textarea></td>
+      </tr>
+      <tr>
+        <td colspan="2" align="right"><input type="submit" value="送出" />&nbsp;&nbsp;<input type="reset" value="清除" /></td>
+      </tr>
+    </table>
+  </form>
+</div>
+<div class="field_bottom"></div>
+</div>

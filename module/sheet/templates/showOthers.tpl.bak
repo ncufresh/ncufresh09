@@ -1,0 +1,21 @@
+問題<{$smarty.section.qst.iteration}> : <{$questions[qst]}> 
+    <{if $type[qst]=="radio"}>
+    	<單選題>
+    <{elseif $type[qst]=="checkbox"}>
+    	<多選題>
+    <{/if}>
+	</div>
+	<div style="float:right"><a href="./showStatics.php?sno=<{$sno}>&qis=<{$smarty.section.qst.iteration}>">顯示詳細資料</a> </div>
+    <{section name=choose loop=$choose[qst]}> 
+        <table width="400" border="0">
+      <tr>
+        <td>選項<{$smarty.section.choose.iteration}>:<{if $choose[qst][choose]!="others"}>
+          <{$choose[qst][choose]}>&nbsp;&nbsp;出現&nbsp;&nbsp;
+          <{if $anscount[$smarty.section.qst.iteration][$smarty.section.choose.iteration]!=0}>
+          <{$anscount[$smarty.section.qst.iteration][$smarty.section.choose.iteration]}>
+          <{else}>0<{/if}>&nbsp;&nbsp;次
+          <{elseif $choose[qst][choose]=="others"}>其他&nbsp;&nbsp;出現&nbsp;&nbsp;
+          <{if $othercount[$smarty.section.qst.iteration]!=0}>
+          <{$othercount[$smarty.section.qst.iteration]}>
+          <{else}>0<{/if}>&nbsp;&nbsp;次<{/if}>
+		  

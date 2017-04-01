@@ -1,0 +1,40 @@
+@charset "utf-8";
+/* CSS Document */
+
+#QA_MAIN_OUTER{
+	width:100%;
+	height:100%;
+	display:block;
+	padding-left:25px;
+}
+
+#QA_navigate_bar{
+	height:35px;
+	width:620px;
+}
+
+#QA_IhaveQuestion{
+	width:84px;
+	height:33px;
+	display:inline-block;
+	background:url('../images/iconNew.gif');
+}
+
+#QA_navigate_bar{
+	color:#394d26;
+}
+
+.QA_divideBAR{
+	width:620px;
+	height:50px;
+	display:block;
+	color:#af2323;
+	font-size:110%;
+	background:url('../images/bartenQA.gif');
+}
+.QA_content{
+	width:560px;
+	height:80px;
+	margin-left:60px;
+	display:block;
+}

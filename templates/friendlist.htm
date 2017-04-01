@@ -1,0 +1,87 @@
+<script type="text/javascript">
+	function chk_uid(uid)
+	{
+		if (!uid)
+			return false;
+
+		var parms = 'chk_uid=1&uid=' + encodeURIComponent(uid);
+
+		var req = new Ajax.Request('<{$currconfig->url}>/include/user.php', {method: 'get', parameters: parms, onComplete: function (req) {$('chk_uid_result').innerHTML = (req.responseText == 'exists') ? '' : '錯誤的使用者帳號';} });
+	}
+
+	function addfriend()
+	{
+		if (!document.fl.fid.value)
+			return ;
+
+		var parms = 'add_friend=1&keep=1&fid=' + document.fl.fid.value;
+
+		var req = new Ajax.Request("friendlist_ajax.php", {method: "post", parameters: parms, onComplete: function(q){ document.location.href = '<{$currconfig->phpself}>';}});
+	}
+
+	function delfriend(fno)
+	{
+		if (fno == 0)
+			return ;
+
+		var parms = 'del_friend=1&keep=1&fno=' + fno;
+
+		var req = new Ajax.Request("friendlist_ajax.php", {method: "get", parameters: parms, onComplete: function(q){ Effect.Fade('fl-' + fno); }});
+	}
+
+	function turnfriendship(fno)
+	{
+		if (fno == 0)
+			return ;
+
+		var imgsrc = $('fl-img-' + fno).src;
+		var txtclass;
+
+		if (imgsrc.match('good.gif'))
+		{
+			imgsrc = imgsrc.replace('good.gif', 'bad.gif');
+			txtclass = "bfriend";
+		}
+		else
+		{
+			imgsrc = imgsrc.replace('bad.gif', 'good.gif');
+			txtclass = "gfriend";
+		}
+
+		var parms = 'turn_friendship=1&keep=1&fno=' + fno;
+
+		var req = new Ajax.Request("friendlist_ajax.php", {method: "get", parameters: parms, onComplete: function(q){ $('friend-' + fno).className = txtclass; $('fl-img-' + fno).src = imgsrc; }});
+	}
+</script>
+<style type="text/css">
+.gfriend {color: #CC9900};
+.bfriend {color: #666666};
+</style>
+<div class="blue_back">
+<div class="field_top_top"><img src="templates/images/friend.gif" alt="好友名單" class="field_title"/>
+<div style="margin: -20px 0px 80px 470px; >margin-top:-40px;">
+	<form method="post" action="friendlist_ajax.php?add_friend=1" id="fl" name="fl" onSubmit="
+		addfriend();return false;
+	">
+	  <div style="width:70px;">新增好友</div> <br/><input type="text" name="fid" size="17" onblur="chk_uid(this.value);" style="margin-left:20px;"/><br/>
+	  <input type="submit" value="新增" style="margin-left:40px;"/>
+	  <span id="chk_uid_result" style="margin: 0px 0px; color: #FF0000;font-size:8pt;width:100px;display:inline;"></span>
+  </form>
+ </div>
+</div>
+<div class="field_content_bar"><div style="margin:4px 10px 0 0;float:left; width:325px;">帳號 (暱稱)</div><div style="margin-top:4px;width:50px;float:left;">傳訊</div><div style="margin-top:4px;float:left;">刪除</div></div>
+<div class="field_content_content">
+
+  <table border="0" cellpadding="3" cellspacing="0" style="border-collapse: collapse;" width="100%">
+	  <tr><td width="340"></td><td width="50"></td><td ></td></tr>
+<{foreach from=$friend item="user"}>
+    <tr id="fl-<{$user->uno}>">
+	    <td><span id="friend-<{$user->uno}>" class="<{if ($user->friendship == $friend_handler->goodfriend)}>gfriend<{else}>bfriend<{/if}>"><a href="show_pfile.php?uno=<{$user->uno}>" title="觀看使用者資料" style="color:#c90"><{$user->uid}> (<{$user->name}>)</a></span></td>
+      <td><a href="msgsend.php?fno=<{$user->uno}>" title="傳送訊息"><img src="templates/images/mailicon.png" alt="" border="0" /></a></td>
+      <td><a onclick="javascript: if (confirm('確定要刪除 <{$user->uid}> (<{$user->name}>) ?')) {delfriend(<{$user->uno}>);} return false;" href="friendlist_ajax.php?del_friend=1&fno=<{$user->uno}>" title="從好友名單中刪除"><img src="templates/images/p_friendminus.gif" alt="" border="0" /></a></td>
+    </tr>
+<{/foreach}>
+  </table>
+</div>
+<div class="field_bottom"></div>
+</div>

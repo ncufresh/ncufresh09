@@ -1,0 +1,71 @@
+@charset "utf-8";
+/* CSS Document */
+
+#campus_all{
+	min-height:100%;
+	width:100%
+}
+
+#campus_main_menu{
+	height:70px;
+	width:100%;
+	background:#123456;
+	display:block;
+	float:left;
+}
+.main_button_text{
+	margin-top:20px;
+	display:inline-block;
+}
+.campus_main_menu_button{
+	height:100%;
+	width:16.4%;
+	color:#00FF00;
+	font: "微軟正黑體";
+	float:left;
+	display:inline-block;
+	border:solid #000000 1px;
+	text-align:center;
+	}
+
+#campus_center_block{
+	height:100%;
+	width:100%;
+	background:#fabce2;
+	display:inline-block;
+	overflow:hidden;
+}
+
+#campus_sub_menu{
+	clear:both;
+	min-height:100%;
+	height:inherit;
+	width:30%;
+	float:left;
+	background:#005a9c;
+	display:block;
+	padding-bottom:32762px;	/*47 48正負相抵拉長較短的DIV*/
+	margin-bottom:-32762px;	
+}
+
+#campus_maps_and_intro{
+	min-height:100%;
+	width:70%;
+	float:left;
+	display:block;
+	background:#0000bc;
+}
+
+#campus_map_intro{
+	min-height:0px;
+	width:100%;
+	clear:both;
+	background:#576acb;
+}
+
+#campus_map{
+	height:90%;
+	width:100%;
+	display:inline-block;
+	background:#1db790;
+}

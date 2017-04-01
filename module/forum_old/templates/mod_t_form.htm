@@ -1,0 +1,11 @@
+<div class="forum_field">
+<div class="forum_title">修改文章</div>
+<div class="forum_content">
+<form method="post" action="" id="" name="">
+	<p>標題 <input type="text" name="title" value="<{$forumtopic->title}>" size="60" /></p>
+	<p>內容 <textarea name="content" rows="15" cols="60"><{$forumtopic->content}></textarea></p>
+    <input type="hidden" name="mdarticle" value="1" /><input type="hidden" name="tno" value="<{$forumtopic->topic_no}>" />
+	<p><input type="submit" value="確定" /> <input type="reset" value="重填" /> <input type="button" value="取消" onclick="javascript: window.back();" />
+</form>
+</div>
+</div>

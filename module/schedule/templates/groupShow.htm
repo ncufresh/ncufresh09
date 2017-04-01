@@ -1,0 +1,20 @@
+<table border="1" cellpadding="10" cellspacing="0" style="margin: 0px auto; border-collapse: collapse; width: 500px;">
+  <tr>
+    <td width="25%">群組名稱</td>
+    <td width="75%"><{$group.name}> (<{if ($group.public == 1)}>公開<{else}>隱藏<{/if}>)</td>
+  </tr>
+  <tr>
+    <td colspan="2"><{$group.introduce}></td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center">
+<{if ($joined == 0) && !($curruser->isguest())}>
+      <a href="group.php?gno=<{$group.gno}>&apply=1" title="申請加入群組">申請加入群組</a>&nbsp;&nbsp;
+<{/if}>
+<{if ($manager == 1)}>
+      <a href="member.php?gno=<{$group.gno}>" title="管理群組成員">管理群組成員</a>&nbsp;&nbsp;
+<{/if}>
+	<a href="<{$currconfig->url}>/redirect.php?1" title="回上一頁">回上一頁</a>
+    </td>
+  </tr>
+</table>

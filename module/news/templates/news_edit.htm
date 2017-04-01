@@ -1,0 +1,32 @@
+<div>
+	<table>
+		<form action="news_do.php?edit=1&action=1&news_no=<{$news_no}>" method="post" enctype="multipart/form-data">
+			<tr>
+			<td>標題：</td><td><input type="text" name="title" value="<{$title}>"></td>
+			</tr>
+			<tr>
+			<td>置頂：</td><td align="left"><{if $top==1}><input type="radio" name="top" value="1" checked>是<input type="radio" name="top" value"0">否<{/if}><{if $top==0}><input type="radio" name="top" value="1">是<input type="radio" name="top" value"0" checked>否<{/if}></td>
+			</tr>
+			<tr>
+			<td valign="top">內容：</td><td><textarea rows="20" cols="140" name="content"><{$content}></textarea></td>
+			</tr>
+            <tr>
+            <td>寄發站內信？</td><td><input type="checkbox" name="sendmail" /></td>
+            </tr>
+			<tr>
+			<td valign="top">已上傳檔案：</td>
+			<td>
+			<{section loop=$upfiled name=dis}>
+				<a href="upfile/fileofnews<{$upfiled[dis].news_no}>/<{$upfiled[dis].fname}>" target="_blank"><{$upfiled[dis].fname}><br></a>
+			<{/section}>
+			</td>
+			</tr>
+			<tr>
+			<td>上傳檔案：</td><td align="left"><input type="file" name="upfile"></td>
+			</tr>
+			<tr>
+			<td colspan="2" align="center"><input type="submit" value="確認"><input type="reset" value="復原"><input type="button" onClick="history.go(-1)" value="放棄"></td>
+			</tr>
+		</form>
+	</table>
+</div>

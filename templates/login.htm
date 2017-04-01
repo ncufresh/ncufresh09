@@ -1,0 +1,24 @@
+<div >使用者登入</div>
+<div style="magin:0 auto;">
+  <form method="post" action="<{$currconfig->url}>/include/user.php">
+    <table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse" align="center">
+      <tr>
+        <td colspan="2" align="center"><span style="font-weight: bold; color: #FF0000;"><{$msg}></span></td>
+      </tr>
+      <tr>
+        <td align="right">帳號</td>
+        <td align="left"><input type="text" name="id" size="10" /></td>
+      </tr>
+      <tr>
+        <td align="right">密碼</td>
+        <td align="left"><input type="password" name="pwd" size="10" /></td>
+      </tr>
+      <tr>
+        <td colspan="2" align="center"><input type="hidden" name="user_login" value="1" /><input type="submit" value="登入" />&nbsp;&nbsp;<input type="reset" value="取消" /></td>
+      </tr>
+      <tr>
+        <td colspan="2" align="center">還沒有帳號？<a href="<{$currconfig->url}>/register.php" title="註冊">註冊</a></td>
+      </tr>
+    </table>
+  </form>
+</div>

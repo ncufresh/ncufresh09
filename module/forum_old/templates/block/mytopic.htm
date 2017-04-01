@@ -1,0 +1,11 @@
+<table class="blockTable">
+  <tr>
+    <th>文章記錄</th>
+  </tr>
+<{foreach from=$block.mytopic item="topic"}>
+  <tr>
+    <td>&nbsp;&nbsp;<a href="<{$block.dirname}>/viewtopic.php?no=<{$topic.topic_no}>" title="閱讀文章"><{$topic.title|htmlencode}>&nbsp;(<{$topic.num}>)</a></td>
+  </tr>
+<{/foreach}>
+</table>
+

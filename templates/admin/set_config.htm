@@ -1,0 +1,32 @@
+<div>
+  <form method="post" action="">
+    <table border="1" cellpadding="3" cellspacing="0" align="center" style="border-collpase: collapsed;" width="400">
+      <thead>
+        <tr>
+          <th colspan="2" align="center">修改網站設定</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td align="right" width="120">網站標題</td>
+          <td><input type="text" name="site_name" size="20" value="<{$currconfig->site_name}>" /></td>
+        </tr>
+        <tr>
+          <td align="right">Session Name</td>
+          <td><input type="text" name="session_name" size="10" value="<{$currconfig->session_name}>" /></td>
+        </tr>
+        <tr>
+          <td align="right">Session Expire</td>
+          <td><input type="text" name="session_expire" size="10" value="<{$currconfig->session_expire}>" />(分鐘)</td>
+        </tr>
+        <tr>
+          <td align="right">是否開放註冊</td>
+          <td><input type="radio" name="openreg" value="1" <{if ($currconfig->openreg == 1)}>checked <{/if}>/>是<input type="radio" name="openreg" value="0" <{if ($currconfig->openreg == 0)}>checked <{/if}>/>否</td>
+        </tr>
+        <tr>
+          <td colspan="2" align="center"><input type="hidden" name="set_config" value="1" /><input type="submit" value="更改" />&nbsp;&nbsp;<input type="reset" value="重設" /></td>
+        </tr>
+      </tbody>
+    </table>
+  </form>
+</div>

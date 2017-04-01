@@ -1,0 +1,16 @@
+<div id="must_container">
+  <div id="must_top" style="background-image:url(templates/images/E01_<{$curr_cat}>.gif)"></div>
+  <div id="must_center">
+    <div id="must_center_l">
+    <{section name=l loop=$menu_arr}>
+    <a href="<{$menu_arr[l].hyperlink}>"><{$menu_arr[l].title}></a><br />
+    <{/section}>
+    </div>
+    <div id="must_center_r_contents">
+    <div class="must_title"><{$cat_id_request_arr.title}></div><br />
+    <div class="must_cont"><{$topic_arr.main}></div>
+    </div>
+  </div>
+  <div id="must_bottom"></div>
+</div>
+<br class="clear" />&nbsp;

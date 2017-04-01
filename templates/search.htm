@@ -1,0 +1,10 @@
+<div style="border:1px solid #dfdfdf; margin-left:5px;">
+	<div>共搜尋到<{$count}>個結果</div>
+
+	<{section name=res loop=$result.data}>
+		<div><a href="<{$result.data[res].url}>"><{$result.data[res].title}></a>
+    	    	<blockquote><div><{$result.data[res].content}></div></blockquote>
+		</div>
+		-----------------------------------------------------------------------------
+	<{/section}>
+</div>

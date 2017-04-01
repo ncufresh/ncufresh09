@@ -1,0 +1,16 @@
+<table>
+<tr><td>群組名稱</td><td>介紹</td></tr>
+<{section name=listGroup loop=$group}>
+<tr>
+	<td>
+		<a href="group.php?gno=<{$group[listGroup].gno}>" title="詳細介紹"><{$group[listGroup].name}></a>
+	</td>
+	<td>
+		<{$group[listGroup].introduce}>
+	</td>
+	<td>
+		<a href="group.php?gno=<{$group[listGroup].gno}>&apply=1" title="申請加入">申請加入</a>
+	</td>
+</tr>
+<{/section}>
+</table>

@@ -1,0 +1,24 @@
+<div id="cats_bg">
+  <div style="float: left;">
+    <{$c_block}>
+  </div>
+  <div style="float: right; padding: 0px 5px;">
+<{if ($category)}>
+<{foreach from=$category item="item"}>
+    <div class="category_b_top"><h1><{$item.name|htmlencode}></h1></div>
+    <div class="category_b_content">
+<{foreach from=$item.child item="child"}>
+      <a href="view.php?tno=<{$child.tno}>" title="<{$child.title|htmlencode}>"><{$child.title|htmlencode}></a>&nbsp;&nbsp;
+<{/foreach}>
+    </div>
+<{/foreach}>
+<{else}>
+    <div class="category_b_top"><h1><{$_WikiCat->name|htmlencode}></h1></div>
+    <div class="category_b_content">
+<{foreach from=$topic item="item"}>
+      <a href="view.php?tno=<{$item.tno}>" title="<{$item.title|htmlencode}>"><{$item.title|htmlencode}></a>&nbsp;&nbsp;
+<{/foreach}>
+    </div>
+<{/if}>
+  </div>
+</div>

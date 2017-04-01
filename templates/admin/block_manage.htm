@@ -1,0 +1,28 @@
+<div>
+  <form method="post" action="">
+    <table border="1" cellpadding="3" cellspacing="0" align="center" style="border-collapse: collapse" width="400">
+        <tr>
+          <th align="center">區塊名稱</th>
+          <th>模組</th>
+          <th>顯示位置</th>
+          <th>順位</th>
+        </tr>
+<{foreach from=$block_list item="block"}>
+        <tr>
+          <td><{$block.name}></td>
+          <td><{$block.module_name}></td>
+          <td>
+            <select name="side[<{$block.bno}>]" size="1">
+              <option value="0"<{if ($block.side == 0)}> selected<{/if}>>0</option>
+              <option value="2"<{if ($block.side == 2)}> selected<{/if}>>2</option>
+            </select>
+          </td>
+          <td><input type="text" name="ord[<{$block.bno}>]" value="<{$block.ord}>" size="3" /></td>
+        </tr>
+<{/foreach}>
+      <tr>
+        <td colspan="4" align="center"><input type="hidden" name="block_manage" value="1" /><input type="submit" value="修改" /></td>
+      </tr>
+    </table>
+  </form>
+</div>

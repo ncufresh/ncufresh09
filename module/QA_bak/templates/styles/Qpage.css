@@ -1,0 +1,218 @@
+@charset "utf-8";
+/* CSS Document */
+
+#QA_MAIN_OUTER{
+	width:100%;
+	height:100%;
+	display:block;
+	padding-left:25px;
+}
+
+#QA_navigate_bar_page{
+	padding: 10px 5px;
+	width:620px;
+    margin-bottom:10px;
+}
+
+#QA_navigate_bar{
+	height:35px;
+    width:620px;
+}
+
+#QA_IhaveQuestion{
+	width:84px;
+	height:33px;
+	display:inline-block;
+	background:url('../images/iconNew.gif');
+}
+
+#QA_IReQuestion{
+	width:84px;
+	height:33px;
+	display:inline-block;
+	background:url('../images/iconFeeback.gif');
+}
+
+#QA_navigate_bar{
+	color:#394d26;
+}
+
+#QA_pageNavigate{
+	font-size:15px;
+	margin-left:220px;
+	margin-top:-10px;
+	display:inline-block;
+}
+#QA_pageNavigateEnd{
+	font-size:15px;
+	margin-bottom:-12px;
+	display:inline-block;
+    float:right;
+}
+
+.QA_page_select{
+	border:solid 1px #999999;
+	display:inline-block;
+	height:15px;
+	padding:1px 3px;
+}
+
+.QA_page_select2{
+	border:solid 1px #999999;
+	display:inline-block;
+	height:15px;
+}
+
+.QA_divideBAR{
+	width:620px;
+	height:12px;
+	display:block;
+	background:url('../images/barDevide.gif');
+}
+
+.QA_divideBARre{
+	width:620px;
+	height:12px;
+	display:block;
+	background:url('../images/barFeeback.gif');
+}
+.QA_rightcontent{
+	width:450px;
+	min-height:200px;
+	margin-top:10px;
+	float: left;
+	display:block;
+
+}
+.QA_leftcontent{
+	width:150px;
+	min-height:220px;
+	margin-top:10px;
+	float: left;
+	display:block;
+}
+.QA_img{
+	width:120px;
+	height:120px;
+	margin-top:10px;
+	margin-left:10px;
+	float: left;
+	display:block;
+}
+.QA_title{
+	width:350px;
+	min-height:40px;
+	display:block;
+	margin-left:10px;
+	font-size:18px;
+	float:left;
+	color:#af2323;
+	clear:both;
+	overflow: hidden;
+}
+.QA_re{
+	width:65px;
+	height:40px;
+	white-space:normal;
+	margin-right:2px;
+	color:#999999;
+	font-size:80%;
+	float: right;
+	display:block;
+}
+.QA_change{
+	width:65px;
+	height:40px;
+	margin-right:2px;
+	color:#999999;
+	font-size:80%;
+	float: right;
+	display:block;
+}
+.QA_reNew{
+	width:100px;
+	height:40px;
+	margin-right:5px;
+	color:#af2323;
+	float: right;
+	display:block;
+}
+.QA_author{
+	width:300px;
+	height:40px;
+	margin-left:10px;
+	color:#333333;
+	float: left;
+	display:block;
+}
+.QA_time{
+	width:200px;
+	height:40px;
+	margin-right:-20px;
+	color:#999999;
+	font-size:80%;
+	float: right;
+	display:block;
+}
+.RA_author{
+	width:120px;
+	height:10px;
+	margin-left:10px;
+	font-size:80%;
+	color:#333333;
+}
+
+.RA_name{
+	width:120px;
+	height:10px;
+	margin-left:10px;
+	font-size:80%;
+	color:#333333;
+}
+
+.RA_dep{
+	width:120px;
+	height:10px;
+	margin-left:10px;
+	font-size:80%;
+	color:#333333;
+}
+
+.RA_floor{
+	width:100px;
+	height:100px;
+	margin-left:400px;
+	font-size:80%;
+	color:#999999;
+}
+
+.RA_content{
+	width:400px;
+	min-height:160px;
+	display:block;
+	margin-left:10px;
+	font-size:80%; 
+	float: left;
+	color:#333333;
+	overflow: hidden;
+}	
+.QA_content{
+	width:400px;
+	min-height:120px;
+	display:block;
+	margin-left:10px;
+	font-size:80%; 
+	float: left;
+	color:#333333;
+	overflow: hidden;
+}	
+.QA_submit{
+	float:right;
+	margin-right:60px;
+	display:block;
+}
+
+#QA_ReplyArea{
+	width:620px;
+}
+

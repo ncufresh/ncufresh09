@@ -1,0 +1,94 @@
+@charset "utf-8";
+/* CSS Document */
+#background
+{
+
+ background:url(shop_pic/motorBackground.gif);
+	background-position:top center; 
+}
+
+.center
+{
+ background-image:url(shop_pic/Motorback.gif);
+ background-repeat:no-repeat;
+ margin-left:95px;
+ width:800px;
+ height:781px;
+
+}
+
+.head
+{
+ margin-left:73px;
+ margin-top:180px;
+ position:absolute;
+}
+.funny
+{
+ margin-left:50px;
+ margin-top:355px;
+ position:absolute;
+}
+
+.money
+{
+ width:213px;
+ height:48px;
+ margin-left:550px;
+ margin-top:70px;
+ position:absolute;
+ background:url(shop_pic/motormoney.gif);
+}
+
+.coin
+{
+margin-left:659px;
+margin-top:77px;
+color:#71521d;
+font-size:25px;
+position:absolute;
+}
+
+#space
+{
+margin-left:280px;
+margin-top:170px;
+color:#71521d;
+font-size:11px;
+width:491px;
+height:573px;
+position:absolute;
+background:url(shop_pic/motorframe.png);
+}
+#good_space
+{
+height:500px;
+margin-left:15px;
+margin-top:18px;
+overflow-y:scroll;
+position:absolute;
+width:464px;
+}
+
+.good
+{
+float:left;
+height:200px;
+margin-left:10px;
+margin-top:20px;
+max-width:134px;
+width:134px;
+}
+
+.down
+{
+margin-left:384px;
+margin-top:526px;
+}
+#speek
+{
+margin-left:4%;
+margin-top:3%;
+position:absolute;
+font-size:10px;
+}

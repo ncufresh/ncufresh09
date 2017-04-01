@@ -1,0 +1,41 @@
+<{if (!$curruser->isguest())}>
+<script type="text/javascript">
+	function show_msg_status(req)
+	{
+		var msg_num = req.responseText;
+
+		var status = (msg_num > 0) ? '<a href="<{$block.dirname}>/msgbox.php" title="訊息信箱">您有 ' + msg_num + ' 封新訊息</a>' : '您沒有新訊息';
+
+		$('msg_status').innerHTML = status;
+	}
+
+	function get_msg_status()
+	{
+		var parms = "unread=1";
+
+		var req = new Ajax.Request("<{$block.dirname}>/msgbox_do.php", {method: "get", parameters: parms, onComplete: show_msg_status});
+
+		setTimeout(get_msg_status, 60 * 1000);
+	}
+
+	get_msg_status();
+</script>
+
+<div id="block_user_status">
+<div id="block_user_status_data">
+<div>Hi~, <{$block.name}> </div>
+<p id="msg_status"><{$block.unreadmail}></p>
+<p>
+	<a id="img_link01" href="<{$block.dirname}>/edit_pfile.php" title="個人資料"><span>個人資料</span></a>
+	<a id="img_link02" href="<{$currconfig->url}>/module/forum/myquestion.php" title="問題紀錄"><span>問題紀錄</span></a>
+	<a id="img_link03" href="<{$block.dirname}>/friendlist.php" title="好友名單"><span>好友名單</span></a>
+</p>
+<p>
+	<a id="img_link04" href="<{$block.dirname}>/msgbox.php" title="個人信箱"><span>個人信箱</span></a>
+	<a id="img_link05" href="<{$currconfig->url}>/module/schedule/" title="行事曆"><span>行事曆</span></a>
+	<a id="img_link06" href="<{$currconfig->url}>/include/user.php?user_logout=1" title="登出"><span>登出</span></a>
+</p>
+<div style="clear:both"></div>
+</div>
+</div>
+<{/if}>

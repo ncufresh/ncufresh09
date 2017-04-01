@@ -1,0 +1,26 @@
+<{include file="topic_header.htm"}>
+<div class="cate_field">
+  <div class="cate_menu_top">
+    <{foreach from=$cate item="pcat" name=cate}>
+    <div class="cate_<{if $smarty.foreach.cate.iteration %2 == 0}>1<{else}>2<{/if}>">
+       <div class="pcat_menu"><{$pcat.name|htmlencode}></div>
+       <div class="cate_menu">
+	       <table ><tr>
+       <{foreach from=$pcat.child item="ccat" name=child}>
+       <td class="child<{if $smarty.foreach.child.last && $smarty.foreach.child.iteration%4!=0}>2<{/if}>" <{if $smarty.foreach.child.last}>colspan="2"<{/if}>>
+	       <{if $ccat.showlink==1}>
+	       <a href="view.php?tno=<{$ccat.tno}>" title="<{$ccat.title|htmlencode}>" class="menu">
+	       <{/if}>
+	       <{$ccat.title|htmlencode}>
+	       <{if $ccat.showlink==1}>
+               </a>
+               <{/if}>
+       </td><{if $smarty.foreach.child.iteration%4 == 0 && $smarty.foreach.child.iteration!=0}></tr><tr><{/if}>
+       <{/foreach}>
+       </tr></table>
+       </div>
+    </div>
+    <{/foreach}>
+  </div>
+  <br/>
+</div>

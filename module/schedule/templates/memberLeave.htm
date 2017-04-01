@@ -1,0 +1,10 @@
+<center>
+  <table border="1" width="500px">
+    <tr style="text-align: center;"><td width="440px">群組名稱</td><td width="60px">退出群組</td></tr>
+<{section name="groupTotal" loop=$groupTotal}>
+    <tr>
+      <td><{$groupTotal[groupTotal].name}></td><td><a href="memberLeave.php?gno=<{$groupTotal[groupTotal].gno}>">退出</a></td>
+    </tr>
+<{/section}>
+  </table>
+</center>

@@ -1,0 +1,13 @@
+<style type="text/css">
+
+.HomeAd1 {
+	width: 136px;
+	height: 40px;
+	margin-bottom: 5px;
+}
+
+
+</style>
+<{section name=HomeAd loop=$block.img}>
+  <div class="HomeAd1"><a target="_blank" href="<{$block.img[HomeAd].url}>"><img border="0" src="<{$block.img[HomeAd].img}>" /></a></div>
+<{/section}>

@@ -1,0 +1,31 @@
+<script type="text/javascript">
+	function show_chk_uid(req)
+	{
+		$('chk_uid').innerHTML = (req.responseText == "exists") ? '' : '<font color="#FF0000">錯誤的使用者帳號</font>';
+	}
+
+	function chk_uid()
+	{
+		if (!document.msg_send.fid.value)
+			return false;
+
+		var parms = "chk_uid=1&uid=" + document.msg_send.fid.value;
+
+		var req = new Ajax.Request("<{$currconfig->url}>/include/user.php", {method: "get", parameters: parms, onComplete: show_chk_uid});
+	}
+</script>
+<form method="post" action="msgsend.php" id="msg_send" name="msg_send" onSubmit="
+  	if (!this.fid.value && document.msg_send.group.value == 0) {alert('請輸入收件人'); this.fid.focus(); return false;}
+	if (!this.title.value) {alert('請輸入標題'); this.title.focus(); return false;}
+	if (!this.content.value) {alert('請輸入內容'); this.content.focus(); return false;}" >
+<div id="ma_container">
+  <div class="ma_read_title" style="font-size:16px;">標　題：<input type="text" name="title" value="<{$title|htmlencode}>" size="40" /></div>
+  <div class="ma_read_detail">收件者：<input type="text" name="fid" value="<{$fid}>" size="40" onBlur="javascript: chk_uid()" /><span id="chk_uid" style="margin: 0px 10px;font-size:11pt;"></span></div>
+  <div class="ma_read_content">
+  內容：<br />
+  <textarea style="font-size: 16px;" name="content" rows="20" cols="100"></textarea><br />
+  <input type="submit" value="送出" class="button" style="font-size:12pt"/><input type="reset" value="清除" class="button" style="font-size:12pt"/>
+  <a href="redirect.php?1">[上一頁]</a>
+  </div>
+</div>
+</form>

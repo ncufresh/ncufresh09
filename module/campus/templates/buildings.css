@@ -1,0 +1,479 @@
+@charset "utf-8";
+/* CSS Document */
+.buildings{
+	position:absolute;
+	float:left;
+	display:inline-block;
+	background:no-repeat;
+}
+
+.campus_sport{
+}
+.campus_depart{
+}
+.campus_learn{
+}
+.campus_adm{
+}
+
+
+#building1{
+	background-image:url(images/01.png);
+	width:197px;
+	height:100px;
+	margin-top:305px;
+	margin-left:291px;
+}
+
+#building2{
+	background-image:url(images/02.png);
+	width:36px;
+	height:48px;
+	margin-top:329px;
+	margin-left:464px;
+}
+
+#building3{
+	background-image:url(images/03.png);
+	width:147px;
+	height:61px;
+	margin-top:736px;
+	margin-left:402px;
+}
+
+#building4{
+	background-image:url(images/04.png);
+	width:154px;
+	height:113px;
+	margin-top:372px;
+	margin-left:678px;
+}
+
+#building5{
+	background-image:url(images/05.png);
+	width:145px;
+	height:71px;
+	margin-top:372px;
+	margin-left:232px;
+}
+
+#building6{
+	background-image:url(images/06.png);
+	width:46px;
+	height:37px;
+	margin-top:413px;
+	margin-left:320px;
+}
+#building7{
+	background-image:url(images/07.png);
+	width:53px;
+	height:34px;
+	margin-top:350px;
+	margin-left:478px;
+}
+
+#building8{
+	background-image:url(images/08.png);
+	width:80px;
+	height:55px;
+	margin-top:352px;
+	margin-left:399px;
+}
+#building9{
+	background-image:url(images/09.png);
+	width:52px;
+	height:26px;
+	margin-top:369px;
+	margin-left:486px;
+}
+
+#building10{
+	background-image:url(images/10.png);
+	width:54px;
+	height:26px;
+	margin-top:390px;
+	margin-left:523px;
+}
+
+#building11{
+	background-image:url(images/11.png);
+	width:121px;
+	height:18px;
+	margin-top:397px;
+	margin-left:401px;
+}
+
+#building12{
+	background-image:url(images/12.png);
+	width:46px;
+	height:24px;
+	margin-top:402px;
+	margin-left:547px;
+}
+
+#building13{
+	background-image:url(images/13.png);
+	width:60px;
+	height:31px;
+	margin-top:424px;
+	margin-left:552px;
+}
+
+#building14{
+	background:url(images/14.png);
+	width:46px;
+	height:44px;
+	margin-top:405px;
+	margin-left:367px;
+}
+
+#building15{
+	background-image:url(images/15.png);
+	width:77px;
+	height:71px;
+	margin-top:389px;
+	margin-left:484px;
+}
+
+#building16{
+	background-image:url(images/16.png);
+	width:157px;
+	height:67px;
+	margin-top:386px;
+	margin-left:366px;
+}
+#building17{
+	background-image:url(images/17.png);
+	width:157px;
+	height:106px;
+	margin-top:341px;
+	margin-left:539px;
+}
+
+#building18{
+	background-image:url(images/18.png);
+	width:99px;
+	height:59px;
+	margin-top:418px;
+	margin-left:310px;
+}
+#building19{
+	background-image:url(images/19.png);
+	width:77px;
+	height:69px;
+	margin-top:426px;
+	margin-left:229px;
+}
+
+#building20{
+	background-image:url(images/20.png);
+	width:87px;
+	height:49px;
+	margin-top:476px;
+	margin-left:691px;
+}
+
+#building21{
+	background-image:url(images/21.png);
+	width:105px;
+	height:63px;
+	margin-top:445px;
+	margin-left:272px;
+}
+
+#building22{
+	background-image:url(images/22.png);
+	width:101px;
+	height:76px;
+	margin-top:446px;
+	margin-left:638px;
+}
+
+#building23{
+	background-image:url(images/23.png);
+	width:90px;
+	height:57px;
+	margin-top:495px;
+	margin-left:720px;
+}
+
+#building24{
+	background-image:url(images/24.png);
+	width:67px;
+	height:42px;
+	margin-top:511px;
+	margin-left:688px;
+}
+
+#building25{
+	background-image:url(images/25.png);
+	width:75px;
+	height:53px;
+	margin-top:529px;
+	margin-left:756px;
+}
+
+#building26{
+	background-image:url(images/26.png);
+	width:103px;
+	height:73px;
+	margin-top:522px;
+	margin-left:688px;
+}
+#building27{
+	background-image:url(images/27.png);
+	width:103px;
+	height:77px;
+	margin-top:544px;
+	margin-left:768px;
+}
+
+#building28{
+	background-image:url(images/28.png);
+	width:157px;
+	height:122px;
+	margin-top:528px;
+	margin-left:674px;
+}
+#building29{
+	background-image:url(images/29.png);
+	width:134px;
+	height:124px;
+	margin-top:363px;
+	margin-left:762px;
+}
+#building30{
+	background-image:url(images/30.png);
+	width:103px;
+	height:63px;
+	margin-top:433px;
+	margin-left:421px;
+}
+
+
+#building31{
+	background-image:url(images/31.png);
+	width:48px;
+	height:29px;
+	margin-top:648px;
+	margin-left:742px;
+}
+
+#building32{
+	background-image:url(images/32.png);
+	width:159px;
+	height:139px;
+	margin-top:605px;
+	margin-left:787px;
+}
+
+#building33{
+	background-image:url(images/33.png);
+	width:130px;
+	height:65px;
+	margin-top:652px;
+	margin-left:705px;
+}
+
+#building34{
+	background-image:url(images/34.png);
+	width:409px;
+	height:25px;
+	margin-top:497px;
+	margin-left:250px;
+}
+
+#building35{
+	background-image:url(images/35.png);
+	width:54px;
+	height:45px;
+	margin-top:451px;
+	margin-left:541px;
+}
+
+#building36{
+	background-image:url(images/36.png);
+	width:47px;
+	height:27px;
+	margin-top:520px;
+	margin-left:586px;
+}
+#building37{
+	background-image:url(images/37.png);
+	width:170px;
+	height:113px;
+	margin-top:458px;
+	margin-left:380px;
+}
+
+#building38{
+	background-image:url(images/38.png);
+	width:185px;
+	height:94px;
+	margin-top:526px;
+	margin-left:371px;
+}
+#building39{
+	background-image:url(images/39.png);
+	width:194px;
+	height:89px;
+	margin-top:543px;
+	margin-left:515px;
+}
+#building40{
+	background-image:url(images/40.png);
+	width:162px;
+	height:107px;
+	margin-top:512px;
+	margin-left:198px;
+}
+
+
+#building41{
+	background-image:url(images/41.png);
+	width:228px;
+	height:105px;
+	margin-top:567px;
+	margin-left:346px;
+}
+
+#building42{
+	background-image:url(images/42.png);
+	width:47px;
+	height:58px;
+	margin-top:659px;
+	margin-left:428px;
+}
+
+#building43{
+	background-image:url(images/43.png);
+	width:44px;
+	height:29px;
+	margin-top:544px;
+	margin-left:689px;
+}
+
+#building44{
+	background-image:url(images/44.png);
+	width:80px;
+	height:39px;
+	margin-top:464px;
+	margin-left:783px;
+}
+
+#building45{
+	background-image:url(images/45.png);
+	width:24px;
+	height:35px;
+	margin-top:489px;
+	margin-left:809px;
+}
+
+#building46{
+	background-image:url(images/46.png);
+	width:156px;
+	height:114px;
+	margin-top:441px;
+	margin-left:777px;
+}
+#building47{
+	background-image:url(images/47.png);
+	width:106px;
+	height:71px;
+	margin-top:660px;
+	margin-left:297px;
+}
+
+#building48{
+	background-image:url(images/48.png);
+	width:96px;
+	height:69px;
+	margin-top:464px;
+	margin-left:101px;
+}
+#building49{
+	background-image:url(images/49.png);
+	width:51px;
+	height:39px;
+	margin-top:513px;
+	margin-left:106px;
+}
+#building50{
+	background-image:url(images/50.png);
+	width:96px;
+	height:87px;
+	margin-top:451px;
+	margin-left:150px;
+}
+
+
+#building51{
+	background-image:url(images/51.png);
+	width:124px;
+	height:109px;
+	margin-top:476px;
+	margin-left:30px;
+}
+
+#building52{
+	background-image:url(images/52.png);
+	width:73px;
+	height:76px;
+	margin-top:538px;
+	margin-left:99px;
+}
+
+#building53{
+	background-image:url(images/53.png);
+	width:84px;
+	height:69px;
+	margin-top:536px;
+	margin-left:31px;
+}
+
+#building54{
+	background-image:url(images/54.png);
+	width:69px;
+	height:49px;
+	margin-top:529px;
+	margin-left:148px;
+}
+
+#building55{
+	background-image:url(images/55.png);
+	width:107px;
+	height:108px;
+	margin-top:519px;
+	margin-left:103px;
+}
+
+#building56{
+	background-image:url(images/56.png);
+	width:117px;
+	height:102px;
+	margin-top:568px;
+	margin-left:74px;
+}
+#building57{
+	background-image:url(images/57.png);
+	width:136px;
+	height:157px;
+	margin-top:561px;
+	margin-left:0px;
+}
+
+#building58{
+	background-image:url(images/58.png);
+	width:200px;
+	height:89px;
+	margin-top:646px;
+	margin-left:92px;
+}
+#building59{
+	background-image:url(images/59.png);
+	width:98px;
+	height:88px;
+	margin-top:709px;
+	margin-left:82px;
+}
+

@@ -1,0 +1,19 @@
+<{if (!$curruser->isguest())}>
+<div class="list_group">
+<table border="0" style="width:100%">
+	<form action="memberChange.php?del=1" method="post">
+	<{foreach from=$block.group item="group" name="listGroup"}>
+<{if ($smarty.foreach.listGroup.iteration%2 == 1)}><tr><{/if}>
+	<td style="width:40%">
+		<input style="margin:5px" type="checkbox" name="chk[]" value="<{$group.gno}>" /><a href="<{$block.dirname}>/group.php?gno=<{$group.gno}>" title="<{$group.level}>"><{$group.name}></a>	</td>
+	<td style="width:10%"><img src="templates/images/<{$group.level}>.gif"/></td>
+<{if ($smarty.foreach.listGroup.iteration%2 == 0)}></tr><{/if}>
+	<{/foreach}>
+	<{if $smarty.foreach.listGroup.total %2 == 1}> <td>&nbsp;</td></tr><{/if}>
+	<tr><td colspan="6" align="center">
+		<input type="submit" value="DELETE"/>
+	</td></tr>
+	</form>
+</table>
+</div>
+<{/if}>

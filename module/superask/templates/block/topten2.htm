@@ -1,0 +1,43 @@
+<style type="text/css">
+#topten_up
+{
+	margin: 0px;
+	background: url("<{$block.dirname}>/templates/images/front_top.jpg") no-repeat;
+	width: 190px;
+	height: 45px;
+}
+
+#topten_content
+{
+	margin: 0px;
+	background: url("<{$block.dirname}>/templates/images/front_bg.jpg") repeat-y;
+	overflow: hidden;
+	padding: 0px 10px;
+	width: 170px;
+}
+
+#topten_content a
+{
+	color: #333333;
+}
+
+#topten_bottom
+{
+	margin: 0px;
+	background: url("<{$block.dirname}>/templates/images/front_down.jpg") no-repeat;
+	width: 190px;
+	height: 20px;
+}
+</style>
+
+<p id="topten_up"></p>
+<div id="topten_content">
+  <table border="0" cellpadding="3" cellspacing="0" style="border-collapse: collapse;" width="100%">
+<{foreach from=$block.topic item="item"}>
+    <tr>
+      <td><a href="<{$block.dirname}>/view.php?tno=<{$item.tno}>" title="<{$item.title|htmlencode}>"><{$item.title|htmlencode}></a></td>
+    </tr>
+<{/foreach}>
+  </table>
+</div>
+<p id="topten_bottom"></p>

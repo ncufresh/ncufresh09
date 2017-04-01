@@ -1,0 +1,141 @@
+.list_group
+{
+	margin: 10px 50px;
+}
+
+.list_group a{
+	color:#000;
+	text-decoration:none;
+}
+
+/* .week for a row
+ * .data for content
+ * .day for every td have date
+ *
+ * .dnext for next month
+ * .dlast for last month
+ * .today for today
+ * 
+ * .w0 ~ .w6 for sunday ~ saturday
+ *
+ * .dselected for selected
+ *
+ * .mmin for mini mode
+ * .mday for day mode
+ * .mweek for week mode
+ * .mmon for mon mode
+ *
+ * .mwd for day or week or mon mode
+ * */
+.calhead {
+	background: url('images/calhead.gif');
+	height: 84px;
+	width: 541px;
+	margin: 0 auto;
+	font-size: 20pt;
+	font-weight: bold;
+	color: white;
+	padding: 0px;
+}
+.calhead a {
+	color: white;
+}
+.caledit {
+	width: 138px;
+	height: 48px;
+	text-align: center;
+	background: url('images/add.gif') no-repeat;
+	float: right;
+	text-decoration: none;
+}
+.caledit a span {visibility: hidden;}
+.caledit a { color: black; width:138px; height: 48px; display: block; text-decoration: none;}
+.calfun a { 
+	float: left; 
+	font-weight: bold;
+	font-size: 20pt; 
+	color: white; 
+}
+.calback {
+	background: url('images/calback.gif');
+	width: 525px;
+	margin: 0 auto;
+	padding: 0 8px;
+}
+.calbottom {
+	background: url('images/calbottom.gif');
+	height: 11px;
+	width: 541px;
+	margin: -4px auto 0 auto;
+	font-size: 0pt;
+}
+/*
+.mmin {width:50px; margin:0 auto; background: #EEF;}
+.mmin td {margin: 1px; background: #D0DCE0; width: 87px; vertical-align: top;}
+.mmin caption {margin: 0px auto; font-size: 10pt; text-align: center; font-weight: bold;}
+.mmin .w0, 
+.mmin .w6 {background: #E0D0D0;}
+.mmin .week .dlast, 
+.mmin .week .dnext {background: #EEF; color: #EEF;}
+.mmin .week .day:hover {background: #AAA;}
+.mmin .data {font-weight: bold;}
+*/
+.sch {
+	width: 100%;
+	border-collapse:separate;
+}
+.sch td {
+	padding: 1px;
+}
+.dlast, .dnext {
+	color: #AAA;
+}
+
+.mmon .daylimit {
+	height: 70px;
+	overflow: auto;
+}
+.mmon .caleven1
+{
+	background: #ddd;
+}
+
+.mmon {
+	border: 0px;
+/*	background: url('images/calback.gif') 50%;*/
+}
+.mmon td {
+	margin: 0 10px;
+	vertical-align: top;
+	border-bottom: 2px solid #ADF;
+}
+.mmon .w0 , .mmon .w0 .daylimit { width: 65px; }
+.mmon .w1 , .mmon .w1 .daylimit { width: 72px; }
+.mmon .w2 , .mmon .w2 .daylimit { width: 72px; }
+.mmon .w3 , .mmon .w3 .daylimit { width: 71px; }
+.mmon .w4 , .mmon .w4 .daylimit { width: 72px; }
+.mmon .w5 , .mmon .w5 .daylimit { width: 72px; }
+.mmon .w6 , .mmon .w6 .daylimit { width: 72px; }
+
+.mday-td {
+	font-size: 20pt;
+	padding: 20px;
+}
+.mday-td .daylimit div {
+	font-size: 14pt;
+}
+.mday-td .sch_content {
+	padding: 30px 10px 10px;
+	overflow: hidden;
+	background: #d6eca0;
+	margin-bottom: 10px;
+}
+
+#actadd p
+{
+	margin-left: 20px;
+}
+#actadd input , #actadd textarea
+{
+	margin-left: 20px;
+}

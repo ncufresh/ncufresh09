@@ -1,0 +1,29 @@
+<script type="text/javascript">
+	function unsubscribe(type, no)
+	{
+		var parms = 'unsubscr_' + type + '=1&no=' + no;
+
+		var req = new Ajax.Request("<{$block.dirname}>/do_subscribe.php", {method: "post", parameters: parms, onComplete: function(q){alert('已取消訂閱'); document.location.href = '<{$currconfig->phpself}>';}});
+	}
+</script>
+<table class="blockTable">
+  <tr>
+    <th colspan="3">訂閱<{$block.desc}>列表</th>
+  </tr>
+  <tr>
+    <td width="15%">取消</td>
+    <td width="70%">標題</td>
+    <td width="15%">篇數</td>
+  </tr>
+<{foreach from=$block.subscri item="object"}>
+  <tr>
+	<td width="15%">
+		<a href="javascript: unsubscribe('<{$block.type}>', <{$object.no}>);" title="刪除文章">[del]</a>
+	</td>
+	<td width="70%">
+		<a href="<{$block.dirname}>/view<{$block.type}>.php?no=<{$object.no}>" title="閱讀文章"><{$object.title|htmlencode}></a>
+	</td>
+	<td width="15%"><{$object.num}></td>
+  </tr>
+<{/foreach}>
+</table>

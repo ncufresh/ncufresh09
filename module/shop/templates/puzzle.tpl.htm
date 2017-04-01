@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>無標題文件</title>
+</head>
+
+<body>
+<script language="javascript">
+var btn="#draggable";
+function k($i){
+	J(btn+$i).draggable();
+};
+</script>
+
+<style type="text/css">
+	.ui-widget-content { 
+	width: 100px;
+	height:100px
+	}
+	</style>
+	
+<{section name=i loop=$puzzle}>
+<div id="draggable<{$puzzle[i].ino}>" class="ui-widget-content">
+<img width="100px" height="100px" src="./items_pic/<{$puzzle[i].pic}>" alt="圖片生產中" onmousedown="k(<{$puzzle[i].ino}>)"/>
+</div>
+<{/section}>
+
+</body>
+</html>

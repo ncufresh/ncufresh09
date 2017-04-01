@@ -1,0 +1,64 @@
+@charset "utf-8";
+/* CSS Document */
+
+.table{
+	border:2px solid #FFFFFF;
+	background-color:#FFF;
+	margin-left:5px;
+	margin-right:5px;
+	width:810px;
+	}
+
+
+.chart_1st{
+	height: 100px; 
+	width: 100px;
+	margin-left:400px;
+	margin-top:15px;
+	margin-right:15px;
+	clear:both;
+	}
+	
+.chart{
+	height: 100px; 
+	width: 100px;
+	margin-left:400px;
+	margin-top:15px;
+	margin-right:15px;
+	clear:both;
+	}
+
+.header{
+	width: 710px;
+	margin-left:80px;
+	font-weight: 468; 
+	background:url("images/QuLogo.gif") no-repeat;
+}
+	
+.question{
+	width: 550px; 
+	float:left;
+	margin-left:20px;
+	}
+
+.newquestion{
+	width: 810px; 
+	background-color: #FBDCFB;
+	clear:both;
+    padding:5px;	
+}
+	
+.chooses{
+	width: 810px; 
+	clear:both;
+	}
+	
+.choose{
+	width: 240px; 
+	margin-left:120px;
+	}
+
+.end{
+	width: 810px; 
+	}
+

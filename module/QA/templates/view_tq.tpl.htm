@@ -1,0 +1,23 @@
+<div id="qa_main_container">
+  <div id="qa_main_left">
+    <div id="view_tq_title"><{$currtq.TQtitle}></div>
+    <div id="view_tq_detail">
+    <{$currtq.TQcontent}>
+    </div>
+  </div>
+  <div id="qa_main_right">
+    <div id="tq_head"></div>
+    <div id="tq_center">
+    <{section name=tq loop=$tq_list_arr}>
+      <a href="view_tq.php?TQno=<{$tq_list_arr[tq].TQno}>">
+      <div class="tq_link">
+        <span class="tq_link_img"><img src="templates/images/tenQAicon<{$tq_list_arr[tq].TQno}>.gif" alt="QA1" /></span>
+        <span class="tq_link_text"><{$tq_list_arr[tq].TQtitle}></span>
+      </div>
+      </a>
+    <{/section}>
+    </div>
+    <div id="tq_bottom"></div>
+  </div>
+  <br class="clear" />&nbsp;
+</div>

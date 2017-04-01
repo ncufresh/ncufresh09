@@ -1,0 +1,27 @@
+<{if $block.topic}>
+<form action="<{$block.dirname}>/rm_subscribe.php" method="get">
+<input type="hidden" name="type" value="topic"/>
+<table style="width:100%;text-align:left;" id="_subscrtopic">
+<thead>
+	<tr>
+	<th width="10%">刪除</th>
+	<th width="35%">最後回覆</th>
+	<th width="55%">標題</th>
+	</tr>
+</thead>
+<tbody>
+	<tr><td colspan="3"><hr /></td></tr>
+<{foreach from=$block.topic item="object"}>
+	<tr>
+	<td><input style="margin-left:10px" type="checkbox" name="del[]" value="<{$object.topic_no}>" /></td>
+	<td><{$object.lasttime|date_format:"%Y-%m-%d %H:%M:%S"}></td>
+	<td><a href="<{$block.dirname}>/viewtopic.php?no=<{$object.topic_no}>" title="閱讀文章"><{$object.title|htmlencode}> (<{$object.num}>)</a></td>
+	</tr>
+<{/foreach}>
+	<tr><td colspan="3"><input type="button" value="反選" onclick="$$('#_subscrtopic input[type=checkbox]').each(function(th){ $(th).checked=! $(th).checked; });" /> <input type="submit" value="刪除勾選" /></td></tr>
+</tbody>
+</table>
+
+<{else}>
+<div class="notopic">沒有追蹤</div>
+<{/if}>

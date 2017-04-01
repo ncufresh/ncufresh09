@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<link rel="stylesheet" type="text/css" href="templates/style.css" />
+</head>
+
+<body>
+<form action="msgbox_do.php?msgdel=1" method="post">
+<div id="ma_container">
+  <div class="ma_mail_single" style="width:700px;" align="right">
+  <a href="msgsend.php" title="傳送訊息">[傳送訊息]</a>
+  </div>
+  <div class="ma_mail_single" style="font-size:18px;">
+    <div class="ma_mail_s_title">信件標題</div>
+    <div class="ma_mail_s_uid">寄件者</div>
+    <div class="ma_mail_s_datetime">發送時間</div>
+    <div class="ma_mail_s_delete">刪除?</div>
+  </div>
+  <div id="ma_mail_list">
+  <{section name="sec1" loop=$msgs}>
+    <div class="ma_mail_single">
+      <div class="ma_mail_s_title"><a href="msgbox_do.php?msgread=1&mno=<{$msgs[sec1].mno}>" title="閱讀訊息" style="color:#1f4652;"><{if ($msgs[sec1].status == 2)}><b><{$msgs[sec1].title}></b><{else}><{$msgs[sec1].title}><{/if}></a></div>
+      <div class="ma_mail_s_uid"><a href="show_pfile.php?uno=<{$msgs[sec1].sender_no}>" title="使用者資料" style="color:#690;"><{$msgs[sec1].sender_id}></a></div>
+      <div class="ma_mail_s_datetime"><{$msgs[sec1].time}></div>
+      <div class="ma_mail_s_delete"><a onClick="if(!confirm('確定刪除此信件?'))return false;" href="msgbox_do.php?msgdel=1&mno=<{$msgs[sec1].mno}>" title="刪除訊息">[刪除]</a></div>
+    </div>
+  <{/section}>
+  </div>
+  <div align="right" style="width: 720px;">共有<{$num}>封</div>
+</div>
+</form>
+</body>
+</html>

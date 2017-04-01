@@ -1,0 +1,157 @@
+@charset "utf-8";
+/* CSS Document */
+img{border: 0;}
+
+/* --- Container --- */
+#qa_main_container
+{
+	width: 946px;
+	min-height: 20px;
+	margin: auto;
+}
+
+#qa_main_left
+{
+	width: 640px;
+	min-height: 20px;
+	float: left;
+	padding: 0px 20px;
+}
+
+#qa_main_right
+{
+	width: 266px;
+	min-height: 20px;
+	float: left;
+}
+
+/* --- Topic Left --- */
+.qa_view_topic_main
+{
+	width: 590px;
+	min-height: 180px;
+	padding: 15px;
+	
+	color: #333333;
+	font-size: 12px;
+}
+
+.qa_view_topic_headicon
+{
+	width: 145px;
+	min-height: 180px;
+	float: left;
+}
+.qa_view_topic_headicon a
+{
+	color: #333333;
+}
+
+
+.qa_view_topic_detail
+{
+	width: 445px;
+	min-height: 180px;
+	float: left;
+}
+
+.qa_view_topic_title{	width: 345px;	height: 20px;	color: #AF2323;	font-size: 18px;	float: left;}
+.qa_view_topic_replies{	width: 100px;	height: 20px;	color: #999999;	font-size: 12px;	float: left;	text-align: right;}
+
+.qa_edit_button{	color: #999999;	text-align: right;}
+.qa_edit_button a{	color: #999999;}
+
+/* --- Left --- */
+.qa_button
+{
+	width: 84px;
+	height: 33px;
+	vertical-align: middle;
+	display: inline-block;
+}
+
+.qa_nav_bar
+{
+	color: #394D26;
+	vertical-align: middle;
+}
+
+.qa_nav_bar a{			border: #999999 solid 1px;	background-color: #FFFFFF;	padding: 1px;	font-size: 12px;}
+.qa_nav_bar a:hover{	background-color: #FADD19;}
+
+
+.qa_topic_container{	width: 590px;	height: 60px;	padding: 15px;}
+.qa_topic_headicon{		width: 75px;	height: 60px;	float: left}
+.qa_topic_title_author{	width: 320px;	height: 60px;	float: left;}
+.qa_topic_date{			width: 195px;	height: 60px;	float: left;	color:#999999;	font-size:12px;	text-align:right;}
+
+.qa_topic_span_title{	font-size: 18px;}
+.qa_topic_span_author{	font-size: 12px;	color: #333333;}
+
+/* --- Right --- */
+#tq_head{	background-image: url(images/tenQA01.gif);	width: 247px;	height: 55px;}
+#tq_center{	background-image: url(images/tenQA02.gif);	width: 231px;	min-height: 20px;	padding: 0px 8px;}
+
+.tq_link{	width: 215px;	height: 36px;	padding: 8px;}
+.tq_link:hover{	background: #B9C178 none repeat scroll 0 0;	text-decoration: none;}
+.tq_link_img{	vertical-align: middle;	display:inline-block;}
+.tq_link_text{	vertical-align: middle;}
+
+#tq_bottom{	background-image: url(images/tenQA03.gif);	width: 247px;	height: 7px;}
+
+/* --- Block --- */
+#qa_container
+{
+	width: 421px;
+	min-height: 120px;
+}
+
+#qa_block_top{		background-image: url(images/qanew01.png);	width: 421px;	height: 61px;}
+#qa_block_center{	background-image: url(images/qanew02.png);	width: 397px;	min-height: 48px;	padding: 0px 12px;	color: #FFFFFF;	font-size: 14px;	line-height: 24px;}
+#qa_block_center a{	color: #FFFFFF;}
+#qa_block_center_l{	width: 317px;	float: left;}
+#qa_block_center_r{	width: 80px;	float: left;}
+#qa_block_bottom{	background-image: url(images/qanew03.png);	background-repeat: no-repeat; width: 421px;	height: 11px;}
+
+/* --- New/Edit --- */
+#newtopic_title
+{
+	background-image:url(images/barNew.gif);
+	
+	width: 510px;
+	height: 35px;
+	padding: 0px 55px;
+	margin: auto;
+	
+	color: #394D26;
+	font-size: 18px;
+}
+
+#newtopic_inner{	width: 620px;	min-height: 200px;	margin: auto;}
+#newtopic_inner input, select, textarea{	font-size: 16px;	color: #394D26;}
+.newtopic_inner_l{	width: 120px;	min-height: 24px;	float: left;	text-align: right;	color: #394D26;}
+.newtopic_inner_r{	width: 500px;	min-height: 24px;	float: left;}
+
+/* --- View Tq ---*/
+#view_tq_title
+{
+	background-image: url(images/bartenQA.gif);
+	width: 439px;
+	height: 41px;
+	
+	color: #AF2323;
+	font-size: 18px;
+	
+	padding: 8px 90px 0;
+	margin: auto;
+}
+
+#view_tq_detail
+{
+	color: #394D26;
+	width: 539px;
+	min-height: 200px;
+	padding: 20 40px;
+	
+	margin: auto;
+}

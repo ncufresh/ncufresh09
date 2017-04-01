@@ -1,0 +1,38 @@
+@charset "utf-8";
+/* CSS Document */
+
+.table{
+	border:2px solid #dfdfdf;
+	background-color:#FFF;
+	margin-left:5px;
+	margin-right:5px;
+	margin-bottom:5px;
+	padding-top:30px;
+	width:640px;
+	}
+
+
+.chart_1st{
+	margin-top:15px;
+	margin-right:15px;
+	float:right;
+	clear:both;
+	}
+	
+.chart{
+	margin-top:15px;
+	margin-right:15px;
+	float:right;
+	clear:both;
+	}
+	
+.question{
+	float:left;
+	margin-left:20px;
+	}
+
+.chooses{
+	float:left;
+	margin-left:30px;
+	}
+

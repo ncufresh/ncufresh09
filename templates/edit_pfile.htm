@@ -1,0 +1,120 @@
+<script type="text/javascript">
+function callHeadicon(headIcon){
+    J.ajax({
+		url: "headIcon_ajax.php?f_name=" + headIcon + "",
+		
+		data:
+		{
+		   content: J('#headicon_chg').val(),
+		   type: 'send'
+		},
+		
+		success:function(response)
+		{
+			J('div#headicon_chg').html(response);
+			headicon_chg.scrollTop=headicon_chg.scrollHeight;
+		}
+    });
+	
+	J.ajax({
+		url: "headIcon_ajax.php?action=detail&f_name=" + headIcon + "",
+		
+		data:
+		{
+		   content: J('#headicon_detail').val(),
+		   type: 'send'
+		},
+		
+		success:function(response)
+		{
+			J('div#headicon_detail').html(response);
+			headicon_detail.scrollTop=headicon_detail.scrollHeight;
+		}
+    });
+}
+</script>
+<form method="post" action="" onSubmit="if (!this.name.value) {alert('請輸入姓名'); this.name.focus(); return false;}">
+<div id="pa_container">
+  <div id="pa_pfile_l">
+    <div id="pa_pfile_lu"></div>
+    <div id="pa_pfile_ld"></div>
+  </div>
+  <div id="pa_pfile_r">
+    <div id="pa_pfile_ru" style="font-size:20px; font-weight: bold;">
+      <div align="left" style="width: 400px; float:left;">個人區</div>
+      <div align="right" style="width: 300px; float: left">
+      <input type="hidden" name="edit_pfile" value="1" />
+      <input type="hidden" name="uno" value="<{$user->uno}>" />
+      <input type="submit" value="送出" />&nbsp;&nbsp;<input type="reset" value="取消" />
+      </div>
+    </div>
+    <div class="pa_pfile_rd">
+    我的秘密<br /><br />
+      <div class="col_span_title">帳號</div>
+      <div class="col_span_content" style="font-size:12px;"><{$user->uid}></div>
+      <br />
+      <div class="col_span_title">密碼</div>
+      <div class="col_span_content" style="font-size:12px;"><{if ($curruser->uno == $user->uno)}><{if (!$curruser->haveperm($curruser->p_handler->getpermvalid()) && !$curruser->haveperm($curruser->p_handler->getpermdeny()))}><div class="button"><a href="sparc.php" title="計中 e-mail 確認" >E-mail確認</a></div><{/if}><div class="button"><a href="passwd.php" title="修改密碼" >修改密碼</a></div><{/if}></div>
+      <br />
+      <div class="col_span_title">姓名</div>
+      <div class="col_span_content"><{if ($curruser->haveperm($curruser->p_handler->getpermadmin()))}><input type="text" name="realname" value="<{$user->realname}>" size="10" /><{else}><{$user->realname}><{/if}></div>
+      <br />
+      <div class="col_span_title">暱稱</div>
+      <div class="col_span_content"><input type="text" name="name" value="<{$user->name}>" size="20" /></div>
+      <br />
+      <div class="col_span_title">性別</div>
+      <div class="col_span_content">
+      <{if ($curruser->haveperm($curruser->p_handler->getpermadmin()))}>
+      男<input type="radio" name="sex" value="boy" <{if ($user->sex == "男")}>checked <{/if}>/>
+      女<input type="radio" name="sex" value="girl" <{if ($user->sex == "女")}>checked <{/if}>/>
+      <{else}>
+        <{if ($user->sex == "男")}>
+        男
+        <{else if ($user->sex == "男")}>
+        女
+        <{/if}>
+      <{/if}>
+      </div>
+      <br />
+      <div class="col_span_title">學號</div>
+      <div class="col_span_content"><input type="text" name="sid" value="<{$user->sid}>" size="10" /></div>
+      <br />
+      <div class="col_span_title">首頁</div>
+      <div class="col_span_content"><input type="text" name="website" value="<{$user->website}>" size="40" /></div>
+      <br />
+      <div class="col_span_title">電子信箱</div>
+      <div class="col_span_content"><input type="text" name="email" value="<{$user->email}>" size="40" /></div>
+      <br />
+      <div class="col_span_title">自我介紹</div>
+      <div class="col_span_content"></div>
+      <br class="clear" />
+      <textarea class="pa_textrea" name="intro" cols="10" rows="40"><{$user->intro}></textarea>
+      <br class="clear" />
+      <{if ($curruser->haveperm($curruser->p_handler->getpermadmin()))}>
+      <span style="border-bottom: solid 1px;">使用者權限</span><br />
+      <span style="font-size: 12px;">
+      <{foreach from=$user->p_handler->permlist item="perm"}>
+      <input type="checkbox" name="perm[]" value="<{$perm.perm_id}>" <{if $user->perm|binary_and:$perm.perm_id}> checked<{/if}> /> <{$perm.perm_desc}>&nbsp;
+      <{/foreach}>
+      </span>
+      <{/if}>
+    </div>
+    <div class="pa_pfile_rd">我的頭像
+    <br /><br />
+    <div id="headicon_chg" style="text-align: center;"><img alt="<{$curruser->uid}>" src="<{$currconfig->url}>/module/shop/items_pic/<{$curruser->pic}>.jpg" /></div>
+    <br class="clear" />
+    <center>
+    <select name="pic" onchange="callHeadicon(this.options[this.selectedIndex].value);">
+      <{section name=hi loop=$headicon}>
+        <{$headicon[hi].html}>
+      <{/section}>
+    </select>
+    </center>
+    <br class="clear" />
+    <div id="headicon_detail">
+    名稱：<br />　　<{$curruser_headicon.item}><br /><br />
+    敘述：<br />　　<{$curruser_headicon.deric}><br />
+    </div>
+    </div>
+  </div>
+</div>

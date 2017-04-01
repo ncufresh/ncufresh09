@@ -1,0 +1,19 @@
+<div class="blue_back">
+	<div class="field_top_top"><img src="templates/images/choose.gif" class="field_title"><img src="templates/images/pine<{$curruser->pic}>.gif" class="in_section"></div>
+	<form action="selectFace.php?selected=1" method="post">
+		<table style="margin:0 auto;">
+			<tr>
+				<{section name=sel loop=$arr }>
+				<{if $smarty.section.sel.index %5 == 0}></tr><tr><{/if}>
+				<td>
+					<img src="templates/images/<{$arr[sel]}>.gif"/><br/>
+					<input type="radio" name="piccho" value="<{$ys[sel]}>" <{if $arr[sel].1 == 'N'}>disabled="disabled"<{/if}> <{if $curruser->pic == $ys[sel]}>checked="checked"<{/if}>>
+				</td>
+				<{/section}>
+			</tr>
+		<tr>
+			<td colspan="5" align="center"><input type="submit" value="送出"/></td>
+		</tr>
+	</table>
+	</form>
+</div>

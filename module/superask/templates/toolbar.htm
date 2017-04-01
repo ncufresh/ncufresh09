@@ -1,0 +1,5 @@
+<div id="toolbar">
+<{foreach from=$tlb item="b"}>
+<input type="button" value="<{$b.chi}>" onclick="javascript: insertTags('<{$tid}>', '[<{$b.eng}>]', '[/<{$b.eng}>]', 'abc');" />
+<{/foreach}>
+</div>

@@ -1,0 +1,142 @@
+#elfroom { 
+	width: 485px;
+	height: 613px;
+	background: url('images/elfroom.gif');
+	position: relative;
+	margin: 0;
+	padding: 0;
+}
+#elfroom dt {
+	position: absolute;
+	margin: 0; 
+	padding: 0;
+	background: url('images/elfroom.gif');
+}
+#elfroom dd {
+	position: absolute;
+	margin: 0; 
+	padding: 0;
+}
+#elfroom dd a { postion: relatvie; display: block; width: 100%;	height: 100%;}
+#elfroom dd a span {
+	position: absolute; 
+	display: none; 
+	border: 1px solid #666; 
+	background-color: white; 
+	width: 15px;
+	text-align: center;
+	top: 0;
+}
+#elfroom dd a:hover { border: 1px solid black; }
+#elfroom dd a:hover span { display: block; }
+/***********************************/
+
+/*********A*********/
+#elfroom #elfA { background-position: -20px -969px; }
+#elfroom #elfAdef a span { left: 63px; }
+#elfroom #elfA, #elfroom #elfAdef {
+	width: 62px;
+	height: 87px;
+	background-position: -20px -969px;
+	top: 356px;
+	left: 20px;
+}
+/*********B*********/
+#elfroom #elfB { background-position: -333px -801px; }
+#elfroom #elfBdef a span { left: 66px; }
+#elfroom #elfB, #elfroom #elfBdef {
+	width: 65px;
+	height: 65px;
+	background-position: -333px -801px;
+	top: 188px;
+	left: 333px;
+}
+/*********C*********/
+#elfroom #elfC { background-position: -27px -808px; }
+#elfroom #elfCdef a span { left: 90px; }
+#elfroom #elfC, #elfroom #elfCdef {
+	width: 89px;
+	height: 83px;
+	background-position: -27px -808px;
+	top: 195px;
+	left: 27px;
+}
+/*********D*********/
+#elfroom #elfD { background-position: -83px -1143px; }
+#elfroom #elfDdef a span { left: 65px; }
+#elfroom #elfD, #elfroom #elfDdef {
+	width: 64px;
+	height: 81px;
+	background-position: -83px -1143px;
+	top: 530px;
+	left: 83px;
+}
+/*********E*********/
+#elfroom #elfE { background-position: -237px -975px; }
+#elfroom #elfEdef a span { left: 73px; }
+#elfroom #elfE, #elfroom #elfEdef {
+	width: 72px;
+	height: 86px;
+	background-position: -237px -975px;
+	top: 362px;
+	left: 237px;
+}
+/*********F*********/
+#elfroom #elfF { background-position: -412px -1151px; }
+#elfroom #elfFdef a span { left: 71px; }
+#elfroom #elfF, #elfroom #elfFdef {
+	width: 70px;
+	height: 75px;
+	background-position: -412px -1151px;
+	top: 538px;
+	left: 412px;
+}
+/*********G*********/
+#elfroom #elfG { background-position: -341px -885px; }
+#elfroom #elfGdef a span { left: 71px; }
+#elfroom #elfG, #elfroom #elfGdef {
+	width: 70px;
+	height: 96px;
+	background-position: -341px -885px;
+	top: 272px;
+	left: 341px;
+}
+/*********H*********/
+#elfroom #elfH { background-position: -230px -766px; }
+#elfroom #elfHdef a span { left: 69px; }
+#elfroom #elfH, #elfroom #elfHdef {
+	width: 68px;
+	height: 71px;
+	background-position: -230px -766px;
+	top: 153px;
+	left: 230px;
+}
+/*********I*********/
+#elfroom #elfI { background-position: -261px -1151px; }
+#elfroom #elfIdef a span { left: 76px; }
+#elfroom #elfI, #elfroom #elfIdef {
+	width: 75px;
+	height: 72px;
+	background-position: -261px -1151px;
+	top: 538px;
+	left: 261px;
+}
+/*********J*********/
+#elfroom #elfJ { background-position: -59px -642px; }
+#elfroom #elfJdef a span { left: 87px; }
+#elfroom #elfJ, #elfroom #elfJdef {
+	width: 86px;
+	height: 79px;
+	background-position: -59px -642px;
+	top: 29px;
+	left: 59px;
+}
+/*********R*********/
+#elfroom #elfR { background: url('images/pineR_w.gif'); }
+#elfroom #elfRdef a span { left: 135px; }
+#elfroom #elfR, #elfroom #elfRdef {
+	width: 134px;
+	height: 160px;
+	top: -47px;
+	left: 300px;
+}

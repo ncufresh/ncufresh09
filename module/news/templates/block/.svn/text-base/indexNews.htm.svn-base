@@ -1,0 +1,15 @@
+<div class="news_content">
+<table border="0" width="95%" align="center">
+	<{foreach from=$block.news item="news"}>
+    <tr>
+        	<td width="20%"><{$news.date}></td>
+			<td width="80%"><{if $news.top==1}><span style="color:#C22A1B;">[重要]</span><{/if}>
+            <a href="<{$block.dirname}>/index.php?news_no=<{$news.news_no}>" title="<{$news.title}>"><{$news.title}></a></td>
+	<!--<td width="25%" align="right">公告者:<{$news.poster}></td>-->
+    </tr>
+	<{/foreach}>
+</table>
+</div>
+<div class="news_footer">
+	<a href="<{$block.dirname}>/index.php" title="所有消息列表"><img src="<{$block.dirname}>/templates/images/new_link.gif"></a>
+</div>

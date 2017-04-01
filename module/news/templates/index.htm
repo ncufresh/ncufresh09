@@ -1,0 +1,54 @@
+<script type="text/javascript">
+	var i = <{$news_no}>;
+	var hideid = i;
+
+	function hide(){
+		J("#news_"+hideid).slideUp("300");
+		clearTimeout();
+	}
+
+	function show_news(id)
+	{
+		if (i > 0)
+		{
+			hideid = i;
+			setTimeout("hide()", 300);
+		}
+		
+		if (i != id)
+		{
+			J("#news_"+id).slideDown("300");
+			i = id;
+		}
+		else
+			i = 0;
+	}
+
+</script>
+
+<div id="news_main_container">
+<div id="news_top" align="right"><{if $currmodule->isadmin($curruser)}><a href="news_do.php?newpost=1" title="新增消息">[新增消息]</a><{/if}> <a style="color: #FFFFFF;" href="<{$currconfig->url}>" title="回到上一頁">[上一頁]</a></div>
+<div id="news_middle">
+	<{section name=dis loop=$news_dis}>
+	<div class="news_title" style="float:left;"><{$news_dis[dis].date}><{if $news_dis[dis].top==1}> <span class="red_font">[重要]</span><{/if}> <a class="title" onClick="show_news(<{$news_dis[dis].news_no}>);return false;" href="index.php?news_no=<{$news_dis[dis].news_no}>" ><{$news_dis[dis].title}></a></div>
+	<{if $currmodule->isadmin($curruser)}>
+    <div align="right">
+    	<a href="news_do.php?edit=1&news_no=<{$news_dis[dis].news_no}>">編輯</a>
+    	<a href="news_do.php?del=1&news_no=<{$news_dis[dis].news_no}>">刪除</a>
+    </div>
+	<{/if}>
+	<br class="clear" />
+        
+	<div class="news_con" id="news_<{$news_dis[dis].news_no}>" style="display:<{if $news_dis[dis].news_no==$news_no}>block<{else}>none<{/if}>;">
+		<{$news_dis[dis].content}>
+		<{foreach from=$news_dis[dis].files item=file name=files}>
+			<div>相關下載<{$smarty.foreach.files.iteration}>：<a href="upfile/fileofnews<{$news_no}>/<{$file.fname}>"><{$file.fname}></a></div>
+		<{/foreach}>
+			<div align="right">發文者：<{$news_dis[dis].poster}></div>
+            <br class="clear" />
+	</div>
+	<{/section}>
+    <br class="clear" />
+</div>
+<div id="news_bottom" style="text-align:center;"></div>
+</div>

@@ -1,0 +1,54 @@
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td colspan="2" align="center"><form method="post" action="" name="bsubscribe" id="bsubscribe"><select name="bsubscribe" size="1">
+<{foreach from=$uf_blocks item="block"}>
+      <option value="<{$block->bno}>"><{$block->name}></option>
+<{/foreach}>
+    </select>&nbsp;<input type="button" value="增加" onclick="javascript: update_click();">&nbsp;<input type="button" value="刪除" onclick="javascript: delete_click();"></form></td>
+  </tr>
+  <tr>
+    <td colspan="2">&nbsp;</td>
+  </tr>
+</table>
+<div id="DropZone0" style="float: left;border: 1px dashed #85A3BF;overflow: auto;width: 49%;height: 700px;">
+<{foreach from=$user_blocks.0 item="block"}>
+  <div id="b_<{$block.bno}>">
+<{$block.content}>
+  </div>
+<{/foreach}>
+</div>
+<div id="DropZone1" style="float: right;border: 1px dashed #85A3BF;overflow: auto;width: 49%;height: 700px;">
+<{foreach from=$user_blocks.1 item="block"}>
+  <div id="b_<{$block.bno}>">
+<{$block.content}>
+  </div>
+<{/foreach}>
+</div>
+<script type="text/javascript">
+	function delete_click()
+	{
+		subscri_update('del', document.bsubscribe.bsubscribe.options[document.bsubscribe.bsubscribe.options.selectedIndex].value);
+	}
+
+	function update_click()
+	{
+		subscri_update('add', document.bsubscribe.bsubscribe.options[document.bsubscribe.bsubscribe.options.selectedIndex].value);
+	}
+
+	function subscri_update(type, bno)
+	{
+		var parms = type + '=1&bno=' + bno;
+
+		var req = new Ajax.Request("bsubscri_ajax.php", {method: "post", parameters: parms, onComplete: function(q){document.location.href = '<{$currconfig->phpself}>';}});
+	}
+
+	function subscri_allupdate(str)
+	{
+		var parms = 'chg=1&' + str;
+
+		var req = new Ajax.Request("bsubscri_ajax.php", {method: "post", parameters: parms});
+	}
+
+	Sortable.create('DropZone0', {dropOnEmpty: true, containment: ['DropZone0', 'DropZone1'], constraint: false, onUpdate: function () {subscri_allupdate(Sortable.serialize('DropZone0') + '&' + Sortable.serialize('DropZone1'));} });
+	Sortable.create('DropZone1', {dropOnEmpty: true, containment: ['DropZone0', 'DropZone1'], constraint: false, onUpdate: function () {} });
+</script>

@@ -1,0 +1,5 @@
+<div class="header">
+<div class="select_club select<{if $club==0 && $_WikiTopic->cno <=30}>1<{else}>2<{/if}>"><a href="index.php" title="進入系學會介紹" class="select_menu">進入系學會介紹</a></div>
+<div class="select_club select<{if $club==0 && $_WikiTopic->cno <=30 || $_WikiTopic->tno==217}>2<{else}>1<{/if}>"><a href="club.php" title="進入社團介紹" class="select_menu">進入社團介紹</a></div>
+<div class="select_club select<{if $_WikiTopic->tno == 217}>1<{else}>2<{/if}>"><a href="view.php?tno=217" title="進入學生會介紹" class="select_menu">進入學生會介紹</a></div>
+</div>

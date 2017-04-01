@@ -1,0 +1,182 @@
+<script type="text/javascript">
+	var pno = 0;
+
+	function subscribe(type, no)
+	{
+		var parms = 'subscr_' + type + '=1&no=' + no;
+
+		var req = new Ajax.Request("do_subscribe.php", {method: "post", parameters: parms});
+	}
+
+	function rmtopic_result(req)
+	{
+		if (req.responseText == '找不到主題')
+			alert(req.responseText);
+		else
+			document.location.href = 'viewboard.php?no=<{$forumtopic->board_no}>';
+	}
+
+	function rmtopic(no)
+	{
+		var parms = 'rmtopic=1&tno=' + no;
+
+		var req = new Ajax.Request("do_topic.php", {method: "post", parameters: parms, onComplete: rmtopic_result});
+	}
+
+	function rmreply_result(req)
+	{
+		if (req.responseText == '找不到文章')
+			alert(req.responseText);
+		else
+			document.location.href = 'viewtopic.php?<{$smarty.server.QUERY_STRING}>';
+	}
+
+	function rmreply(no)
+	{
+		var parms = 'rmreply=1&rno=' + no;
+
+		var req = new Ajax.Request("do_reply.php", {method: "post", parameters: parms, onComplete: rmreply_result});
+	}
+
+	function show_push(no)
+	{
+		if($('push_form' + no).innerHTML != '')
+		{
+			$('push_form' + no).innerHTML = '';
+			return false;
+		}
+		if (pno > 0)
+			$('push_form' + pno).innerHTML = '';
+
+		var str = '';
+		str = str + '<form method="post" action="do_push.php" name="do_push" id="do_push">\n';
+		str = str + '<{$curruser->name}> → <input type="text" name="content" size="40" />&nbsp;&nbsp;<input type="hidden" name="dopush" value="1" /><input type="hidden" name="rno" value="' + no + '" /><input type="submit" value="確定" />\n';
+		str = str + '</form>\n';
+
+		$('push_form' + no).innerHTML = str;
+
+		pno = no;
+	}
+</script>
+<div class="forum_field">
+<div class="forum_title">
+	<{$forumboard->title}>
+	<{if $forumboard->board_no < 301 || $forumboard > 305 }>
+	<span style="font-size:10pt">&gt;&gt; <a href="<{$currconfig->url}>/module/superask/view.php?tno=<{$forumboard->board_no}>">前往<{$forumboard->title}>介紹</a></span>
+	<{/if}>
+</div>
+<div class="forum_content">
+<div class="forum_img">
+	<{if !$curruser->isguest() && ($curruser->haveperm($forumboard->perm) || $bm)}>
+	<a id="img_post" style="float:right;" href="do_topic.php?dopost=1&amp;bno=<{$forumboard->board_no}>"><span>發表文章</span></a>
+	<a id="img_repost" style="float:right;margin-right:10px;" href="#reply"><span>我要回覆</span></a>
+	<{else}>
+	<div class="noperm" style="float:right;">你不能 [發表文章] (<acronym title="你可能尚未登入或者沒有權限">?</acronym>)</div>
+	<div class="noperm" style="float:right;margin-right:10px;">你不能 [回應文章] (<acronym title="你可能尚未登入或者沒有權限">?</acronym>)</div>
+	<{/if}>
+	<a id="img_return" style="float:left;" href="viewboard.php?no=<{$forumtopic->board_no}>"><span>回列表</span></a>
+	<div style="clear:both"></div>
+</div>
+
+<{if $smarty.get.page == '' || $smarty.get.page == 1}>
+<div class="mitem">
+<div class="mitem-left">
+	<div class="img"><img src="<{$currconfig->url}>/templates/images/pine<{$forumtopic->pic}>.gif" alt="<{$forumtopic->pic}>" /></div>
+	<p>
+	帳號：<a href="<{$currconfig->url}>/show_pfile.php?uno=<{$forumtopic->poster_no}>" title="使用者資料"><{$forumtopic->uid}></a><br />
+	系所：<{$forumtopic->dep}><br/>
+	暱稱：<{$forumtopic->poster_name}>
+	</p>
+</div>
+<div class="mitem-right">
+	<div class="title">
+		<div class="admin">
+			<a href="topicfeed.php?no=<{$forumtopic->topic_no}>" title="rss"><img src="templates/images/feed.png" border="0" alt="rss" /></a>
+			<{if ($curruser->haveperm($forumboard->perm) && ($forumtopic->poster_no == $curruser->uno || $bm))}>
+			<a href="do_topic.php?mdarticle=1&amp;tno=<{$forumtopic->topic_no}>" title="修改文章">[編輯]</a>
+			<{if $bm}><a href="javascript: rmtopic(<{$forumtopic->topic_no}>);" title="刪除文章">[刪除]</a><{/if}>
+			<{/if}>
+		</div>
+		<{$forumtopic->title}>
+	</div>
+	<div class="content"><{$forumtopic->content}></div>
+	<div class="footer">
+		頂樓 :
+		發表時間：<{$forumtopic->posttime}>
+		點閱數：<{$forumtopic->numread}>
+		回應數：<{$forumtopic->numreply}>
+	</div>
+</div>
+<div style="clear:both"></div>
+</div>
+<{/if}>
+
+<{foreach from=$forumreply item="reply" name="reply"}>
+<{if $reply->die == 1}>
+<div class="replyitem">
+<div class="mitem-left" style="height: auto">
+	<p>
+	帳號：----<br />
+	系所：----<br />
+	暱稱：----
+	</p>
+</div>
+<div class="mitem-right">
+	<div><p>-- 本回覆已被刪除 --</p></div><br />
+	#<{$reply->fix_no}> 樓 : 發表時間：<{$reply->posttime}>
+</div>
+<div style="clear:both"></div>
+</div>
+<{else}>
+<div class="replyitem">
+<div class="mitem-left">
+	<div class="img"><img src="<{$currconfig->url}>/templates/images/pine<{$reply->pic}>.gif" alt="<{$reply->pic}>" /></div>
+	<p>
+	帳號：<a href="<{$currconfig->url}>/show_pfile.php?uno=<{$reply->poster_no}>" title="使用者資料"><{$reply->uid}></a><br />
+	系所：<{$reply->dep}><br />
+	暱稱：<{$reply->poster_name}>
+	</p>
+</div>
+<div class="mitem-right">
+    <div>
+	<{if $curruser->haveperm($forumboard->perm) && ($reply->poster_no == $curruser->uno || $bm)}>
+	<div class="admin">
+		<a href="do_reply.php?mdreply=1&amp;rno=<{$reply->reply_no}>;" title="修改文章">[編輯]</a>
+		<{if $bm}><a href="javascript: rmreply(<{$reply->reply_no}>);" title="刪除文章">[刪除]</a><{/if}>
+
+	</div>
+	<{/if}>
+    &nbsp;
+    </div>
+    <div class="content"><{$reply->content}></div>
+	<div class="footer">
+		#<{$reply->fix_no}> 樓 : 發表時間：<{$reply->posttime}>
+	</div>
+</div>
+<div style="clear:both"></div>
+</div>
+<{/if}>
+<{/foreach}>
+<div class="forum_page"><{foreach from=$plink item="link"}><{$link}>&nbsp;&nbsp;<{/foreach}></div>
+
+<a name="reply"></a>
+<{if !$curruser->isguest() && ($curruser->haveperm($forumboard->perm) || $bm)}>
+<div id="reply_form">
+  <form method="post" action="do_reply.php">
+    <table class="formTable" style="width:100%">
+      <tr>
+        <th>回覆文章</th>
+      </tr>
+      <tr>
+        <td><textarea style="width:100%" name="content" rows="10" cols="60"></textarea></td>
+      </tr>
+      <tr>
+		<td><input type="hidden" name="doreply" value="1" /><input type="hidden" name="tno" value="<{$forumtopic->topic_no}>" /><input type="submit" value="確定" />&nbsp;&nbsp;<input type="reset" value="重填" /></td>
+      </tr>
+    </table>
+  </form>
+</div>
+<{/if}>
+
+</div>
+</div>

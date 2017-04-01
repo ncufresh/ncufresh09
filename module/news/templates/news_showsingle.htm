@@ -1,0 +1,31 @@
+<div>
+<table>
+	<tr>
+	<td>標題：</td>
+	<td><{if $news_display.top==1}>[置頂]<{/if}><{$news_display.title}></td>
+	</tr>
+	<tr>
+	<td align="left" valign="top">內容：</td><td><{$news_display.content}></td>
+	</tr>
+	<tr>
+	<td valign="top">附加檔案：</td>
+	<td>
+	<{section loop=$upfiled name=dis}>
+		<a href="upfile/fileofnews<{$upfiled[dis].news_no}>/<{$upfiled[dis].fname}>" target="_blank"><{$upfiled[dis].fname}></a><br>
+	<{/section}>
+	</td>
+	</tr>
+	<tr>
+	<td align="left" colspan="2">
+		<{if $currmodule->isadmin($curruser)}>
+			<form action="news_do.php?edit=1&news_no=<{$news_no}>" method="post" onSubmit="if(!confirm("確認要刪除?"))return false;">
+			<input type="submit" value="編輯">
+			</form>
+			<form action="news_do.php?del=1&news_no=<{$news_no}>" method="post">
+			<input type="submit" value="刪除">
+			</form><!--沒有跳出警告-->
+		<{/if}>
+	</td>
+	</tr>
+</table>
+</div>

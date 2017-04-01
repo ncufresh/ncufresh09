@@ -1,0 +1,21 @@
+<table>
+  <tr>
+    <td>事件名稱</td>
+    <td><{$act.subject}></td>
+  </tr>
+  <tr>
+    <td>時間</td>
+    <td>
+<{foreach from=$sch item="s"}>
+      <{$s.start_date}> 到 <{$s.end_date}><br />
+<{/foreach}>
+    </td>
+  </tr>
+  <tr>
+    <td>內容</td>
+    <td><{$act.content}></td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center"><a href="schModify.php?sno=<{$sno}>" title="修改行程">修改行程</a></td>
+  </tr>
+</table>
